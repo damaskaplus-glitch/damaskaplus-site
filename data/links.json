@@ -1,19 +1,20 @@
 {
- "_شرح": "أحدث منشور في الأعلى. لكل منشور: url رابط فيسبوك، title العنوان، text نص اختياري، series اختياري: street | changed | numbers.",
+ "_شرح": "أحدث منشور في الأعلى. لكل منشور: url رابط فيسبوك أو يوتيوب، title العنوان، text نص اختياري، series اختياري: street | changed | numbers، kind اختياري: ريل | فيديو | إنفوغراف | ألبوم، images روابط الصور (تُنزَّل تلقائياً إلى media مرة واحدة)، extra عدد الصور الإضافية على فيسبوك.",
  "items": [
-  {
-   "url": "https://www.facebook.com/reel/1005989445847466",
-   "title": "عاد إصدار بطاقة الإعاقة في إدلب بعد توقف منذ 2011",
-   "text": "بدأ في مدينة إدلب في 4 تشرين الأول، ووصل إلى معرة النعمان في 19 منه."
-  },
-  {
-   "url": "https://www.facebook.com/reel/1428050899525485",
-   "title": "وزير العدل مظهر الويس في جولة سيراً على الأقدام في محيط قلعة حلب"
-  },
   {
    "url": "https://www.facebook.com/reel/1675283741054584",
    "title": "الختم على اللحم يحمل معلومات عن نوع الذبيحة وجنسها",
-   "text": "وأي ختم يشبهه ليس بالضرورة صحيحاً."
+   "text": "وأي ختم يشبهه ليس بالضرورة صحيحاً.",
+   "images": [
+    "https://scontent-lax3-2.xx.fbcdn.net/v/t15.5256-10/867848887_28761493913544963_948068932401197214_n.jpg?stp=dst-jpg_tt6&cstp=mx1080x1920&ctp=s960x960&_nc_cat=100&ccb=1-7&_nc_sid=d2b52d&_nc_ohc=ZF5SMzFpjJ0Q7kNvwFSRcTL&_nc_oc=AdoWPQaD3iNYdHfE1jFCgjHVKFKXcxC6EFupV9dfCXEoFaKQBNYO98R-7l4JkGsGzPs&_nc_zt=23&_nc_ht=scontent-lax3-2.xx&_nc_gid=PvmLvodZMOYHIpUTUgP2Zw&_nc_ss=792a8&oh=00_AQNQvsg9SXOL-FPcnMpXgK7JJ6zOc8z9MUgb-qmq_BTzEg&oe=6AE3FF7B"
+   ]
+  },
+  {
+   "url": "https://www.facebook.com/reel/1428050899525485",
+   "title": "وزير العدل مظهر الويس في جولة سيراً على الأقدام في محيط قلعة حلب",
+   "images": [
+    "https://scontent-lax3-1.xx.fbcdn.net/v/t15.5256-10/867457752_2345627709533832_7122902530837493444_n.jpg?stp=dst-jpg_tt6&cstp=mx1080x1920&ctp=s960x960&_nc_cat=109&ccb=1-7&_nc_sid=d2b52d&_nc_ohc=ErufUIfdg64Q7kNvwEO_Nff&_nc_oc=AdrjKM-73S_qI0iT-QXEZBU4v1ZG5e2Ww8TsB7jEynwjO_rXIszICnky4pbEFw4wsz4&_nc_zt=23&_nc_ht=scontent-lax3-1.xx&_nc_gid=PvmLvodZMOYHIpUTUgP2Zw&_nc_ss=792a8&oh=00_AQNSB3g7He8-97Ncti-1rxK3KOvCUhqDycOmrybUFzNjVw&oe=6AE42D0E"
+   ]
   },
   {
    "url": "https://www.facebook.com/reel/1752097182672669",
@@ -21,46 +22,202 @@
    "text": "هذا ما صرح به وزير النقل السوري يعرب سليمان بدر بخصوص عدم استخدام سيارة الوزارة في تنقلاته الشخصية حفاظاً على المال العام."
   },
   {
-   "url": "https://www.facebook.com/reel/1785289892775663",
-   "title": "من إدلب إلى منصة التتويج في أوزبكستان"
-  },
-  {
    "url": "https://www.facebook.com/reel/1077655918656803",
    "title": "صورة بلا أخطاء واضحة لا تعني أنها حقيقية",
-   "text": "وصورة يُقال إنها مولّدة لا تعني أنها مزيفة."
+   "text": "وصورة يُقال إنها مولّدة لا تعني أنها مزيفة.",
+   "images": [
+    "https://scontent-lax3-2.xx.fbcdn.net/v/t15.5256-10/863512865_2146492385966103_6270463489110114021_n.jpg?stp=dst-jpg_tt6&cstp=mx1080x1920&ctp=s960x960&_nc_cat=106&ccb=1-7&_nc_sid=d2b52d&_nc_ohc=YG3yqBHCxAUQ7kNvwG-mugg&_nc_oc=Adpdh8guYExk3HcRVIXE3J3FwPs6Pw5hFYFP5PYqa4zXMMVvs4kawPKUKYacwSlgHKQ&_nc_zt=23&_nc_ht=scontent-lax3-2.xx&_nc_gid=PvmLvodZMOYHIpUTUgP2Zw&_nc_ss=792a8&oh=00_AQOVyNZxkWnEOy7sDVNsJjC6ii0eRRDGNRC1hXdy01ytig&oe=6AE41645"
+   ]
   },
   {
    "url": "https://www.facebook.com/reel/1658991198920754",
    "title": "أب يعلن أن مهر ابنته 100 ليرة جديدة",
-   "text": "في مقطع متداول، يعلن أب أن مهر ابنته 100 ليرة جديدة، أي أقل من دولار واحد، بشرط أن يحفّظها العريس أجزاءً من القرآن الكريم."
+   "text": "في مقطع متداول، يعلن أب أن مهر ابنته 100 ليرة جديدة، أي أقل من دولار واحد، بشرط أن يحفّظها العريس أجزاءً من القرآن الكريم.",
+   "images": [
+    "https://scontent-lax3-1.xx.fbcdn.net/v/t15.5256-10/863384216_2260142807893867_4432961482922758865_n.jpg?stp=dst-jpg_tt6&cstp=mx1080x1920&ctp=s960x960&_nc_cat=109&ccb=1-7&_nc_sid=d2b52d&_nc_ohc=aHmcJYZicDcQ7kNvwGFmq5i&_nc_oc=Adoj8Co-SbA7p3CR1PTagCnbxib5ssJ-XtUolsDHfSfT-AVpJqspLdIRjogqnf_zrWs&_nc_zt=23&_nc_ht=scontent-lax3-1.xx&_nc_gid=PvmLvodZMOYHIpUTUgP2Zw&_nc_ss=792a8&oh=00_AQM8Ib4xjgOvKW9gTa5eOnI65PqcryPJWp0XwyayWdIr3Q&oe=6AE408F0"
+   ]
+  },
+  {
+   "url": "https://www.facebook.com/DamaskaPlus/posts/pfbid06YwKshb9snoZYqB5J3ZF7EM5afgoinQNWTZA44mnZbeG4ZiSGf6WeumHACNuzdJ1l",
+   "title": "الطباخ \"الليزري\" لا يعمل بالليزر",
+   "kind": "إنفوغراف",
+   "text": "ولذلك يوصل إلى القدر حرارة أكثر مما توصله شعلة الغاز، التي يضيع جزء كبير من حرارتها في الهواء.",
+   "series": "numbers",
+   "images": [
+    "https://scontent-lax3-2.xx.fbcdn.net/v/t39.99422-6/860541378_1355300577670072_4972128395396403389_n.png?stp=dst-jpg_tt6&cstp=mx1080x1350&ctp=s640x640&_nc_cat=107&ccb=1-7&_nc_sid=127cfc&_nc_ohc=qosOSBv0_fsQ7kNvwGRbeHI&_nc_oc=Adq8AWmB2xQK6QyDMUqWBbE5BpHvV-r9j_YscVwed1aDQ5vOZdmvK24F4arfUX9nhF0&_nc_zt=14&_nc_ht=scontent-lax3-2.xx&_nc_gid=jAeteEIizwelhPpng-UalQ&_nc_ss=7b2a8&oh=00_AQODPuDkxx_r4t_IwyIJHuSPCX4us7gy6Gd-BtIyhU75SQ&oe=6AE4285D"
+   ]
   },
   {
    "url": "https://www.facebook.com/reel/2598011243956551",
    "title": "أهالي جوبر يقطعون طريق المتحلّق الجنوبي",
-   "text": "يوم الجمعة 23 تشرين الأول."
+   "text": "يوم الجمعة 23 تشرين الأول.",
+   "images": [
+    "https://scontent-lax7-1.xx.fbcdn.net/v/t15.5256-10/861563851_1947251486251668_4744395155206165347_n.jpg?stp=dst-jpg_tt6&cstp=mx1080x1920&ctp=s960x960&_nc_cat=101&ccb=1-7&_nc_sid=d2b52d&_nc_ohc=_dtPLeVyx4MQ7kNvwFCNL4l&_nc_oc=AdqjmAZkGKisPm0fWOJDefei9g9cT6PEZfCgah9EK-oUbBp2n2rq3wYYPxR7sj9EI64&_nc_zt=23&_nc_ht=scontent-lax7-1.xx&_nc_gid=PvmLvodZMOYHIpUTUgP2Zw&_nc_ss=792a8&oh=00_AQMQ9gZZ6tpcOxTaE5axkmXCvM3HO8SjiOG49RXUtRzl3Q&oe=6AE430C1"
+   ]
+  },
+  {
+   "url": "https://www.facebook.com/reel/1785289892775663",
+   "title": "من إدلب إلى منصة التتويج في أوزبكستان",
+   "images": [
+    "https://scontent-lax3-1.xx.fbcdn.net/v/t15.5256-10/861205835_1046954208365166_8493603021322662328_n.jpg?stp=dst-jpg_tt6&cstp=mx1080x1920&ctp=s960x960&_nc_cat=108&ccb=1-7&_nc_sid=d2b52d&_nc_ohc=mKdDuRcD0p0Q7kNvwEWXhZH&_nc_oc=Adp7Y2fK7aDGil2jyAAvxF5v7pXH3grfsn2WNcwA7GANkV5NmeIv3Hy2UOZi7bdKySg&_nc_zt=23&_nc_ht=scontent-lax3-1.xx&_nc_gid=PvmLvodZMOYHIpUTUgP2Zw&_nc_ss=792a8&oh=00_AQMB_Hl7t0Wz3sLezhCHHok0_d4J8bCOnwQl-iJyYdkF3g&oe=6AE41061"
+   ]
   },
   {
    "url": "https://www.facebook.com/reel/1164181809599600",
-   "title": "الرصاصة التي تُطلق في عرس لا تختفي، تعود إلى الأرض"
+   "title": "الرصاصة التي تُطلق في عرس لا تختفي، تعود إلى الأرض",
+   "images": [
+    "https://scontent-lax7-1.xx.fbcdn.net/v/t15.5256-10/866668754_2181367736119370_1333671024900468294_n.jpg?stp=dst-jpg_tt6&cstp=mx1080x1920&ctp=s960x960&_nc_cat=105&ccb=1-7&_nc_sid=d2b52d&_nc_ohc=kTdX-WswSSYQ7kNvwEfr2B0&_nc_oc=Adq7SPtlHe9WkhRV9l61Tr_qRloTEY70hYbpJ6l8zsm7o9Udh79xshxF4dWl7KNAYj0&_nc_zt=23&_nc_ht=scontent-lax7-1.xx&_nc_gid=PvmLvodZMOYHIpUTUgP2Zw&_nc_ss=792a8&oh=00_AQORqzDumEvSBVQX5Lmtrn1ea99iAPEzf3zjEzjCRLyWeg&oe=6AE41444"
+   ]
+  },
+  {
+   "url": "https://www.facebook.com/photo/?fbid=122173558106701687",
+   "title": "الحد الأقصى للعمولة بحسب شام كاش",
+   "kind": "إنفوغراف",
+   "series": "numbers",
+   "images": [
+    "https://scontent-lax7-1.xx.fbcdn.net/v/t39.99422-6/859815363_3153705574815227_2912938242511765782_n.png?stp=dst-jpg_tt6&cstp=mx1080x1350&ctp=s640x640&_nc_cat=105&ccb=1-7&_nc_sid=127cfc&_nc_ohc=fO6YWckXNs8Q7kNvwHUryMw&_nc_oc=Adow7qh9xm_vZdUNZCrcQIt7VhmAH61tGf-sbXmX25DIjmKYW66CnSHa5zOo-f3RujI&_nc_zt=14&_nc_ht=scontent-lax7-1.xx&_nc_gid=TueG7EYp0zrAWJzy1h9e2Q&_nc_ss=7b2a8&oh=00_AQM0ejDiOm8107JbrmCbqGnNn5gXuVYknmaNjpcICMY2QQ&oe=6AE40997"
+   ]
+  },
+  {
+   "url": "https://www.facebook.com/DamaskaPlus/posts/pfbid02hLV3moJYyrhSXyQFpVFFhAYiFBHLNjA4YZk84awMS9sLNLUfdKmCRXHKDyxNSG5wl",
+   "title": "أضفنا ما طلبتموه: الطبّاخ الليزري والثلاجة والغسالة",
+   "kind": "إنفوغراف",
+   "text": "الطبخ اليومي على الغاز الليزري قد يستهلك قرابة نصف الشريحة الأولى في الدورة.",
+   "series": "numbers",
+   "images": [
+    "https://scontent-lax3-2.xx.fbcdn.net/v/t39.99422-6/864074282_40067035186228085_1052694498425286204_n.png?stp=dst-jpg_tt6&cstp=mx1080x1350&ctp=s640x640&_nc_cat=100&ccb=1-7&_nc_sid=127cfc&_nc_ohc=vRG77s4SAQcQ7kNvwHXX_Oj&_nc_oc=AdoP3KIGgAxjDtFTYAYE7OP0UNdZ-Lj6nQq3BFHwuc_wZ4n8Q5kDoRrBBlWr6D5_aQI&_nc_zt=14&_nc_ht=scontent-lax3-2.xx&_nc_gid=TueG7EYp0zrAWJzy1h9e2Q&_nc_ss=7b2a8&oh=00_AQNZJa6rVeE7yDxWJCVl8IPbxkvheUfxPJ5UBfGJtCb4mQ&oe=6AE42C72"
+   ]
   },
   {
    "url": "https://www.facebook.com/reel/1137313618844029",
-   "title": "ليست كل مهام عملك معرّضة للاستبدال بالذكاء الاصطناعي بالقدر نفسه"
+   "title": "ليست كل مهام عملك معرّضة للاستبدال بالذكاء الاصطناعي بالقدر نفسه",
+   "images": [
+    "https://scontent-lax3-2.xx.fbcdn.net/v/t15.5256-10/861827600_1434686614861732_7327062171947638423_n.jpg?stp=dst-jpg_tt6&cstp=mx1080x1920&ctp=s960x960&_nc_cat=107&ccb=1-7&_nc_sid=d2b52d&_nc_ohc=irDESdPoOrYQ7kNvwEyz3uf&_nc_oc=Adp_knmwH399hkN6040B0TEBBhuvMRaKtQl0xmiG_EzAvl-TTbBMTOaSvFmskT1TOB8&_nc_zt=23&_nc_ht=scontent-lax3-2.xx&_nc_gid=PvmLvodZMOYHIpUTUgP2Zw&_nc_ss=792a8&oh=00_AQNRH4KspCJ0i4nHysGR4Xr2I-yC7dhtfpAcv3s6BUQprw&oe=6AE410C9"
+   ]
   },
   {
    "url": "https://www.facebook.com/reel/1514533713872452",
-   "title": "ما هي المواد التي انقطعت من البيت السوري بسبب غلائها؟"
+   "title": "ما هي المواد التي انقطعت من البيت السوري بسبب غلائها؟",
+   "series": "street",
+   "images": [
+    "https://scontent-lax7-1.xx.fbcdn.net/v/t15.5256-10/864025285_1532152648674850_6561193045640735567_n.jpg?stp=dst-jpg_tt6&cstp=mx1080x1920&ctp=s960x960&_nc_cat=101&ccb=1-7&_nc_sid=d2b52d&_nc_ohc=Tj6cCVXpJtwQ7kNvwFBeGNj&_nc_oc=Adoh-qyjLcTWCtwyewsGiUPajnfbDPdsTn1XH5ZeZLY5NImHZniXptAPERXkrX0nvSQ&_nc_zt=23&_nc_ht=scontent-lax7-1.xx&_nc_gid=PvmLvodZMOYHIpUTUgP2Zw&_nc_ss=792a8&oh=00_AQOsQWA56y_ctAcFuQbUhUq2o6C4E2FFqdLKDGU7SEb_iw&oe=6AE42D5C"
+   ]
+  },
+  {
+   "url": "https://www.facebook.com/photo/?fbid=122173478954701687",
+   "title": "هزات أرضية شعر بها السوريون في تشرين الأول",
+   "kind": "ألبوم",
+   "text": "في 4 تشرين الأول 2026، سجّل المركز الوطني للزلازل 5 هزات في جنوب تركيا شعر بها سكان الشمال السوري.",
+   "images": [
+    "https://scontent-lax3-2.xx.fbcdn.net/v/t39.99422-6/860556697_39125162387131139_8030128476887230607_n.png?stp=dst-jpg_tt6&cstp=mx1080x1350&ctp=s590x590&_nc_cat=100&ccb=1-7&_nc_sid=127cfc&_nc_ohc=-94Fy_84S2AQ7kNvwF0AQEB&_nc_oc=AdqdEe125FpcMkmPifMU4mITQL9OswrZGL7Wb8pdpBAiEzL4RIS7m5ZSoXHizONAYnU&_nc_zt=14&_nc_ht=scontent-lax3-2.xx&_nc_gid=cTYX10RAO1C40VRV0DkWsA&_nc_ss=7b2a8&oh=00_AQPNiiluWDIHHaqDLEHus_G67_dwVxvHYOAJfU_S9fdb-A&oe=6AE42530",
+    "https://scontent-lax3-1.xx.fbcdn.net/v/t39.99422-6/857866027_2277867582783878_1177033510341326496_n.png?stp=dst-jpg_tt6&cstp=mx1080x1350&ctp=s590x590&_nc_cat=104&ccb=1-7&_nc_sid=127cfc&_nc_ohc=Nrxg6VkUoiEQ7kNvwEy8Wy6&_nc_oc=Adoy0r2jr6_9Mi_gpt2zgZI9wKEUycyFgp6YiuuGGyhHQty_5CaD2TXYLDvEZGB5qhw&_nc_zt=14&_nc_ht=scontent-lax3-1.xx&_nc_gid=cTYX10RAO1C40VRV0DkWsA&_nc_ss=7b2a8&oh=00_AQPZKCic0a19WQ2MQdRyGFNElQDAAurmSiGi07vslkNnaQ&oe=6AE42872",
+    "https://scontent-lax3-2.xx.fbcdn.net/v/t39.99422-6/861222173_2200303900870388_6938380827186455975_n.png?stp=dst-jpg_tt6&cstp=mx1080x1350&ctp=s590x590&_nc_cat=106&ccb=1-7&_nc_sid=127cfc&_nc_ohc=voxIaZYr6NkQ7kNvwFSFNsO&_nc_oc=Adp8MUGI8aHhYhxsapD0-C3C4EZRY-Xm3D1Q4dcNgMezM9S_r76MQpCGjhPWWhW0s_g&_nc_zt=14&_nc_ht=scontent-lax3-2.xx&_nc_gid=cTYX10RAO1C40VRV0DkWsA&_nc_ss=7b2a8&oh=00_AQNhj5vdS7R35FnXPKyORZliFYLTpVnU76Lk0LIdCioYXw&oe=6AE41A6C",
+    "https://scontent-lax3-2.xx.fbcdn.net/v/t39.99422-6/861300534_28348852458127017_6350755275916468951_n.png?stp=dst-jpg_tt6&cstp=mx1080x1350&ctp=s590x590&_nc_cat=100&ccb=1-7&_nc_sid=127cfc&_nc_ohc=LjG8CWxueFkQ7kNvwGAF8Zc&_nc_oc=AdoVT21P58jwIqHOGX4cmpa810LUPHb4YIE-uLNlqVSN-JD1vxFrPeUUDb2yDFJ6ln4&_nc_zt=14&_nc_ht=scontent-lax3-2.xx&_nc_gid=cTYX10RAO1C40VRV0DkWsA&_nc_ss=7b2a8&oh=00_AQMqe6kAAL_2PTjV7n31wtts-DrNQhBwC5xik7GJh01_NA&oe=6AE41264",
+    "https://scontent-lax3-2.xx.fbcdn.net/v/t39.99422-6/858477562_1636749161515399_5462937671287417581_n.png?stp=dst-jpg_tt6&cstp=mx1080x1350&ctp=s590x590&_nc_cat=103&ccb=1-7&_nc_sid=127cfc&_nc_ohc=8JRjLl_krmEQ7kNvwGX0FxA&_nc_oc=AdrqTVczIloMPdNFfK5F6--TrHPbedVLqowW8YCKAjz78QqYqhwwwOWJcELaOPvNcAQ&_nc_zt=14&_nc_ht=scontent-lax3-2.xx&_nc_gid=cTYX10RAO1C40VRV0DkWsA&_nc_ss=7b2a8&oh=00_AQMsu9l0_DV3Su-Gs2sFO2n49sgz5hRWj23mUFVo4SkdZg&oe=6AE428AC"
+   ],
+   "extra": 2
   },
   {
    "url": "https://www.facebook.com/reel/1672146527857654",
    "title": "قرار بالسماح باستيراد البطاطا انتشر خلال الأيام الماضية",
-   "text": "ووزارة الزراعة تقول إنه مزوَّر."
+   "text": "ووزارة الزراعة تقول إنه مزوَّر.",
+   "images": [
+    "https://scontent-lax7-1.xx.fbcdn.net/v/t15.5256-10/858255766_1817882775904035_1506692712989314184_n.jpg?stp=dst-jpg_tt6&cstp=mx1080x1920&ctp=s960x960&_nc_cat=105&ccb=1-7&_nc_sid=d2b52d&_nc_ohc=q3VkrxcuiX4Q7kNvwEb_Ohc&_nc_oc=AdrdEOjJqNcWV36LupahV0q7CT-BZbpJjgV9BvlRymH-jSAReAgDmlzmBy_1qHsLG-E&_nc_zt=23&_nc_ht=scontent-lax7-1.xx&_nc_gid=PvmLvodZMOYHIpUTUgP2Zw&_nc_ss=792a8&oh=00_AQP8yEIUuLOpvRqE7n6qraffdGnAW4g5tyYc_RJOGZh0Hg&oe=6AE404FD"
+   ]
   },
   {
    "url": "https://www.facebook.com/reel/1062322926767401",
    "title": "برأيك شو تغيّر بحقوق السجناء؟",
    "text": "شاركنا رأيك بالتعليقات واقترح علينا موضوع الحلقة القادمة.",
-   "series": "changed"
+   "series": "changed",
+   "images": [
+    "https://scontent-lax3-1.xx.fbcdn.net/v/t15.5256-10/861423902_1445048254391305_6251745916392709146_n.jpg?stp=dst-jpg_tt6&cstp=mx1080x1920&ctp=s960x960&_nc_cat=108&ccb=1-7&_nc_sid=d2b52d&_nc_ohc=8u4PhHavMYcQ7kNvwGTpPNc&_nc_oc=AdrebN5NWnADLKMbHh8AKmjwzsp5dryalj5GnlJ4-a2p_yzRnCu5a-wbv2YA0EyI4Qw&_nc_zt=23&_nc_ht=scontent-lax3-1.xx&_nc_gid=iacGafFoYuVlA7KFjfjkWA&_nc_ss=7b2a8&oh=00_AQNTcxuGTxyxgnd2klOJU6MDOhEfR5wMKvzE9VWEUZL5dw&oe=6AE3FFE0"
+   ]
+  },
+  {
+   "url": "https://www.facebook.com/photo/?fbid=122173403930701687",
+   "title": "في 4 تشرين الأول، صدرت في إدلب أول بطاقة إعاقة منذ 2011",
+   "kind": "ألبوم",
+   "text": "وفي الحسكة عادت الخدمة بعد توقف نحو عامين.",
+   "images": [
+    "https://scontent-lax3-2.xx.fbcdn.net/v/t39.99422-6/857933725_1639516557664013_4037883441415909838_n.png?stp=dst-jpg_tt6&cstp=mx1080x1350&ctp=s590x590&_nc_cat=106&ccb=1-7&_nc_sid=127cfc&_nc_ohc=Z5cfXlxPIPMQ7kNvwH00X-9&_nc_oc=Adpy7hjHG8CIer6OyriydvpfYggLjU_eZAL_CuQFIN5hTkhjDYxof-HpvhQDfjSVY4M&_nc_zt=14&_nc_ht=scontent-lax3-2.xx&_nc_gid=4218pTXmTQeBSY1Zy3uWNA&_nc_ss=7b2a8&oh=00_AQOEVY_GNhxk67YbJ5tlNUTuvf7xsBrMQknC_bpxTkmrdg&oe=6AE40267",
+    "https://scontent-lax7-1.xx.fbcdn.net/v/t39.99422-6/857107050_2610392249465070_7401541829539837931_n.png?stp=dst-jpg_tt6&cstp=mx1080x1350&ctp=s590x590&_nc_cat=101&ccb=1-7&_nc_sid=127cfc&_nc_ohc=1oTNTWnToCsQ7kNvwGoE0mB&_nc_oc=AdoTDzozjMW6zGmBTWJHp4u0u1kkSt1az7FVN_3WHW2yeHJn2TdoziD46wm7PQuyyt8&_nc_zt=14&_nc_ht=scontent-lax7-1.xx&_nc_gid=4218pTXmTQeBSY1Zy3uWNA&_nc_ss=7b2a8&oh=00_AQPHtPP5B9gWJqCi0NkSyDzMSa9UrZJJCbA-Jkzrnikcjg&oe=6AE41BAD",
+    "https://scontent-lax3-2.xx.fbcdn.net/v/t39.99422-6/859977481_1498026669042608_578837991876306963_n.png?stp=dst-jpg_tt6&cstp=mx1080x1350&ctp=s590x590&_nc_cat=100&ccb=1-7&_nc_sid=127cfc&_nc_ohc=50L1_t6vQrAQ7kNvwF0kKXj&_nc_oc=Ado_8sGhvCKrYnGcLT8wOukEzjox01cwzmDACubr-dhKPNHOnW4NCJ0WFuNorAYGZ0c&_nc_zt=14&_nc_ht=scontent-lax3-2.xx&_nc_gid=4218pTXmTQeBSY1Zy3uWNA&_nc_ss=7b2a8&oh=00_AQMee0pEyHG9McndwUHXib4FwPZpV-Yynf61o36i1zRC-w&oe=6AE3FAD9",
+    "https://scontent-lax7-1.xx.fbcdn.net/v/t39.99422-6/857871707_3256623547880254_7268122058860728433_n.png?stp=dst-jpg_tt6&cstp=mx1080x1350&ctp=s590x590&_nc_cat=101&ccb=1-7&_nc_sid=127cfc&_nc_ohc=B8PKt27pxMMQ7kNvwGKnLHD&_nc_oc=Adrhzq4puSg3nWO1OKAkMW9hUz588UirstczGIAL1VQ_eRcbCA1WGEFQqzIGFpWi1FY&_nc_zt=14&_nc_ht=scontent-lax7-1.xx&_nc_gid=4218pTXmTQeBSY1Zy3uWNA&_nc_ss=7b2a8&oh=00_AQO1a0m8cUGWQVhCqkOXI0lSN1LH5Hz0pcCcXFQpEYIIcw&oe=6AE400D7",
+    "https://scontent-lax7-1.xx.fbcdn.net/v/t39.99422-6/859399383_2119895988892223_4498155456814125668_n.png?stp=dst-jpg_tt6&cstp=mx1080x1350&ctp=s590x590&_nc_cat=105&ccb=1-7&_nc_sid=127cfc&_nc_ohc=PENE0bvUYzEQ7kNvwFVa99v&_nc_oc=AdpHp4_BOXQeru1-f3x6f6h-NXynRS08TM3k9r7ZDRMzbrQsBdWg8PhheZIXSIPLvJM&_nc_zt=14&_nc_ht=scontent-lax7-1.xx&_nc_gid=4218pTXmTQeBSY1Zy3uWNA&_nc_ss=7b2a8&oh=00_AQOpOUwauMAOWfR80RfjAQFLRq_-RsVWQgqYJcXv5IHmzw&oe=6AE3FA72"
+   ]
+  },
+  {
+   "url": "https://www.facebook.com/DamaskaPlus/posts/pfbid02zK3cFdZQAT4rfwWwWvmbPgnyZZ6cxN7enwAet7V2s96u4zjyrkGGKhAWTzrZV83l",
+   "title": "فاتورة الكهرباء تُحسب كل شهرين",
+   "kind": "إنفوغراف",
+   "text": "أول 300 كيلوواط بـ6 ليرات جديدة للكيلوواط، وما فوقها بـ14.",
+   "series": "numbers",
+   "images": [
+    "https://scontent-lax7-1.xx.fbcdn.net/v/t39.99422-6/857324831_1811427746668609_5640407748469260392_n.png?stp=dst-jpg_tt6&cstp=mx1440x1800&ctp=s640x640&_nc_cat=105&ccb=1-7&_nc_sid=127cfc&_nc_ohc=_Xo3rWPFCUkQ7kNvwFtPrtJ&_nc_oc=Adr3U3Y5PUP4Fi0S2LHN2vm3FjskKT722uv8iPpe-ySpCV0tkYn3XZQIUrF1Snz7tAc&_nc_zt=14&_nc_ht=scontent-lax7-1.xx&_nc_gid=NLFVNf5ilAmQduH6xxy_uQ&_nc_ss=7b2a8&oh=00_AQOlR7jrnWdDQJcQwMlHU8d3hdxxrzLMlLiqdjvY31NKeg&oe=6AE410CB"
+   ]
+  },
+  {
+   "url": "https://www.facebook.com/photo/?fbid=122173330994701687",
+   "title": "سقف أجر الساعة المعتمدة في الجامعات الخاصة",
+   "kind": "إنفوغراف",
+   "text": "حدد مجلس التعليم العالي يوم الأحد 18 تشرين الأول سقفاً لأجر الساعة المعتمدة في الجامعات الخاصة حسب الاختصاص:",
+   "series": "numbers",
+   "images": [
+    "https://scontent-lax3-2.xx.fbcdn.net/v/t39.99422-6/858357248_1124146843644934_4856342393003285593_n.png?stp=dst-jpg_tt6&cstp=mx1080x1350&ctp=s640x640&_nc_cat=111&ccb=1-7&_nc_sid=127cfc&_nc_ohc=a1T9qHuY87cQ7kNvwEL9Nnp&_nc_oc=Adrsw91wjfVjncmap3slAREM730bTp3_6a0qGkU0Cn1o_CRjWIYuAXlm44xRy6cnQQo&_nc_zt=14&_nc_ht=scontent-lax3-2.xx&_nc_gid=vuNcTb9M6lZDG6fWL-GrOg&_nc_ss=7b2a8&oh=00_AQN9UXUKmEHYoNdUyJh8MJSa6ea0bpWuuQiu9yqLeulC-g&oe=6AE4190C"
+   ]
+  },
+  {
+   "url": "https://www.facebook.com/photo/?fbid=122173327844701687",
+   "title": "كثيرات لا يُبلغن عن الابتزاز خوفاً من الفضيحة",
+   "kind": "ألبوم",
+   "text": "والمبتز يعرف ذلك، ويبني تهديده عليه.",
+   "images": [
+    "https://scontent-lax3-1.xx.fbcdn.net/v/t39.99422-6/856854426_1449311003802505_1594446845379902036_n.png?stp=dst-jpg_tt6&cstp=mx1080x1350&ctp=s590x590&_nc_cat=109&ccb=1-7&_nc_sid=127cfc&_nc_ohc=52cRRwFvr9gQ7kNvwH6QWbL&_nc_oc=Adq9w0H9DznA9tfIqlJk9VgP1Fbm3-dg_RwZpsuTJF3DeoddPSxIVZYqmaiGk6RcL0o&_nc_zt=14&_nc_ht=scontent-lax3-1.xx&_nc_gid=psAbA_6DAuWu0H82NmvGfA&_nc_ss=7b2a8&oh=00_AQPMfQvpJxRuLcKC5K7jeUlAP3cNiSqa8q3s6SN1_VuqKQ&oe=6AE40E7B",
+    "https://scontent-lax3-2.xx.fbcdn.net/v/t39.99422-6/857207681_1431719261673743_3443075807438998932_n.png?stp=dst-jpg_tt6&cstp=mx1080x1350&ctp=s590x590&_nc_cat=111&ccb=1-7&_nc_sid=127cfc&_nc_ohc=Fy3OpZVDnSkQ7kNvwHbDhFu&_nc_oc=Adp9yKOY8AQUab7KoD5g28lcywPn5LfsSUoUWrdLVibI5nCWX1J_94xzk-ZbyVKC_nM&_nc_zt=14&_nc_ht=scontent-lax3-2.xx&_nc_gid=psAbA_6DAuWu0H82NmvGfA&_nc_ss=7b2a8&oh=00_AQONTruSeV-_nOkFEhaQurMTMX7zn2ydmS0hY4wrjq3Tiw&oe=6AE414BE",
+    "https://scontent-lax3-1.xx.fbcdn.net/v/t39.99422-6/858704836_1104417745622743_704818769195669366_n.png?stp=dst-jpg_tt6&cstp=mx1080x1350&ctp=s590x590&_nc_cat=109&ccb=1-7&_nc_sid=127cfc&_nc_ohc=E-tgNEUT2BoQ7kNvwGx9eWB&_nc_oc=AdryX5c05gbWDA3fHwvQASVg95QpTY4BJYiiUvKDcb6G2BQXIJVp4HTf2dpRZTlMPIw&_nc_zt=14&_nc_ht=scontent-lax3-1.xx&_nc_gid=psAbA_6DAuWu0H82NmvGfA&_nc_ss=7b2a8&oh=00_AQP5C-R1AFA1RDAAn8VnGwKGuq_0ZegUvMKwxR9pabEYxg&oe=6AE42ED3",
+    "https://scontent-lax7-1.xx.fbcdn.net/v/t39.99422-6/858653664_938729395708209_4736788246706832667_n.png?stp=dst-jpg_tt6&cstp=mx1080x1350&ctp=s590x590&_nc_cat=105&ccb=1-7&_nc_sid=127cfc&_nc_ohc=4M7iPfqw-pAQ7kNvwEE5Alq&_nc_oc=AdpnSgXqkrEC289P74qz7JFbSU6rVXOodfeAovLI-kEP0FmbpIhfqffRH7-DUKvz2Cg&_nc_zt=14&_nc_ht=scontent-lax7-1.xx&_nc_gid=psAbA_6DAuWu0H82NmvGfA&_nc_ss=7b2a8&oh=00_AQMJGknrB6BOL4zeI4bgz5WHqUD-pY2dR1rFe59fI9OmbQ&oe=6AE4079E",
+    "https://scontent-lax3-1.xx.fbcdn.net/v/t39.99422-6/858323060_1781083299785593_4385789177951858336_n.png?stp=dst-jpg_tt6&cstp=mx1080x1350&ctp=s590x590&_nc_cat=102&ccb=1-7&_nc_sid=127cfc&_nc_ohc=ierU2QIaIokQ7kNvwEwv2J0&_nc_oc=AdoQRBA7On7HX-eEuf9rKr5ksxn7LFCP9FcYN6Oey5gCNegxGkp-iySZp3s3QFsKdxI&_nc_zt=14&_nc_ht=scontent-lax3-1.xx&_nc_gid=psAbA_6DAuWu0H82NmvGfA&_nc_ss=7b2a8&oh=00_AQNApUr10rp8aZwlL1yhtHQ9FgrztqpeTfWBD2Zto4OJOA&oe=6AE42BA3"
+   ],
+   "extra": 3
+  },
+  {
+   "url": "https://www.facebook.com/photo/?fbid=122173308920701687",
+   "title": "رحلات السورية للطيران بين دمشق وحلب",
+   "kind": "إنفوغراف",
+   "text": "أعلنت السورية للطيران تسيير رحلات بين دمشق وحلب في الاتجاهين، ابتداءً من 18 تشرين الثاني 2026.",
+   "series": "numbers",
+   "images": [
+    "https://scontent-lax3-2.xx.fbcdn.net/v/t39.99422-6/855164088_958663393523520_4599052257580197988_n.png?stp=dst-jpg_tt6&cstp=mx1080x1350&ctp=s640x640&_nc_cat=100&ccb=1-7&_nc_sid=127cfc&_nc_ohc=8zJPEpBPW7IQ7kNvwGXnhEM&_nc_oc=AdobOw2PPciES4gyq6D66pubcQDL_qjcab7uicwzRSp9B1_iLFiMDbv_I1bBDdVra6U&_nc_zt=14&_nc_ht=scontent-lax3-2.xx&_nc_gid=psAbA_6DAuWu0H82NmvGfA&_nc_ss=7b2a8&oh=00_AQNRtYWYFMTmAFxMcSEFnjzvhhZ4vPJ2W8vJMSdfznOQgA&oe=6AE42130"
+   ]
+  },
+  {
+   "url": "https://www.facebook.com/reel/1005989445847466",
+   "title": "عاد إصدار بطاقة الإعاقة في إدلب بعد توقف منذ 2011",
+   "text": "بدأ في مدينة إدلب في 4 تشرين الأول، ووصل إلى معرة النعمان في 19 منه.",
+   "images": [
+    "https://scontent-lax3-1.xx.fbcdn.net/v/t15.5256-10/858265875_1092956470009355_5366567380044360913_n.jpg?stp=dst-jpg_tt6&cstp=mx1080x1920&ctp=s960x960&_nc_cat=104&ccb=1-7&_nc_sid=d2b52d&_nc_ohc=13kNGTh-jQQQ7kNvwEqAuTZ&_nc_oc=AdpIbIlxbTyhuCT6Ih_ni-WfyhnEw48IIDOCQuI9mrz2go0kyUQZmnyndYCYO-ffGMA&_nc_zt=23&_nc_ht=scontent-lax3-1.xx&_nc_gid=iacGafFoYuVlA7KFjfjkWA&_nc_ss=7b2a8&oh=00_AQPlDrJUu_i4Nt0EaJWp93Xz-gF732MhewdkHJTIX0aAgA&oe=6AE3F97F"
+   ]
+  },
+  {
+   "url": "https://www.facebook.com/photo/?fbid=122173177406701687",
+   "title": "الفستق الحلبي في الزراعة السورية",
+   "kind": "ألبوم",
+   "text": "من حماة وحلب إلى إدلب، يحتل الفستق الحلبي مكانة مهمة في الزراعة السورية.\nفما الذي يجعل هذا المحصول مهماً للاقتصاد المحلي والمزارعين؟",
+   "images": [
+    "https://scontent-lax7-1.xx.fbcdn.net/v/t39.99422-6/855590374_1101249839323752_5471712571282523021_n.png?stp=dst-jpg_tt6&cstp=mx1080x1350&ctp=s590x590&_nc_cat=105&ccb=1-7&_nc_sid=127cfc&_nc_ohc=yS7AqB5JLsAQ7kNvwGhmZWT&_nc_oc=Adp4ywYdUUSBDWvFk3ZtAIOZF5TN2-f9x7WQpaCZA1nSGItqae71AAhx5diDESFf_GM&_nc_zt=14&_nc_ht=scontent-lax7-1.xx&_nc_gid=f7xxNM6pkI9f_2Q_2vo32A&_nc_ss=7b2a8&oh=00_AQM3Z0CwHXBJozotvrW-Z-3R4_Ar9J_lrt10XpgpSSLbmg&oe=6AE419D2",
+    "https://scontent-lax7-1.xx.fbcdn.net/v/t39.99422-6/855436963_1112497618039910_3119920271399714908_n.png?stp=dst-jpg_tt6&cstp=mx1080x1350&ctp=s590x590&_nc_cat=105&ccb=1-7&_nc_sid=127cfc&_nc_ohc=pnzZgze5TaQQ7kNvwENJIN_&_nc_oc=Adr9A1eaMWbZACRNifeSZGTJ0di3hEsA5J09oPKVTDTA7I1Y23N4a1R4VJBW4ECIhUI&_nc_zt=14&_nc_ht=scontent-lax7-1.xx&_nc_gid=f7xxNM6pkI9f_2Q_2vo32A&_nc_ss=7b2a8&oh=00_AQNk04HXspSUEXdcHUg0OMRKaHLrkDkdnixlNLCKb9tmYw&oe=6AE401DC",
+    "https://scontent-lax3-2.xx.fbcdn.net/v/t39.99422-6/854236703_1112385425024878_3002613474445003821_n.png?stp=dst-jpg_tt6&cstp=mx1080x1350&ctp=s590x590&_nc_cat=103&ccb=1-7&_nc_sid=127cfc&_nc_ohc=snA-nlCefyoQ7kNvwHkHfBc&_nc_oc=Adof1DzknWzHohZUEDMinjG3OBS19keyG8g7INBaJTE8aTgPcl-G4pUSP2F8vRa7ykQ&_nc_zt=14&_nc_ht=scontent-lax3-2.xx&_nc_gid=f7xxNM6pkI9f_2Q_2vo32A&_nc_ss=7b2a8&oh=00_AQOkp0_X3GhBUT6A1oq42Ktup-OEbM3mSH99-rzrX0Oc3g&oe=6AE42DF9",
+    "https://scontent-lax3-1.xx.fbcdn.net/v/t39.99422-6/855109420_4511161192487309_3134542270191838968_n.png?stp=dst-jpg_tt6&cstp=mx1080x1350&ctp=s590x590&_nc_cat=109&ccb=1-7&_nc_sid=127cfc&_nc_ohc=fZNtnMOTOycQ7kNvwEcpZMO&_nc_oc=AdpsbOc_rWAWONFiHfPKm4DCfx25QYo4ZTg0d7gG_L8Uzhc1kEVxg2If5p0TizuBXgY&_nc_zt=14&_nc_ht=scontent-lax3-1.xx&_nc_gid=f7xxNM6pkI9f_2Q_2vo32A&_nc_ss=7b2a8&oh=00_AQOPuUO_ip6j6eqHIwL4dvdYAa7bO_at0WNDE_rtWYA8sA&oe=6AE42A84",
+    "https://scontent-lax3-1.xx.fbcdn.net/v/t39.99422-6/853629121_1761189481776335_4720481977939168969_n.png?stp=dst-jpg_tt6&cstp=mx1080x1350&ctp=s590x590&_nc_cat=104&ccb=1-7&_nc_sid=127cfc&_nc_ohc=R-U-M_zOmJsQ7kNvwHxUQTr&_nc_oc=AdoH2s9_M8pWGmwG0Kkce58FQRBqn3hMQo90XHtURP8iEBuLAOxIZg-aICi6eWyGb2s&_nc_zt=14&_nc_ht=scontent-lax3-1.xx&_nc_gid=f7xxNM6pkI9f_2Q_2vo32A&_nc_ss=7b2a8&oh=00_AQOL7zcbMzuufPgNfUSBsmtysHL7nEbIMTojmLHR7J_MbA&oe=6AE4189E"
+   ],
+   "extra": 2
+  },
+  {
+   "url": "https://www.youtube.com/watch?v=0LXriGpHi9w",
+   "title": "ما الشيء الذي صرت تشتريه أغلى من قبل؟",
+   "text": "سؤال طرحناه على الناس في الشارع، في حلقة هذا الأسبوع من برنامج سؤال الشارع.",
+   "series": "street"
   }
  ]
 }
