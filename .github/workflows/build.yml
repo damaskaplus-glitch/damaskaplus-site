@@ -1,0 +1,51 @@
+name: build-site
+on:
+  schedule:
+    - cron: "*/15 * * * *"
+  workflow_dispatch:
+  push:
+    branches: [main]
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+concurrency:
+  group: site
+  cancel-in-progress: false
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    outputs:
+      ready: ${{ steps.build.outputs.ready }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install uharfbuzz fonttools
+      - id: build
+        run: python build.py
+        env:
+          FB_PAGE_TOKEN: ${{ secrets.FB_PAGE_TOKEN }}
+          FONT_TITLE_B64: ${{ secrets.FONT_TITLE_B64 }}
+      - name: Save new posts and images
+        run: |
+          git config user.name "damaska-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data
+          if [ -d media ]; then git add media; fi
+          if ! git diff --cached --quiet; then git commit -m "تحديث المنشورات من فيسبوك" && git push; fi
+      - if: steps.build.outputs.ready == 'true'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+  deploy:
+    needs: build
+    if: needs.build.outputs.ready == 'true' && vars.DEPLOY == 'on'
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.d.outputs.page_url }}
+    steps:
+      - id: d
+        uses: actions/deploy-pages@v4
