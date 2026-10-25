@@ -180,13 +180,44 @@ def prepare(items, overrides):
         if p["series"] not in SERIES: p["series"] = None
         p["title"], p["body"] = split_text(it["message"], it["kind"])
         if ov.get("title"): p["title"] = ov["title"]
-        p["dt"], p["date"] = when(it["created"])
+        if it.get("created"):
+            p["dt"], p["date"] = when(it["created"])
+        else:
+            p["dt"], p["date"] = None, ""
         p["slug"] = re.sub(r"[^0-9A-Za-z_-]", "-", it["id"])
         p["href"] = f"/p/{p['slug']}/"
         p["thumb"] = f"/media/{it['images'][0]}" if it.get("images") else None
         posts.append(p)
-    posts.sort(key=lambda p: p["dt"], reverse=True)
+    if all(p["dt"] for p in posts):
+        posts.sort(key=lambda p: p["dt"], reverse=True)
+    else:
+        posts.sort(key=lambda p: p.get("order", 0))
     return posts
+
+def kind_from_url(u):
+    if "/reel/" in u: return "ريل"
+    if "/videos/" in u or "/watch" in u: return "فيديو"
+    if "/photo" in u: return "إنفوغراف"
+    return "منشور"
+
+def from_links():
+    """Items listed by hand in data/links.json (newest first): no Facebook token needed."""
+    path = os.path.join(DATA, "links.json")
+    if not os.path.exists(path):
+        return {}
+    items = {}
+    for n, e in enumerate(json.load(open(path, encoding="utf-8")).get("items", [])):
+        u = e["url"].strip()
+        num = re.findall(r"\d{6,}", u)
+        iid = "fb_" + (num[-1] if num else str(n))
+        kind = e.get("kind") or kind_from_url(u)
+        msg = (e.get("title", "") + "\n" + e.get("text", "")).strip()
+        if e.get("series"):
+            msg += "\n" + SERIES.get(e["series"], {}).get("tag", "")
+        items[iid] = {"id": iid, "kind": kind, "message": msg, "created": e.get("date"), "order": n,
+                      "permalink": u, "video_url": u if kind in ("ريل", "فيديو") else None,
+                      "images": e.get("images", []), "remote_images": []}
+    return items
 
 # ---------------------------------------------------------------- Fatimah outlines (optional)
 
@@ -300,6 +331,14 @@ section.blk{padding:48px 0 8px}
 .card .th img{width:100%;height:100%;object-fit:cover}
 .card .th .chip{position:absolute;bottom:10px;right:10px}
 .card h3{margin:0;font-size:16px;line-height:1.55;font-weight:500}
+.tile{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}
+.tile.blue{background:#2F3F57}.tile.olive{background:#616F47}.tile.sand{background:#F4E0B2}
+.card .th .tile .mk{position:absolute;top:12px;right:12px;width:30px;height:30px;border-radius:7px;object-fit:contain}
+.tile .pl:not(:empty){width:58px;height:58px;border-radius:50%;background:var(--yellow);display:flex;align-items:center;justify-content:center}
+.tile .pl svg{width:22px;height:22px}
+.frame iframe{width:100%;height:100%;border:0;display:block}
+.fbtl{display:flex;justify-content:center}
+.fbtl iframe{width:100%;max-width:500px;height:720px;border:0;border-radius:16px;background:#fff}
 .card time{font-size:13px;color:var(--muted)}
 .card:hover h3{color:var(--yellow)}
 .about{padding:40px 0 64px}
@@ -404,9 +443,15 @@ def T(s, tag="span", cls=""):
 
 def card(p, show_series=True):
     label = SERIES[p["series"]]["name"] if (show_series and p["series"]) else p["kind"]
-    th = f'<img src="{p["thumb"]}" alt="" loading="lazy">' if p["thumb"] else ""
+    if p["thumb"]:
+        th = f'<img src="{p["thumb"]}" alt="" loading="lazy">'
+    else:
+        tone = {"changed": "olive", "numbers": "sand"}.get(p["series"], "blue")
+        icon = PLAY if p["kind"] in ("ريل", "فيديو") else ""
+        th = f'<span class="tile {tone}"><img class="mk" src="/favicon.svg" alt=""><span class="pl">{icon}</span></span>'
+    tm = f'<time datetime="{p["dt"].isoformat()}">{p["date"]}</time>' if p["dt"] else ""
     return (f'<a class="card" href="{p["href"]}"><div class="th">{th}<span class="chip">{E(label)}</span></div>'
-            f'<h3>{E(p["title"])}</h3><time datetime="{p["dt"].isoformat()}">{p["date"]}</time></a>')
+            f'<h3>{E(p["title"])}</h3>{tm}</a>')
 
 def sched():
     rows = "".join(f'<a href="/{s["slug"]}/"><b>{s["day"]}</b><span>{E(s["name"])}</span></a>' for s in SERIES.values())
@@ -429,11 +474,17 @@ def home(posts):
         more = (f'<a class="btn o" href="/{SERIES[lead["series"]]["slug"]}/">كل حلقات {E(SERIES[lead["series"]]["name"])}</a>'
                 if lead["series"] else '<a class="btn o" href="/all/">كل المنشورات</a>')
         img = f'<img src="{lead["thumb"]}" alt="">' if lead["thumb"] else ""
+        if not lead["thumb"] and lead.get("video_url"):
+            src = "https://www.facebook.com/plugins/video.php?" + urllib.parse.urlencode({"href": lead["video_url"], "show_text": "false", "width": "320"})
+            media_html = (f'<div class="frame"><iframe src="{E(src)}" title="{E(lead["title"])}" '
+                          f'allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowfullscreen></iframe></div>')
+        else:
+            media_html = f'<a class="frame" href="{lead["href"]}" aria-label="{E(lead["title"])}">{img}<span class="play">{PLAY}</span></a>'
         hero = f"""<section class="hero"><div class="wrap">
 <div class="txt"><span class="tag">{E(label)}</span>{T(lead["title"], "h1")}
 {f"<p>{E(excerpt)}</p>" if excerpt else ""}
 <div style="display:flex;flex-wrap:wrap;gap:12px"><a class="btn y" href="{lead["href"]}">{PLAY_S}{"شاهد الحلقة" if lead["kind"] in ("ريل","فيديو") else "اقرأ المنشور"}</a>{more}</div></div>
-<div class="med"><a class="frame" href="{lead["href"]}" aria-label="{E(lead["title"])}">{img}<span class="play">{PLAY}</span></a></div>
+<div class="med">{media_html}</div>
 </div></section>"""
     else:
         hero = f"""<section class="hero"><div class="wrap"><div class="txt"><span class="tag">قريباً</span>{T("منصة سورية للإعلام الحر", "h1")}<p>{E(BIO)}</p></div></div></section>"""
@@ -446,6 +497,12 @@ def home(posts):
     if reels:
         body += (f'<section class="blk"><div class="wrap"><div class="head">{T("أحدث الريلز", "h2")}'
                  f'<a href="/all/#ريل">عرض الكل</a></div><div class="grid">{"".join(card(p) for p in reels)}</div></div></section>')
+    fbtl = ("https://www.facebook.com/plugins/page.php?" + urllib.parse.urlencode({
+        "href": FB_PAGE, "tabs": "timeline", "width": "500", "height": "720", "small_header": "true",
+        "adapt_container_width": "true", "hide_cover": "false", "show_facepile": "false", "locale": "ar_AR"}))
+    body += (f'<section class="blk"><div class="wrap"><div class="head">{T("آخر منشوراتنا على فيسبوك", "h2")}'
+             f'<a href="{FB_PAGE}" rel="noopener" target="_blank">افتح الصفحة</a></div>'
+             f'<div class="fbtl"><iframe src="{E(fbtl)}" title="آخر منشورات دامسكا بلس على فيسبوك" loading="lazy"></iframe></div></div></section>')
     if nums:
         body += (f'<section class="blk"><div class="wrap"><div class="head">{T("سوريا بالأرقام", "h2")}'
                  f'<a href="/syria-in-numbers/">كل الإنفوغرافات</a></div><div class="grid sq">{"".join(card(p, False) for p in nums)}</div></div></section>')
@@ -458,12 +515,16 @@ def home(posts):
 def post_page(p, posts):
     s = SERIES.get(p["series"]) if p["series"] else None
     meta = (f'<a class="tag" href="/{s["slug"]}/">{E(s["name"])}</a><span>{"كل " + s["day"] if s["day"] != "دوري" else "إنفوغرافات"} · ' if s
-            else f'<span class="tag">{E(p["kind"])}</span><span>') + f'<time datetime="{p["dt"].isoformat()}">{p["date"]}</time></span>'
+            else f'<span class="tag">{E(p["kind"])}</span><span>') + (f'<time datetime="{p["dt"].isoformat()}">{p["date"]}</time>' if p["dt"] else "دامسكا بلس") + '</span>'
     if p["kind"] in ("ريل", "فيديو") and p.get("video_url"):
         src = ("https://www.facebook.com/plugins/video.php?" +
                urllib.parse.urlencode({"href": p["video_url"], "show_text": "false", "width": "420" if p["kind"] == "ريل" else "760"}))
         media = (f'<div class="player{" wide" if p["kind"] == "فيديو" else ""}"><iframe src="{E(src)}" title="{E(p["title"])}" loading="lazy" '
                  f'allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowfullscreen></iframe></div>')
+    elif not p.get("images") and p.get("permalink") and "facebook.com" in p["permalink"]:
+        src = "https://www.facebook.com/plugins/post.php?" + urllib.parse.urlencode({"href": p["permalink"], "show_text": "true", "width": "500"})
+        media = (f'<div class="fbtl"><iframe src="{E(src)}" title="{E(p["title"])}" loading="lazy" style="height:760px" '
+                 f'allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe></div>')
     elif len(p.get("images") or []) > 1:
         media = '<div class="gallery">' + "".join(
             f'<img src="/media/{i}" alt="صورة {n + 1} من {len(p["images"])}" loading="lazy">' for n, i in enumerate(p["images"])) + "</div>"
@@ -533,7 +594,7 @@ def feeds(posts):
     now = dt.datetime.now(dt.timezone.utc)
     items = "".join(
         f"<item><title>{E(p['title'])}</title><link>{SITE}{p['href']}</link><guid>{SITE}{p['href']}</guid>"
-        f"<pubDate>{p['dt'].astimezone(dt.timezone.utc).strftime('%a, %d %b %Y %H:%M:%S +0000')}</pubDate>"
+        + (f"<pubDate>{p['dt'].astimezone(dt.timezone.utc).strftime('%a, %d %b %Y %H:%M:%S +0000')}</pubDate>" if p['dt'] else "") +
         f"<description>{E(' '.join(p['body'])[:400])}</description></item>" for p in posts[:30])
     rss = (f'<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"><channel><title>دامسكا بلس</title>'
            f'<link>{SITE}/</link><description>{E(BIO)}</description><language>ar</language>'
@@ -566,6 +627,8 @@ def main():
             print("::warning::Facebook fetch failed:", ex, body)
         download_images(items)
         json.dump(items, open(data_path, "w", encoding="utf-8"), ensure_ascii=False, indent=1, sort_keys=True)
+    if not fetched and not items:
+        items = from_links()
     ov_path = os.path.join(DATA, "overrides.json")
     overrides = json.load(open(ov_path, encoding="utf-8")) if os.path.exists(ov_path) else {}
     overrides = {k: v for k, v in overrides.items() if not k.startswith("_")}
