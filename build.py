@@ -28,9 +28,9 @@ BIO = ("منصة سورية تهدف إلى نشر الوعي والإعلام �
 LICENSE_LINE = "أول منصة إعلامية مسجّلة لدى وزارة الإعلام السورية بعد التحرير"
 
 SERIES = {
-    "street": {"name": "سؤال الشارع", "tag": "#سوال_الشارع", "slug": "street-question", "day": "الاثنين",
+    "street": {"name": "سؤال الشارع", "tag": "#سوال_الشارع", "slug": "street-question", "day": "الاثنين", "every": "كل اثنين",
                "about": "ننزل إلى الشارع ونسأل الناس أسئلة محددة، ونسمع إجاباتهم كما هي. كل اثنين."},
-    "changed": {"name": "شو تغيّر", "tag": "#شو_تغير", "slug": "what-changed", "day": "الخميس",
+    "changed": {"name": "شو تغيّر", "tag": "#شو_تغير", "slug": "what-changed", "day": "الخميس", "every": "كل خميس",
                 "about": "نقارن بين ما كان في عهد النظام البائد وما صار بعد التحرير، في مختلف جوانب الحياة. كل خميس."},
     "numbers": {"name": "سوريا بالأرقام", "tag": "#سوريا_بالارقام", "slug": "syria-in-numbers", "day": "دوري",
                 "about": "إحصائيات رسمية ومجتمعية وثقافية من داخل سوريا، في إنفوغراف يُقرأ بنظرة."},
@@ -119,7 +119,7 @@ def download_images(items):
     os.makedirs(MEDIA, exist_ok=True)
     for it in items.values():
         local = it.get("images") or []
-        if len(local) >= len(it.get("remote_images") or []) and local:
+        if local and len(local) >= len(it.get("remote_images") or []):
             continue
         local = []
         for n, src in enumerate(it.get("remote_images") or []):
@@ -194,6 +194,10 @@ def prepare(items, overrides):
         posts.sort(key=lambda p: p.get("order", 0))
     return posts
 
+def yt_id(u):
+    m = re.search(r"(?:youtu\.be/|[?&]v=|/shorts/|/embed/)([\w-]{11})", u or "")
+    return m.group(1) if m else None
+
 def kind_from_url(u):
     if "/reel/" in u: return "ريل"
     if "/videos/" in u or "/watch" in u: return "فيديو"
@@ -208,15 +212,20 @@ def from_links():
     items = {}
     for n, e in enumerate(json.load(open(path, encoding="utf-8")).get("items", [])):
         u = e["url"].strip()
+        yt = yt_id(u)
         num = re.findall(r"\d{6,}", u)
-        iid = "fb_" + (num[-1] if num else str(n))
-        kind = e.get("kind") or kind_from_url(u)
+        iid = ("yt_" + yt) if yt else "fb_" + (num[-1] if num else str(n))
+        kind = e.get("kind") or ("فيديو" if yt else kind_from_url(u))
+        remote = [x for x in e.get("images", []) if x.startswith("http")]
+        if yt and not remote:
+            remote = [f"https://i.ytimg.com/vi/{yt}/hqdefault.jpg"]
         msg = (e.get("title", "") + "\n" + e.get("text", "")).strip()
         if e.get("series"):
             msg += "\n" + SERIES.get(e["series"], {}).get("tag", "")
         items[iid] = {"id": iid, "kind": kind, "message": msg, "created": e.get("date"), "order": n,
-                      "permalink": u, "video_url": u if kind in ("ريل", "فيديو") else None,
-                      "images": e.get("images", []), "remote_images": []}
+                      "permalink": u, "video_url": u if kind in ("ريل", "فيديو") and not yt else None,
+                      "youtube": yt, "extra": int(e.get("extra") or 0),
+                      "images": [], "remote_images": remote}
     return items
 
 # ---------------------------------------------------------------- Fatimah outlines (optional)
@@ -327,7 +336,6 @@ section.blk{padding:48px 0 8px}
 .grid.sq{grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}
 .card{display:flex;flex-direction:column;gap:10px;color:var(--text);text-decoration:none}
 .card .th{position:relative;aspect-ratio:9/16;background:var(--card);border-radius:16px;overflow:hidden}
-.grid.sq .card .th{aspect-ratio:1/1}
 .card .th img{width:100%;height:100%;object-fit:cover}
 .card .th .chip{position:absolute;bottom:10px;right:10px}
 .card h3{margin:0;font-size:16px;line-height:1.55;font-weight:500}
@@ -373,7 +381,27 @@ footer.bot a{color:var(--muted)}
 .lead{font-size:18px;color:var(--muted);max-width:720px;margin:0 0 8px}
 .prose{max-width:760px;font-size:18px}
 .prose h2{font-size:24px;margin:28px 0 8px}
+.slider{padding:40px 0 18px;overflow:hidden}
+.slider .vp{overflow:hidden}
+.slider .track{display:flex;direction:ltr;transition:transform .8s cubic-bezier(.65,0,.35,1)}
+.slider .slide{flex:0 0 100%;min-width:0;direction:rtl;display:flex;align-items:center}
+@media (max-width:900px){.slider .slide{align-items:flex-start}}
+.slider .slide .wrap{width:100%;display:flex;flex-wrap:wrap;gap:40px;align-items:center}
+.slider .ttl{margin:0;font-size:clamp(30px,5vw,50px);line-height:1.3}
+.slider .when{font-size:15px;color:var(--muted)}
+.slider .acts{display:flex;flex-wrap:wrap;gap:12px}
+.slide.wide .txt{flex:1 1 340px}
+.slide.wide .ttl{font-size:clamp(28px,3.4vw,40px)}
+.slide.wide .med{flex:999 1 560px}
+.frame.wide{width:100%;max-width:720px;aspect-ratio:16/9;border-radius:20px}
+.dots{width:100%;display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:24px}
+.dots button{font:inherit;font-weight:500;font-size:15px;min-height:40px;padding:4px 18px;border-radius:999px;border:2px solid var(--line);background:transparent;color:var(--muted);cursor:pointer}
+.dots button[aria-selected=true]{background:var(--yellow);border-color:var(--yellow);color:var(--blue)}
+.grid.sq .card .th{aspect-ratio:4/5}
+.more{margin:10px 0 0;text-align:center}
+@media (prefers-reduced-motion:reduce){.slider .track{transition:none}}
 @media (max-width:640px){
+ .slider{padding:24px 0 12px}.slider .slide .wrap{gap:20px}
  nav.main{order:3;width:100%;gap:2px 16px;font-size:15px}
  .hero{padding:28px 0}.hero .wrap{gap:22px}
  .grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
@@ -443,6 +471,10 @@ def T(s, tag="span", cls=""):
 
 def card(p, show_series=True):
     label = SERIES[p["series"]]["name"] if (show_series and p["series"]) else p["kind"]
+    if p["kind"] == "ألبوم":
+        label = f'ألبوم · {len(p.get("images") or []) + (p.get("extra") or 0)} صور'
+    elif p["series"] == "numbers" and not show_series:
+        label = "سوريا بالأرقام"
     if p["thumb"]:
         th = f'<img src="{p["thumb"]}" alt="" loading="lazy">'
     else:
@@ -454,7 +486,8 @@ def card(p, show_series=True):
             f'<h3>{E(p["title"])}</h3>{tm}</a>')
 
 def sched():
-    rows = "".join(f'<a href="/{s["slug"]}/"><b>{s["day"]}</b><span>{E(s["name"])}</span></a>' for s in SERIES.values())
+    rows = "".join(f'<a href="/{s["slug"]}/"><b>{s["every"]}</b><span>{E(s["name"])}</span></a>'
+                   for k, s in SERIES.items() if s["day"] != "دوري")
     return f'<section class="sched" aria-label="مواعيد البرامج"><div class="wrap">{rows}</div></section>'
 
 def about_strip():
@@ -464,59 +497,88 @@ def about_strip():
 
 # ---------------------------------------------------------------- pages
 
+def embed_src(p, autoplay=False):
+    if p.get("youtube"):
+        return f"https://www.youtube-nocookie.com/embed/{p['youtube']}?rel=0&playsinline=1"
+    if p.get("video_url"):
+        return "https://www.facebook.com/plugins/video.php?" + urllib.parse.urlencode(
+            {"href": p["video_url"], "show_text": "false", "width": "320" if p["kind"] == "ريل" else "640"})
+    return None
+
+def slide(p, n, total):
+    s = SERIES[p["series"]]
+    wide = bool(p.get("youtube")) or p["kind"] == "فيديو"
+    excerpt = (p["body"][0] if p["body"] else "")[:220]
+    src = embed_src(p)
+    if src:
+        media = (f'<div class="frame{" wide" if wide else ""}"><iframe src="{E(src)}" title="{E(p["title"])}" loading="{"eager" if n == 0 else "lazy"}" '
+                 f'allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowfullscreen></iframe></div>')
+    else:
+        img = f'<img src="{p["thumb"]}" alt="">' if p["thumb"] else ""
+        media = f'<a class="frame{" wide" if wide else ""}" href="{p["href"]}" aria-label="{E(p["title"])}">{img}<span class="play">{PLAY}</span></a>'
+    return (f'<div class="slide{" wide" if wide else ""}" role="group" aria-roledescription="شريحة" aria-label="{n + 1} من {total}: {E(s["name"])}"'
+            f'{"" if n == 0 else " inert"}><div class="wrap">'
+            f'<div class="txt"><span class="tag">الحلقة الجديدة · {E(s["name"])}</span>{T(p["title"], "h1" if n == 0 else "h2", "ttl")}'
+            f'{f"<p>{E(excerpt)}</p>" if excerpt else ""}<span class="when">{E(s.get("every", ""))} على دامسكا بلس</span>'
+            f'<div class="acts"><a class="btn y" href="{p["href"]}">{PLAY_S}شاهد الحلقة</a>'
+            f'<a class="btn o" href="/{s["slug"]}/">كل حلقات {E(s["name"])}</a></div></div>'
+            f'<div class="med">{media}</div></div></div>')
+
+SLIDER_JS = """<script>
+(function(){var r=document.querySelector('.slider');if(!r)return;var t=r.querySelector('.track'),sl=r.querySelectorAll('.slide'),d=r.querySelectorAll('.dots button'),i=0,stop=false,hold=false;
+if(sl.length<2)return;
+function go(k){i=(k+sl.length)%sl.length;t.style.transform='translateX(-'+(i*100)+'%)';
+sl.forEach(function(x,j){if(j===i)x.removeAttribute('inert');else x.setAttribute('inert','')});
+d.forEach(function(x,j){x.setAttribute('aria-selected',j===i)});}
+d.forEach(function(x,j){x.addEventListener('click',function(){stop=true;go(j)})});
+r.addEventListener('mouseenter',function(){hold=true});r.addEventListener('mouseleave',function(){hold=false});
+r.addEventListener('focusin',function(){hold=true});r.addEventListener('focusout',function(){hold=false});
+window.addEventListener('blur',function(){setTimeout(function(){var a=document.activeElement;if(a&&a.tagName==='IFRAME'&&r.contains(a))stop=true},0)});
+if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+setInterval(function(){if(!stop&&!hold&&!document.hidden)go(i+1)},7000);})();
+</script>"""
+
 def home(posts):
-    episodes = [p for p in posts if p["series"] in ("street", "changed")]
-    videos = [p for p in posts if p["kind"] in ("ريل", "فيديو")]
-    lead = (episodes or videos or posts or [None])[0]
-    if lead:
-        label = (f"الحلقة الجديدة · {SERIES[lead['series']]['name']}" if lead["series"] else "الأحدث")
-        excerpt = (lead["body"][0] if lead["body"] else "")[:220]
-        more = (f'<a class="btn o" href="/{SERIES[lead["series"]]["slug"]}/">كل حلقات {E(SERIES[lead["series"]]["name"])}</a>'
-                if lead["series"] else '<a class="btn o" href="/all/">كل المنشورات</a>')
-        img = f'<img src="{lead["thumb"]}" alt="">' if lead["thumb"] else ""
-        if not lead["thumb"] and lead.get("video_url"):
-            src = "https://www.facebook.com/plugins/video.php?" + urllib.parse.urlencode({"href": lead["video_url"], "show_text": "false", "width": "320"})
-            media_html = (f'<div class="frame"><iframe src="{E(src)}" title="{E(lead["title"])}" '
-                          f'allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowfullscreen></iframe></div>')
-        else:
-            media_html = f'<a class="frame" href="{lead["href"]}" aria-label="{E(lead["title"])}">{img}<span class="play">{PLAY}</span></a>'
-        hero = f"""<section class="hero"><div class="wrap">
-<div class="txt"><span class="tag">{E(label)}</span>{T(lead["title"], "h1")}
-{f"<p>{E(excerpt)}</p>" if excerpt else ""}
-<div style="display:flex;flex-wrap:wrap;gap:12px"><a class="btn y" href="{lead["href"]}">{PLAY_S}{"شاهد الحلقة" if lead["kind"] in ("ريل","فيديو") else "اقرأ المنشور"}</a>{more}</div></div>
-<div class="med">{media_html}</div>
-</div></section>"""
+    def latest(key, prefer_wide=False):
+        eps = [p for p in posts if p["series"] == key]
+        if prefer_wide:
+            eps = [p for p in eps if p.get("youtube") or p["kind"] == "فيديو"] or eps
+        return eps[0] if eps else None
+    slides = [p for p in (latest("changed"), latest("street", True)) if p]
+    used = {p["id"] for p in slides}
+    if slides:
+        hero = (f'<section class="hero slider" aria-roledescription="عرض متتابع" aria-label="برامجنا">'
+                f'<div class="vp"><div class="track">{"".join(slide(p, n, len(slides)) for n, p in enumerate(slides))}</div></div>'
+                + (f'<div class="wrap"><div class="dots" role="tablist" aria-label="اختر البرنامج">' + "".join(
+                    f'<button type="button" role="tab" aria-selected="{"true" if n == 0 else "false"}">{E(SERIES[p["series"]]["name"])}</button>'
+                    for n, p in enumerate(slides)) + '</div></div>' if len(slides) > 1 else "")
+                + '</section>' + SLIDER_JS)
     else:
         hero = f"""<section class="hero"><div class="wrap"><div class="txt"><span class="tag">قريباً</span>{T("منصة سورية للإعلام الحر", "h1")}<p>{E(BIO)}</p></div></div></section>"""
-    used = {lead["id"]} if lead else set()
-    reels = [p for p in videos if p["id"] not in used][:8]
-    nums = [p for p in posts if p["series"] == "numbers"][:3]
-    used |= {p["id"] for p in reels + nums}
-    others = [p for p in posts if p["id"] not in used and p["kind"] in ("إنفوغراف", "ألبوم", "منشور")][:8]
+    reels = [p for p in posts if p["kind"] == "ريل" and p["id"] not in used][:8]
+    nums = [p for p in posts if p["series"] == "numbers"][:6]
+    albums = [p for p in posts if p["kind"] == "ألبوم"][:6]
     body = hero + sched()
     if reels:
         body += (f'<section class="blk"><div class="wrap"><div class="head">{T("أحدث الريلز", "h2")}'
                  f'<a href="/all/#ريل">عرض الكل</a></div><div class="grid">{"".join(card(p) for p in reels)}</div></div></section>')
-    fbtl = ("https://www.facebook.com/plugins/page.php?" + urllib.parse.urlencode({
-        "href": FB_PAGE, "tabs": "timeline", "width": "500", "height": "720", "small_header": "true",
-        "adapt_container_width": "true", "hide_cover": "false", "show_facepile": "false", "locale": "ar_AR"}))
-    body += (f'<section class="blk"><div class="wrap"><div class="head">{T("آخر منشوراتنا على فيسبوك", "h2")}'
-             f'<a href="{FB_PAGE}" rel="noopener" target="_blank">افتح الصفحة</a></div>'
-             f'<div class="fbtl"><iframe src="{E(fbtl)}" title="آخر منشورات دامسكا بلس على فيسبوك" loading="lazy"></iframe></div></div></section>')
     if nums:
         body += (f'<section class="blk"><div class="wrap"><div class="head">{T("سوريا بالأرقام", "h2")}'
                  f'<a href="/syria-in-numbers/">كل الإنفوغرافات</a></div><div class="grid sq">{"".join(card(p, False) for p in nums)}</div></div></section>')
-    if others:
-        body += (f'<section class="blk"><div class="wrap"><div class="head">{T("منشورات أخرى", "h2")}'
-                 f'<a href="/all/">كل المنشورات</a></div><div class="grid sq">{"".join(card(p) for p in others)}</div></div></section>')
+    if albums:
+        body += (f'<section class="blk"><div class="wrap"><div class="head">{T("الألبومات", "h2")}'
+                 f'<a href="/all/#ألبوم">كل الألبومات</a></div><div class="grid sq">{"".join(card(p, False) for p in albums)}</div></div></section>')
     body += about_strip()
-    page("/", "دامسكا بلس", body, current="/", image=(lead or {}).get("thumb"))
+    page("/", "دامسكا بلس", body, current="/", image=(slides[0] if slides else {}).get("thumb"))
 
 def post_page(p, posts):
     s = SERIES.get(p["series"]) if p["series"] else None
     meta = (f'<a class="tag" href="/{s["slug"]}/">{E(s["name"])}</a><span>{"كل " + s["day"] if s["day"] != "دوري" else "إنفوغرافات"} · ' if s
             else f'<span class="tag">{E(p["kind"])}</span><span>') + (f'<time datetime="{p["dt"].isoformat()}">{p["date"]}</time>' if p["dt"] else "دامسكا بلس") + '</span>'
-    if p["kind"] in ("ريل", "فيديو") and p.get("video_url"):
+    if p.get("youtube"):
+        media = (f'<div class="player wide"><iframe src="{E(embed_src(p))}" title="{E(p["title"])}" '
+                 f'allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowfullscreen></iframe></div>')
+    elif p["kind"] in ("ريل", "فيديو") and p.get("video_url"):
         src = ("https://www.facebook.com/plugins/video.php?" +
                urllib.parse.urlencode({"href": p["video_url"], "show_text": "false", "width": "420" if p["kind"] == "ريل" else "760"}))
         media = (f'<div class="player{" wide" if p["kind"] == "فيديو" else ""}"><iframe src="{E(src)}" title="{E(p["title"])}" loading="lazy" '
@@ -527,7 +589,10 @@ def post_page(p, posts):
                  f'allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe></div>')
     elif len(p.get("images") or []) > 1:
         media = '<div class="gallery">' + "".join(
-            f'<img src="/media/{i}" alt="صورة {n + 1} من {len(p["images"])}" loading="lazy">' for n, i in enumerate(p["images"])) + "</div>"
+            f'<img src="/media/{i}" alt="صورة {n + 1} من {len(p["images"]) + (p.get("extra") or 0)}" loading="lazy">' for n, i in enumerate(p["images"])) + "</div>"
+        if p.get("extra"):
+            media += (f'<p class="more"><a href="{E(p["permalink"])}" rel="noopener" target="_blank">'
+                      f'شاهد الصور الباقية ({p["extra"]}) على فيسبوك</a></p>')
     elif p["thumb"]:
         media = f'<div class="single"><a href="{p["thumb"]}"><img src="{p["thumb"]}" alt="{E(p["title"])}"></a></div>'
     else:
@@ -539,7 +604,8 @@ def post_page(p, posts):
              f'<a href="https://www.facebook.com/sharer/sharer.php?u={q(url)}" rel="noopener" target="_blank">فيسبوك</a>'
              f'<a href="https://t.me/share/url?url={q(url)}&amp;text={q(p["title"])}" rel="noopener" target="_blank">تلغرام</a>'
              f'<button type="button" onclick="navigator.clipboard&&navigator.clipboard.writeText(\'{url}\');this.textContent=\'تم النسخ\'">نسخ الرابط</button></div>')
-    cta = f'<a class="btn y cta" href="{E(p["permalink"])}" rel="noopener" target="_blank">علّق على فيسبوك</a>' if p.get("permalink") else ""
+    cta = (f'<a class="btn y cta" href="{E(p["permalink"])}" rel="noopener" target="_blank">'
+           f'{"علّق على يوتيوب" if p.get("youtube") else "علّق على فيسبوك"}</a>') if p.get("permalink") else ""
     rel = [x for x in posts if x["id"] != p["id"] and (x["series"] == p["series"] if p["series"] else True)][:4]
     rel_title = f"حلقات أخرى من {s['name']}" if s else "منشورات أخرى"
     rel_html = (f'<section class="blk"><div class="wrap"><div class="head">{T(rel_title, "h2")}</div>'
@@ -629,6 +695,7 @@ def main():
         json.dump(items, open(data_path, "w", encoding="utf-8"), ensure_ascii=False, indent=1, sort_keys=True)
     if not fetched and not items:
         items = from_links()
+        download_images(items)
     ov_path = os.path.join(DATA, "overrides.json")
     overrides = json.load(open(ov_path, encoding="utf-8")) if os.path.exists(ov_path) else {}
     overrides = {k: v for k, v in overrides.items() if not k.startswith("_")}
