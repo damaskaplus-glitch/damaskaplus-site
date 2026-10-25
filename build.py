@@ -10,7 +10,7 @@ Env:
   FONT_TITLE_B64  optional base64 of Fatimah-Bold (GitHub secret). Titles are then drawn as
                   outlines; the font file itself is never published. Without it titles use the system font.
 """
-import base64, datetime as dt, html, io, json, os, re, shutil, sys, unicodedata, urllib.parse, urllib.request
+import base64, datetime as dt, hashlib, html, io, json, os, re, shutil, sys, unicodedata, urllib.parse, urllib.request
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 DATA = os.path.join(ROOT, "data")
@@ -214,7 +214,7 @@ def from_links():
         u = e["url"].strip()
         yt = yt_id(u)
         num = re.findall(r"\d{6,}", u)
-        iid = ("yt_" + yt) if yt else "fb_" + (num[-1] if num else str(n))
+        iid = ("yt_" + yt) if yt else "fb_" + (num[-1] if num else hashlib.sha1(u.encode()).hexdigest()[:12])
         kind = e.get("kind") or ("فيديو" if yt else kind_from_url(u))
         remote = [x for x in e.get("images", []) if x.startswith("http")]
         if yt and not remote:
