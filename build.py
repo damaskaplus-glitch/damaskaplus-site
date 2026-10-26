@@ -463,7 +463,7 @@ def page(path, title, body, desc=BIO, image=None, current=None, ld=None):
     navh = "".join(f'<a href="{h}"{cur if h == current else ""}>{E(t)}</a>' for h, t in nav)
     soc = "".join(f'<a href="{u}" rel="noopener" target="_blank">{t}</a>' for t, u in SOCIAL)
     full = f"{title} | دامسكا بلس" if title != "دامسكا بلس" else title
-    og_img = SITE + (image or "/logo.png")
+    og_img = SITE + (image or "/share.png")
     defs = OT.defs() if OT else ""
     ld_html = ('<script type="application/ld+json">' + json.dumps(ld, ensure_ascii=False).replace("</", "<\\/") + "</script>") if ld else ""
     doc = f"""<!doctype html>
@@ -831,7 +831,7 @@ def main():
     OT = Outliner()
     shutil.rmtree(OUT, ignore_errors=True)
     os.makedirs(OUT)
-    for f in ("logo.svg", "logo.png", "favicon.svg", "CNAME"):
+    for f in ("logo.svg", "logo.png", "share.png", "favicon.svg", "CNAME"):
         if os.path.exists(os.path.join(ROOT, f)):
             shutil.copy(os.path.join(ROOT, f), OUT)
     if os.path.isdir(MEDIA):
