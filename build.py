@@ -442,6 +442,8 @@ section.blk .next{margin:0 0 24px}
 }
 """
 
+CSS_V = hashlib.sha1(CSS.encode()).hexdigest()[:8]
+
 PLAY = '<svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 4l12 8-12 8z" fill="#2F3F57"/></svg>'
 PLAY_S = '<svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4l13 8-13 8z" fill="#2F3F57"/></svg>'
 
@@ -480,7 +482,7 @@ def page(path, title, body, desc=BIO, image=None, current=None):
 <meta property="og:locale" content="ar_AR">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/style.css?v={CSS_V}">
 <script data-goatcounter="https://damaskaplus.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </head>
 <body>
