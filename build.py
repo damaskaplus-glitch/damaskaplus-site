@@ -480,6 +480,7 @@ def page(path, title, body, desc=BIO, image=None, current=None):
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="/style.css">
+<script data-goatcounter="https://damaskaplus.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </head>
 <body>
 {defs}
