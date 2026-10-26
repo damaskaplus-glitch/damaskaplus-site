@@ -403,6 +403,7 @@ footer.bot a{color:var(--muted)}
 .dots button[aria-selected=true]{background:var(--yellow);border-color:var(--yellow);color:var(--blue)}
 .grid.sq .card .th{aspect-ratio:4/5}
 .more{margin:10px 0 0;text-align:center}
+.more a{display:inline-flex;align-items:center;min-height:44px;padding:8px 18px;border:2px solid var(--line);border-radius:999px;text-decoration:none;font-weight:500}
 .slider .when b{background:var(--card);color:var(--text);border-radius:8px;padding:3px 12px;font-size:16px}
 .hdr-act{display:flex;gap:10px;align-items:center}
 .menu{display:none;width:46px;height:46px;border:0;border-radius:10px;background:var(--card);color:var(--text);align-items:center;justify-content:center;cursor:pointer}
@@ -455,7 +456,7 @@ n.addEventListener('click',function(){r.scrollBy({left:-r.clientWidth*.85,behavi
 r.addEventListener('scroll',st,{passive:true});window.addEventListener('resize',st);st();});})();
 </script>"""
 
-def page(path, title, body, desc=BIO, image=None, current=None):
+def page(path, title, body, desc=BIO, image=None, current=None, ld=None):
     nav = [("/", "الرئيسية")] + [(f"/{s['slug']}/", s["name"]) for s in SERIES.values()] + \
           [("/all/", "كل المنشورات"), ("/about/", "من نحن")]
     cur = ' aria-current="page"'
@@ -464,6 +465,7 @@ def page(path, title, body, desc=BIO, image=None, current=None):
     full = f"{title} | دامسكا بلس" if title != "دامسكا بلس" else title
     og_img = SITE + (image or "/logo.png")
     defs = OT.defs() if OT else ""
+    ld_html = ('<script type="application/ld+json">' + json.dumps(ld, ensure_ascii=False).replace("</", "<\\/") + "</script>") if ld else ""
     doc = f"""<!doctype html>
 <html lang="ar" dir="rtl">
 <head>
@@ -482,6 +484,9 @@ def page(path, title, body, desc=BIO, image=None, current=None):
 <meta property="og:locale" content="ar_AR">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+{ld_html}
 <link rel="stylesheet" href="/style.css?v={CSS_V}">
 <script data-goatcounter="https://damaskaplus.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </head>
@@ -629,7 +634,33 @@ def home(posts):
         body += (f'<section class="blk"><div class="wrap"><div class="head">{T("الألبومات", "h2")}'
                  f'<a href="/all/#ألبوم">كل الألبومات</a></div><div class="grid sq">{"".join(card(p, False) for p in albums)}</div></div></section>')
     body += about_strip()
-    page("/", "دامسكا بلس", body, current="/", image=(slides[0] if slides else {}).get("thumb"))
+    page("/", "دامسكا بلس", body, current="/", image=(slides[0] if slides else {}).get("thumb"), ld=site_ld())
+
+PUBLISHER = {"@type": "NewsMediaOrganization", "name": "دامسكا بلس", "url": SITE + "/",
+             "logo": {"@type": "ImageObject", "url": SITE + "/logo.png"}}
+
+def site_ld():
+    org = dict(PUBLISHER, **{"@context": "https://schema.org", "sameAs": [u for _, u in SOCIAL],
+                              "description": BIO, "email": "damaskaplus@gmail.com"})
+    web = {"@context": "https://schema.org", "@type": "WebSite", "name": "دامسكا بلس", "url": SITE + "/", "inLanguage": "ar"}
+    return [org, web]
+
+def post_ld(p, desc):
+    img = SITE + p["thumb"] if p["thumb"] else SITE + "/logo.png"
+    when = p["dt"].isoformat() if p["dt"] else None
+    if p["kind"] in ("ريل", "فيديو") and when:
+        d = {"@context": "https://schema.org", "@type": "VideoObject", "name": p["title"], "description": desc or p["title"],
+             "thumbnailUrl": [img], "uploadDate": when, "publisher": PUBLISHER, "inLanguage": "ar"}
+        if p.get("youtube"):
+            d["embedUrl"] = "https://www.youtube.com/embed/" + p["youtube"]
+        elif p.get("video_url"):
+            d["embedUrl"] = "https://www.facebook.com/plugins/video.php?" + urllib.parse.urlencode({"href": p["video_url"]})
+        return d
+    d = {"@context": "https://schema.org", "@type": "NewsArticle", "headline": p["title"][:110], "image": [img],
+         "inLanguage": "ar", "publisher": PUBLISHER, "author": PUBLISHER, "mainEntityOfPage": SITE + p["href"]}
+    if when:
+        d["datePublished"] = when
+    return d
 
 def post_page(p, posts):
     s = SERIES.get(p["series"]) if p["series"] else None
@@ -681,7 +712,7 @@ def post_page(p, posts):
     body = (f'<article class="post"><div class="wrap"><div class="meta">{meta}</div>{T(p["title"], "h1")}{media}'
             f'<div class="body">{body_txt}</div>{share}{cta}{next_episode(s) if s and "wd" in s else ""}</div></article>{rel_html}<div style="height:40px"></div>')
     desc = " ".join([p["title"]] + p["body"])[:200]
-    page(p["href"], p["title"], body, desc=desc, image=p["thumb"])
+    page(p["href"], p["title"], body, desc=desc, image=p["thumb"], ld=post_ld(p, desc))
 
 def series_page(key, posts):
     s = SERIES[key]
@@ -744,12 +775,30 @@ def feeds(posts):
            f'<lastBuildDate>{now.strftime("%a, %d %b %Y %H:%M:%S +0000")}</lastBuildDate>{items}</channel></rss>')
     open(os.path.join(OUT, "rss.xml"), "w", encoding="utf-8").write(rss)
     urls = ["/", "/all/", "/about/"] + [f"/{s['slug']}/" for s in SERIES.values()] + [p["href"] for p in posts]
+    lm = {p["href"]: p["dt"].date().isoformat() for p in posts if p["dt"]}
     sm = '<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' + \
-         "".join(f"<url><loc>{SITE}{u}</loc></url>" for u in urls) + "</urlset>"
+         "".join(f"<url><loc>{SITE}{u}</loc>" + (f"<lastmod>{lm[u]}</lastmod>" if u in lm else "") + "</url>" for u in urls) + "</urlset>"
     open(os.path.join(OUT, "sitemap.xml"), "w", encoding="utf-8").write(sm)
     open(os.path.join(OUT, "robots.txt"), "w").write(f"User-agent: *\nAllow: /\nSitemap: {SITE}/sitemap.xml\n")
 
 # ---------------------------------------------------------------- main
+
+def icon_png(n):
+    """Brand mark (blue tile, yellow plus) drawn as a PNG without extra libraries."""
+    import struct, zlib
+    blue, yellow = (0x2F, 0x3F, 0x57), (0xFF, 0xCF, 0x50)
+    u = n / 64.0
+    def inside_plus(x, y):
+        return (26 * u <= x < 38 * u and 12 * u <= y < 52 * u) or (12 * u <= x < 52 * u and 26 * u <= y < 38 * u)
+    rows = bytearray()
+    for y in range(n):
+        rows.append(0)
+        for x in range(n):
+            rows += bytes(yellow if inside_plus(x + .5, y + .5) else blue)
+    def chunk(t, d):
+        return struct.pack(">I", len(d)) + t + d + struct.pack(">I", zlib.crc32(t + d) & 0xffffffff)
+    return (b"\x89PNG\r\n\x1a\n" + chunk(b"IHDR", struct.pack(">IIBBBBB", n, n, 8, 2, 0, 0, 0))
+            + chunk(b"IDAT", zlib.compress(bytes(rows), 9)) + chunk(b"IEND", b""))
 
 def main():
     global OT
@@ -788,6 +837,8 @@ def main():
     if os.path.isdir(MEDIA):
         shutil.copytree(MEDIA, os.path.join(OUT, "media"))
     open(os.path.join(OUT, "style.css"), "w").write(CSS)
+    for size, name in ((192, "icon-192.png"), (180, "apple-touch-icon.png"), (512, "icon-512.png")):
+        open(os.path.join(OUT, name), "wb").write(icon_png(size))
     home(posts)
     for p in posts:
         post_page(p, posts)
