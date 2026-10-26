@@ -28,11 +28,11 @@ BIO = ("منصة سورية تهدف إلى نشر الوعي والإعلام �
 LICENSE_LINE = "أول منصة إعلامية مسجّلة لدى وزارة الإعلام السورية بعد التحرير"
 
 SERIES = {
-    "street": {"name": "سؤال الشارع", "tag": "#سوال_الشارع", "slug": "street-question", "day": "الاثنين", "every": "كل اثنين",
+    "street": {"name": "سؤال الشارع", "tag": "#سوال_الشارع", "slug": "street-question", "day": "الاثنين", "every": "كل اثنين", "wd": 0,
                "about": "ننزل إلى الشارع ونسأل الناس أسئلة محددة، ونسمع إجاباتهم كما هي. كل اثنين."},
-    "changed": {"name": "شو تغيّر", "tag": "#شو_تغير", "slug": "what-changed", "day": "الخميس", "every": "كل خميس",
+    "changed": {"name": "شو تغيّر", "tag": "#شو_تغير", "slug": "what-changed", "day": "الخميس", "every": "كل خميس", "wd": 3,
                 "about": "نقارن بين ما كان في عهد النظام البائد وما صار بعد التحرير، في مختلف جوانب الحياة. كل خميس."},
-    "numbers": {"name": "سوريا بالأرقام", "tag": "#سوريا_بالارقام", "slug": "syria-in-numbers", "day": "دوري",
+    "numbers": {"name": "سوريا بالأرقام", "tag": "#سوريا_بالارقام", "slug": "syria-in-numbers", "day": "دوري", "every": "إنفوغرافات",
                 "about": "إحصائيات رسمية ومجتمعية وثقافية من داخل سوريا، في إنفوغراف يُقرأ بنظرة."},
 }
 MONTHS = ["كانون الثاني", "شباط", "آذار", "نيسان", "أيار", "حزيران", "تموز", "آب", "أيلول",
@@ -211,6 +211,8 @@ def from_links():
         return {}
     items = {}
     for n, e in enumerate(json.load(open(path, encoding="utf-8")).get("items", [])):
+        if e.get("skip"):
+            continue
         u = e["url"].strip()
         yt = yt_id(u)
         num = re.findall(r"\d{6,}", u)
@@ -306,6 +308,7 @@ img{max-width:100%;display:block}
 header.top{background:var(--panel);border-bottom:1px solid var(--card)}
 header.top .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;padding-top:12px;padding-bottom:12px}
 .logo img{height:46px;width:auto;border-radius:8px}
+.logo{order:1}nav.main{order:2}.hdr-act{order:3}
 nav.main{display:flex;flex-wrap:wrap;gap:4px 20px;font-weight:500}
 nav.main a{color:var(--text);text-decoration:none;padding:8px 0}
 nav.main a[aria-current]{color:var(--yellow)}
@@ -399,10 +402,37 @@ footer.bot a{color:var(--muted)}
 .dots button[aria-selected=true]{background:var(--yellow);border-color:var(--yellow);color:var(--blue)}
 .grid.sq .card .th{aspect-ratio:4/5}
 .more{margin:10px 0 0;text-align:center}
+.slider .when b{background:var(--card);color:var(--text);border-radius:8px;padding:3px 12px;font-size:16px}
+.hdr-act{display:flex;gap:10px;align-items:center}
+.menu{display:none;width:46px;height:46px;border:0;border-radius:10px;background:var(--card);color:var(--text);align-items:center;justify-content:center;cursor:pointer}
+.rowctl{display:flex;align-items:center;gap:14px}
+.rowwrap{position:relative}
+.row{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding-bottom:4px;overscroll-behavior-x:contain}
+.row::-webkit-scrollbar{display:none}
+.row .card{scroll-snap-align:start;flex:0 0 calc((100% - 72px)/5);min-width:0}
+.rowwrap.nums .row .card{flex-basis:calc((100% - 54px)/4)}
+.rowwrap.nums .card .th{aspect-ratio:4/5}
+.pv,.nx{position:absolute;top:38%;z-index:2;width:44px;height:44px;border-radius:50%;border:0;background:var(--yellow);color:var(--blue);font-size:28px;line-height:1;cursor:pointer;box-shadow:0 4px 16px rgba(0,0,0,.35)}
+.pv{right:-14px}.nx{left:-14px}
+.pv:disabled,.nx:disabled,.rowwrap.noscroll .pv,.rowwrap.noscroll .nx{display:none}
+.next{margin-top:22px;background:var(--yellow);color:var(--blue);border-radius:16px;padding:16px 20px;display:flex;flex-direction:column;gap:2px}
+.next span{font-size:14px;font-weight:500}.next b{font-size:20px}
+section.blk .next{margin:0 0 24px}
+.sub{font-size:22px;margin:8px 0 14px}
+.grid.wide{grid-template-columns:repeat(auto-fill,minmax(320px,1fr))}
+.grid.wide .card .th{aspect-ratio:16/9}
 @media (prefers-reduced-motion:reduce){.slider .track{transition:none}}
 @media (max-width:640px){
  .slider{padding:24px 0 12px}.slider .slide .wrap{gap:20px}
- nav.main{order:3;width:100%;gap:2px 16px;font-size:15px}
+ .menu{display:inline-flex}
+ .hdr-act{order:2}
+ nav.main{display:none;order:3;width:100%;flex-direction:column;gap:0;font-size:17px;border-top:1px solid var(--card);margin-top:6px}
+ nav.main a{padding:12px 0;border-bottom:1px solid var(--card)}
+ header.top.open nav.main{display:flex}
+ .slider .frame:not(.wide){width:min(100%,calc(58vh * 9 / 16))}
+ .row{gap:12px}.row .card{flex-basis:44%}.rowwrap.nums .row .card{flex-basis:70%}
+ .pv,.nx{display:none}
+ .grid.wide{grid-template-columns:1fr}
  .hero{padding:28px 0}.hero .wrap{gap:22px}
  .grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
  .grid.sq{grid-template-columns:repeat(2,minmax(0,1fr))}
@@ -413,6 +443,14 @@ footer.bot a{color:var(--muted)}
 
 PLAY = '<svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 4l12 8-12 8z" fill="#2F3F57"/></svg>'
 PLAY_S = '<svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4l13 8-13 8z" fill="#2F3F57"/></svg>'
+
+PAGE_JS = """<script>
+(function(){var b=document.querySelector('.menu'),h=document.querySelector('header.top');if(b)b.addEventListener('click',function(){var o=h.classList.toggle('open');b.setAttribute('aria-expanded',o)});
+document.querySelectorAll('.rowwrap').forEach(function(w){var r=w.querySelector('.row'),n=w.querySelector('.nx'),p=w.querySelector('.pv');if(!r||!n)return;
+function st(){var m=r.scrollWidth-r.clientWidth,x=Math.abs(r.scrollLeft);n.disabled=x>=m-4;p.disabled=x<=4;w.classList.toggle('noscroll',m<=4)}
+n.addEventListener('click',function(){r.scrollBy({left:-r.clientWidth*.85,behavior:'smooth'})});p.addEventListener('click',function(){r.scrollBy({left:r.clientWidth*.85,behavior:'smooth'})});
+r.addEventListener('scroll',st,{passive:true});window.addEventListener('resize',st);st();});})();
+</script>"""
 
 def page(path, title, body, desc=BIO, image=None, current=None):
     nav = [("/", "الرئيسية")] + [(f"/{s['slug']}/", s["name"]) for s in SERIES.values()] + \
@@ -448,8 +486,9 @@ def page(path, title, body, desc=BIO, image=None, current=None):
 <a class="skip" href="#main">تخطَّ إلى المحتوى</a>
 <header class="top"><div class="wrap">
 <a class="logo" href="/"><img src="/logo.svg" alt="دامسكا بلس" width="111" height="48"></a>
-<nav class="main" aria-label="القائمة الرئيسية">{navh}</nav>
-<a class="btn y" href="{FB_PAGE}" rel="noopener" target="_blank">تابعنا</a>
+<div class="hdr-act"><a class="btn y" href="{FB_PAGE}" rel="noopener" target="_blank">تابعنا</a>
+<button class="menu" type="button" aria-expanded="false" aria-controls="nav" aria-label="القائمة"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button></div>
+<nav class="main" id="nav" aria-label="القائمة الرئيسية">{navh}</nav>
 </div></header>
 <main id="main">
 {body}
@@ -458,6 +497,7 @@ def page(path, title, body, desc=BIO, image=None, current=None):
 <span>دامسكا بلس · {E(LICENSE_LINE)}</span>
 <nav aria-label="حسابات التواصل">{soc}<a href="/rss.xml">RSS</a></nav>
 </div></footer>
+{PAGE_JS}
 </body>
 </html>
 """
@@ -505,6 +545,21 @@ def embed_src(p, autoplay=False):
             {"href": p["video_url"], "show_text": "false", "width": "320" if p["kind"] == "ريل" else "640"})
     return None
 
+def next_episode(s):
+    now = dt.datetime.now(DAMASCUS)
+    days = (s["wd"] - now.weekday()) % 7
+    d = now + dt.timedelta(days=days)
+    when_txt = "اليوم" if days == 0 else ("بكرا" if days == 1 else "")
+    label = f'{s["day"]} {d.day} {MONTHS[d.month - 1]}'
+    return (f'<section class="next" aria-label="الحلقة القادمة"><span>الحلقة القادمة من {E(s["name"])}</span>'
+            f'<b>{E(label)}{" (" + when_txt + ")" if when_txt else ""}</b></section>')
+
+def row(title_html, link_html, cards, kind):
+    return (f'<section class="blk"><div class="wrap"><div class="head">{title_html}<div class="rowctl">{link_html}</div></div>'
+            f'<div class="rowwrap {kind}"><button type="button" class="pv" aria-label="السابق">&#8250;</button>'
+            f'<div class="row" tabindex="0">{"".join(cards)}</div>'
+            f'<button type="button" class="nx" aria-label="التالي">&#8249;</button></div></div></section>')
+
 def slide(p, n, total):
     s = SERIES[p["series"]]
     wide = bool(p.get("youtube")) or p["kind"] == "فيديو"
@@ -519,7 +574,7 @@ def slide(p, n, total):
     return (f'<div class="slide{" wide" if wide else ""}" role="group" aria-roledescription="شريحة" aria-label="{n + 1} من {total}: {E(s["name"])}"'
             f'{"" if n == 0 else " inert"}><div class="wrap">'
             f'<div class="txt"><span class="tag">الحلقة الجديدة · {E(s["name"])}</span>{T(p["title"], "h1" if n == 0 else "h2", "ttl")}'
-            f'{f"<p>{E(excerpt)}</p>" if excerpt else ""}<span class="when">{E(s.get("every", ""))} على دامسكا بلس</span>'
+            f'{f"<p>{E(excerpt)}</p>" if excerpt else ""}<span class="when"><b>{E(s.get("every", ""))}</b> على دامسكا بلس</span>'
             f'<div class="acts"><a class="btn y" href="{p["href"]}">{PLAY_S}شاهد الحلقة</a>'
             f'<a class="btn o" href="/{s["slug"]}/">كل حلقات {E(s["name"])}</a></div></div>'
             f'<div class="med">{media}</div></div></div>')
@@ -555,16 +610,14 @@ def home(posts):
                 + '</section>' + SLIDER_JS)
     else:
         hero = f"""<section class="hero"><div class="wrap"><div class="txt"><span class="tag">قريباً</span>{T("منصة سورية للإعلام الحر", "h1")}<p>{E(BIO)}</p></div></div></section>"""
-    reels = [p for p in posts if p["kind"] == "ريل" and p["id"] not in used][:8]
-    nums = [p for p in posts if p["series"] == "numbers"][:6]
+    reels = [p for p in posts if p["kind"] == "ريل" and p["id"] not in used][:10]
+    nums = [p for p in posts if p["series"] == "numbers"][:12]
     albums = [p for p in posts if p["kind"] == "ألبوم"][:6]
-    body = hero + sched()
+    body = hero
     if reels:
-        body += (f'<section class="blk"><div class="wrap"><div class="head">{T("أحدث الريلز", "h2")}'
-                 f'<a href="/all/#ريل">عرض الكل</a></div><div class="grid">{"".join(card(p) for p in reels)}</div></div></section>')
+        body += row(T("أحدث الريلز", "h2"), '<a href="/all/#ريل">عرض الكل</a>', [card(p) for p in reels], "reels")
     if nums:
-        body += (f'<section class="blk"><div class="wrap"><div class="head">{T("سوريا بالأرقام", "h2")}'
-                 f'<a href="/syria-in-numbers/">كل الإنفوغرافات</a></div><div class="grid sq">{"".join(card(p, False) for p in nums)}</div></div></section>')
+        body += row(T("سوريا بالأرقام", "h2"), '<a href="/syria-in-numbers/">كل الإنفوغرافات</a>', [card(p, False) for p in nums], "nums")
     if albums:
         body += (f'<section class="blk"><div class="wrap"><div class="head">{T("الألبومات", "h2")}'
                  f'<a href="/all/#ألبوم">كل الألبومات</a></div><div class="grid sq">{"".join(card(p, False) for p in albums)}</div></div></section>')
@@ -573,7 +626,7 @@ def home(posts):
 
 def post_page(p, posts):
     s = SERIES.get(p["series"]) if p["series"] else None
-    meta = (f'<a class="tag" href="/{s["slug"]}/">{E(s["name"])}</a><span>{"كل " + s["day"] if s["day"] != "دوري" else "إنفوغرافات"} · ' if s
+    meta = (f'<a class="tag" href="/{s["slug"]}/">{E(s["name"])}</a><span>{s["every"]} · ' if s
             else f'<span class="tag">{E(p["kind"])}</span><span>') + (f'<time datetime="{p["dt"].isoformat()}">{p["date"]}</time>' if p["dt"] else "دامسكا بلس") + '</span>'
     if p.get("youtube"):
         media = (f'<div class="player wide"><iframe src="{E(embed_src(p))}" title="{E(p["title"])}" '
@@ -607,20 +660,37 @@ def post_page(p, posts):
     cta = (f'<a class="btn y cta" href="{E(p["permalink"])}" rel="noopener" target="_blank">'
            f'{"علّق على يوتيوب" if p.get("youtube") else "علّق على فيسبوك"}</a>') if p.get("permalink") else ""
     rel = [x for x in posts if x["id"] != p["id"] and (x["series"] == p["series"] if p["series"] else True)][:4]
-    rel_title = f"حلقات أخرى من {s['name']}" if s else "منشورات أخرى"
+    if p["series"] == "numbers":
+        rel_title = "المزيد من سوريا بالأرقام"
+    elif s:
+        rel_title = f"حلقات أخرى من {s['name']}"
+    else:
+        rel_title = "منشورات أخرى"
+    if not rel:
+        rel = [x for x in posts if x["id"] != p["id"] and x["kind"] == "ريل"][:4]
+        rel_title = "أحدث الريلز"
     rel_html = (f'<section class="blk"><div class="wrap"><div class="head">{T(rel_title, "h2")}</div>'
                 f'<div class="grid">{"".join(card(x) for x in rel)}</div></div></section>') if rel else ""
     body = (f'<article class="post"><div class="wrap"><div class="meta">{meta}</div>{T(p["title"], "h1")}{media}'
-            f'<div class="body">{body_txt}</div>{share}{cta}</div></article>{sched()}{rel_html}<div style="height:40px"></div>')
+            f'<div class="body">{body_txt}</div>{share}{cta}{next_episode(s) if s and "wd" in s else ""}</div></article>{rel_html}<div style="height:40px"></div>')
     desc = " ".join([p["title"]] + p["body"])[:200]
     page(p["href"], p["title"], body, desc=desc, image=p["thumb"])
 
 def series_page(key, posts):
     s = SERIES[key]
     eps = [p for p in posts if p["series"] == key]
-    grid = (f'<div class="grid{" sq" if key == "numbers" else ""}">{"".join(card(p, False) for p in eps)}</div>' if eps
-            else '<p class="empty">ستظهر الحلقات هنا فور نشرها.</p>')
-    body = (f'<section class="blk"><div class="wrap"><span class="tag">{"كل " + s["day"] if s["day"] != "دوري" else "إنفوغرافات"}</span>'
+    full = [p for p in eps if p.get("youtube") or p["kind"] == "فيديو"]
+    clips = [p for p in eps if p not in full]
+    if full and clips:
+        grid = (f'<h2 class="sub">الحلقات الكاملة</h2><div class="grid wide">{"".join(card(p, False) for p in full)}</div>'
+                f'<h2 class="sub">مقاطع من الحلقات</h2><div class="grid">{"".join(card(p, False) for p in clips)}</div>')
+    elif eps:
+        grid = f'<div class="grid{" sq" if key == "numbers" else (" wide" if full else "")}">{"".join(card(p, False) for p in eps)}</div>'
+    else:
+        grid = '<p class="empty">ستظهر الحلقات هنا فور نشرها.</p>'
+    if "wd" in s:
+        grid = next_episode(s) + grid
+    body = (f'<section class="blk"><div class="wrap"><span class="tag">{s["every"]}</span>'
             f'<div class="head" style="margin-top:12px">{T(s["name"], "h1")}</div><p class="lead">{E(s["about"])}</p>{grid}</div></section>'
             f'<div style="height:48px"></div>')
     page(f"/{s['slug']}/", s["name"], body, desc=s["about"], current=f"/{s['slug']}/",
