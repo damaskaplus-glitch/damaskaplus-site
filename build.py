@@ -634,7 +634,7 @@ def home(posts):
         body += (f'<section class="blk"><div class="wrap"><div class="head">{T("الألبومات", "h2")}'
                  f'<a href="/all/#ألبوم">كل الألبومات</a></div><div class="grid sq">{"".join(card(p, False) for p in albums)}</div></div></section>')
     body += about_strip()
-    page("/", "دامسكا بلس", body, current="/", image=(slides[0] if slides else {}).get("thumb"), ld=site_ld())
+    page("/", "دامسكا بلس", body, current="/", ld=site_ld())
 
 PUBLISHER = {"@type": "NewsMediaOrganization", "name": "دامسكا بلس", "url": SITE + "/",
              "logo": {"@type": "ImageObject", "url": SITE + "/logo.png"}}
