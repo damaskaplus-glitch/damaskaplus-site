@@ -1,96 +1,100 @@
 {
- "_شرح": "أحدث منشور في الأعلى. لكل منشور: url رابط فيسبوك أو يوتيوب، title العنوان، text نص اختياري، series اختياري: street | changed | numbers، kind اختياري: ريل | فيديو | إنفوغراف | ألبوم، images روابط الصور (تُنزَّل تلقائياً إلى media مرة واحدة)، extra عدد الصور الإضافية على فيسبوك.",
+ "_شرح": "أحدث منشور في الأعلى. لكل منشور: url رابط فيسبوك أو يوتيوب، title العنوان، date تاريخ النشر (UTC)، text النص، series اختياري: street | changed | numbers (numbers فقط للتصاميم التي عليها شعار سوريا بالأرقام)، kind اختياري: ريل | فيديو | إنفوغراف | ألبوم | منشور، images روابط الصور (تُنزَّل إلى media مرة واحدة)، extra عدد صور الألبوم الإضافية، skip لإخفاء منشور (مثل ريلات لقطات).",
  "items": [
+  {
+   "url": "https://www.facebook.com/photo/?fbid=122173702586701687",
+   "title": "أيهما أرخص: شحن السيارة أم البنزين؟",
+   "kind": "إنفوغراف",
+   "date": "2026-10-26T07:00:00",
+   "text": "الشحن أرخص بنحو 3 مرات، حتى على الشريحة الثانية.\nفماذا يعني ذلك لجيبك؟\nفي الشهر: إن كنت تقطع 1,500 كم شهرياً، يكلّفك الشحن نحو 3,600 ليرة جديدة، والبنزين نحو 11,100 ليرة جديدة. الفرق نحو 7,500 ليرة جديدة.\nلماذا الشريحة الثانية؟ حد الشريحة الأولى 300 كيلوواط ساعي في دورة الشهرين. شحن السيارة وحده يتجاوزه بسرعة، فيُحسب معظمه بسعر الشريحة الثانية.\nكيف حسبنا البنزين؟ والبطارية فارغة، أي حين تسير السيارة على البنزين فعلياً.\nلماذا أرقامنا أعلى من أرقام الشركة؟ لأن الأرقام الرسمية تُقاس في المختبر. قدّرنا الاستهلاك في القيادة الفعلية مع التكييف والسرعة، وأضفنا فاقد الشحن من الشبكة.\nالشحن من مقبس البيت بطيء، وقد لا تكفي ساعات الوصل لشحنة كاملة.\nكم ساعة تحتاج لشحن سيارتك في بيتك مع ساعات الوصل الحالية؟",
+   "series": "numbers",
+   "images": [
+    "https://scontent-lax3-1.xx.fbcdn.net/v/t39.99422-6/865391761_1866620431363993_511074340405813322_n.png?stp=dst-jpg_tt6&cstp=mx1080x1350&ctp=s640x640&_nc_cat=110&ccb=1-7&_nc_sid=127cfc&_nc_ohc=v0t9ub1fvp8Q7kNvwEnnGpY&_nc_oc=AdoBCBXLbgaOhjJWX9Jy5C3oBYKioYQtcJ2YDOm76_NBHGnEi_axCycsxUwWBDrYgGI&_nc_zt=14&_nc_ht=scontent-lax3-1.xx&_nc_gid=G8GS3EDGxMoLkLSS4p1TRg&_nc_ss=792a8&oh=00_AQNtrbBHS7YHFsev-ymI245uxrLSpDBi4DzCRGrq5IEbLg&oe=6AE5127F"
+   ]
+  },
   {
    "url": "https://www.facebook.com/reel/1675283741054584",
    "title": "الختم على اللحم يحمل معلومات عن نوع الذبيحة وجنسها",
-   "text": "وأي ختم يشبهه ليس بالضرورة صحيحاً.",
+   "date": "2026-10-25T16:09:00",
+   "text": "شاهد الفيديو لتعرف كيف تقرأ الختم قبل أن تشتري",
    "images": [
     "https://scontent-lax3-2.xx.fbcdn.net/v/t15.5256-10/867848887_28761493913544963_948068932401197214_n.jpg?stp=dst-jpg_tt6&cstp=mx1080x1920&ctp=s960x960&_nc_cat=100&ccb=1-7&_nc_sid=d2b52d&_nc_ohc=ZF5SMzFpjJ0Q7kNvwFSRcTL&_nc_oc=AdoWPQaD3iNYdHfE1jFCgjHVKFKXcxC6EFupV9dfCXEoFaKQBNYO98R-7l4JkGsGzPs&_nc_zt=23&_nc_ht=scontent-lax3-2.xx&_nc_gid=PvmLvodZMOYHIpUTUgP2Zw&_nc_ss=792a8&oh=00_AQNQvsg9SXOL-FPcnMpXgK7JJ6zOc8z9MUgb-qmq_BTzEg&oe=6AE3FF7B"
    ]
   },
   {
-   "url": "https://www.facebook.com/reel/1428050899525485",
-   "title": "وزير العدل مظهر الويس في جولة سيراً على الأقدام في محيط قلعة حلب",
-   "images": [
-    "https://scontent-lax3-1.xx.fbcdn.net/v/t15.5256-10/867457752_2345627709533832_7122902530837493444_n.jpg?stp=dst-jpg_tt6&cstp=mx1080x1920&ctp=s960x960&_nc_cat=109&ccb=1-7&_nc_sid=d2b52d&_nc_ohc=ErufUIfdg64Q7kNvwEO_Nff&_nc_oc=AdrjKM-73S_qI0iT-QXEZBU4v1ZG5e2Ww8TsB7jEynwjO_rXIszICnky4pbEFw4wsz4&_nc_zt=23&_nc_ht=scontent-lax3-1.xx&_nc_gid=PvmLvodZMOYHIpUTUgP2Zw&_nc_ss=792a8&oh=00_AQNSB3g7He8-97Ncti-1rxK3KOvCUhqDycOmrybUFzNjVw&oe=6AE42D0E"
-   ]
-  },
-  {
-   "url": "https://www.facebook.com/reel/1752097182672669",
-   "title": "وزير النقل: لا أستخدم سيارة الوزارة في تنقلاتي الشخصية",
-   "text": "هذا ما صرح به وزير النقل السوري يعرب سليمان بدر بخصوص عدم استخدام سيارة الوزارة في تنقلاته الشخصية حفاظاً على المال العام."
-  },
-  {
    "url": "https://www.facebook.com/reel/1077655918656803",
    "title": "صورة بلا أخطاء واضحة لا تعني أنها حقيقية",
-   "text": "وصورة يُقال إنها مولّدة لا تعني أنها مزيفة.",
+   "date": "2026-10-25T14:02:00",
+   "text": "قبل أن تشارك صورة حريق أو فيضان من مدينتك، ثلاثة أسئلة تستحق لحظة قبل الضغط على زر المشاركة.",
    "images": [
     "https://scontent-lax3-2.xx.fbcdn.net/v/t15.5256-10/863512865_2146492385966103_6270463489110114021_n.jpg?stp=dst-jpg_tt6&cstp=mx1080x1920&ctp=s960x960&_nc_cat=106&ccb=1-7&_nc_sid=d2b52d&_nc_ohc=YG3yqBHCxAUQ7kNvwG-mugg&_nc_oc=Adpdh8guYExk3HcRVIXE3J3FwPs6Pw5hFYFP5PYqa4zXMMVvs4kawPKUKYacwSlgHKQ&_nc_zt=23&_nc_ht=scontent-lax3-2.xx&_nc_gid=PvmLvodZMOYHIpUTUgP2Zw&_nc_ss=792a8&oh=00_AQOVyNZxkWnEOy7sDVNsJjC6ii0eRRDGNRC1hXdy01ytig&oe=6AE41645"
    ]
   },
   {
-   "url": "https://www.facebook.com/reel/1658991198920754",
-   "title": "أب يعلن أن مهر ابنته 100 ليرة جديدة",
-   "text": "في مقطع متداول، يعلن أب أن مهر ابنته 100 ليرة جديدة، أي أقل من دولار واحد، بشرط أن يحفّظها العريس أجزاءً من القرآن الكريم.",
+   "url": "https://www.facebook.com/photo/?fbid=122173632602701687",
+   "title": "اكتب اسمك كما كتبه السوريون قبل آلاف السنين",
+   "kind": "منشور",
+   "date": "2026-10-25T12:35:00",
+   "text": "هل جربت أن تكتب اسمك كما كتبه السوريون قبل آلاف السنين؟\nفي متحف حماة الوطني، يتيح معرض \"أسبوع عبر العصور\" للزوار كتابة أسمائهم بالأبجديتين الأوغاريتية والآرامية.\nماذا في المعرض؟\nلوحات فنية ومعرفية تروي تاريخ حماة، مدينة وريفاً، من عصور ما قبل التاريخ إلى العهد الإسلامي.\nتجربة الكتابة بالأبجديات القديمة.\nقسم مخصص للأطفال، يعرّفهم بالتاريخ بأسلوب تفاعلي.\nمن الأحد 25 حتى الخميس 29 تشرين الأول\nيومياً من 10 صباحاً حتى 8 مساءً\nمتحف حماة الوطني\nفرصة للعائلات والطلاب ليعرفوا تاريخ مدينتهم عن قرب.",
    "images": [
-    "https://scontent-lax3-1.xx.fbcdn.net/v/t15.5256-10/863384216_2260142807893867_4432961482922758865_n.jpg?stp=dst-jpg_tt6&cstp=mx1080x1920&ctp=s960x960&_nc_cat=109&ccb=1-7&_nc_sid=d2b52d&_nc_ohc=aHmcJYZicDcQ7kNvwGFmq5i&_nc_oc=Adoj8Co-SbA7p3CR1PTagCnbxib5ssJ-XtUolsDHfSfT-AVpJqspLdIRjogqnf_zrWs&_nc_zt=23&_nc_ht=scontent-lax3-1.xx&_nc_gid=PvmLvodZMOYHIpUTUgP2Zw&_nc_ss=792a8&oh=00_AQM8Ib4xjgOvKW9gTa5eOnI65PqcryPJWp0XwyayWdIr3Q&oe=6AE408F0"
+    "https://scontent-lax3-1.xx.fbcdn.net/v/t39.99422-6/863174253_1621555259461240_8492394644603662386_n.png?stp=dst-jpg_tt6&cstp=mx1080x1350&ctp=s640x640&_nc_cat=104&ccb=1-7&_nc_sid=127cfc&_nc_ohc=KfpEzHQvBSAQ7kNvwEF_eop&_nc_oc=AdojCzmmFXjRN3Zk2CO0V2PDMp31JJFaqM7OjK_ZHFZViLCBlOEIyuGCkuuVJWR3vIM&_nc_zt=14&_nc_ht=scontent-lax3-1.xx&_nc_gid=_5Z3jjt0I9AdOBwMG60jDg&_nc_ss=7b2a8&oh=00_AQPQXsW3LgBesPpWZXub0vmUgsUfa88g4jRqHGSbYyYQCg&oe=6AE4F498"
    ]
   },
   {
-   "url": "https://www.facebook.com/DamaskaPlus/posts/pfbid06YwKshb9snoZYqB5J3ZF7EM5afgoinQNWTZA44mnZbeG4ZiSGf6WeumHACNuzdJ1l",
+   "url": "https://www.facebook.com/DamaskaPlus/posts/pfbid02AQP34NWyj7GuktLCBK2rgDGbVR9DxMKwgVzzTJqWLMW1NnJhN34FX93JfeBgNwqil",
    "title": "الطباخ \"الليزري\" لا يعمل بالليزر",
    "kind": "إنفوغراف",
-   "text": "ولذلك يوصل إلى القدر حرارة أكثر مما توصله شعلة الغاز، التي يضيع جزء كبير من حرارتها في الهواء.",
+   "date": "2026-10-25T07:00:00",
+   "text": "ولذلك يوصل إلى القدر حرارة أكثر مما توصله شعلة الغاز، التي يضيع جزء كبير من حرارتها في الهواء.\nالشريحة الأولى تشمل أول 300 كيلوواط في دورة الشهرين، وما بعدها يُحسب بـ14 ليرة للكيلوواط.\nلذلك يتقلص التوفير من نحو الثلثين إلى نحو الثلث إن تجاوز بيتك هذا الحد.\nما لم يدخل في الحساب: الطباخ يحتاج كهرباء متوفرة وقت الطبخ، وتمديدات تتحمل استهلاكه، إضافة إلى ثمن الجهاز نفسه.\nوإن كان الجهد الكهربائي في منطقتك منخفضاً، فالكلفة لا تتغير كثيراً، لكن الطبخ يأخذ وقتاً أطول بشكل ملحوظ.\nاعتمدنا كفاءات تقديرية من دراسات مخبرية لوزارة الطاقة الأمريكية.\nما الذي يحدد اختيارك في مطبخك: السعر أم توفر الكهرباء؟",
    "series": "numbers",
    "images": [
-    "https://scontent-lax3-2.xx.fbcdn.net/v/t39.99422-6/860541378_1355300577670072_4972128395396403389_n.png?stp=dst-jpg_tt6&cstp=mx1080x1350&ctp=s640x640&_nc_cat=107&ccb=1-7&_nc_sid=127cfc&_nc_ohc=qosOSBv0_fsQ7kNvwGRbeHI&_nc_oc=Adq8AWmB2xQK6QyDMUqWBbE5BpHvV-r9j_YscVwed1aDQ5vOZdmvK24F4arfUX9nhF0&_nc_zt=14&_nc_ht=scontent-lax3-2.xx&_nc_gid=jAeteEIizwelhPpng-UalQ&_nc_ss=7b2a8&oh=00_AQODPuDkxx_r4t_IwyIJHuSPCX4us7gy6Gd-BtIyhU75SQ&oe=6AE4285D"
+    "https://scontent-lax3-2.xx.fbcdn.net/v/t39.99422-6/860541378_1355300577670072_4972128395396403389_n.png?stp=dst-jpg_tt6&cstp=mx1080x1350&ctp=s640x640&_nc_cat=107&ccb=1-7&_nc_sid=127cfc&_nc_ohc=qosOSBv0_fsQ7kNvwGRbeHI&_nc_oc=Adq8AWmB2xQK6QyDMUqWBbE5BpHvV-r9j_YscVwed1aDQ5vOZdmvK24F4arfUX9nhF0&_nc_zt=14&_nc_ht=scontent-lax3-2.xx&_nc_gid=nmx-3SBplORZW1aRlBDR4w&_nc_ss=7b2a8&oh=00_AQOYgMcu5gqHjGSSzq2nYKW9DSn6NIoObPZ72uEVlgSWsQ&oe=6AE5095D"
    ]
   },
   {
    "url": "https://www.facebook.com/reel/2598011243956551",
    "title": "أهالي جوبر يقطعون طريق المتحلّق الجنوبي",
-   "text": "يوم الجمعة 23 تشرين الأول.",
+   "date": "2026-10-24T17:44:00",
+   "text": "قطع أهالي جوبر طريق المتحلّق الجنوبي يوم الجمعة 23 تشرين الأول\nاحتجاجاً على تأخر الإعمار في منطقتهم لكن الخلاف الأكبر يدور حول سؤال آخر: كم يبقى للمالك من أرضه بعد المخطط التنظيمي؟\nتقارير تتحدث عن نسبة، ولجنة الأهالي تتحدث عن عرض آخر وتصفه بغير المنصف.\nولم يُحسم بعد من يتحمل كلفة البنية التحتية.\nوالمخطط نفسه لم يُعلَن حتى الآن.\nإن كنت تملك عقاراً في حيٍّ مدمّر، فهذا الملف يخصك أيضاً.\nهل أُبلغت بأي شيء عن المخطط التنظيمي لحيّك؟ شاركنا في التعليقات.",
    "images": [
     "https://scontent-lax7-1.xx.fbcdn.net/v/t15.5256-10/861563851_1947251486251668_4744395155206165347_n.jpg?stp=dst-jpg_tt6&cstp=mx1080x1920&ctp=s960x960&_nc_cat=101&ccb=1-7&_nc_sid=d2b52d&_nc_ohc=_dtPLeVyx4MQ7kNvwFCNL4l&_nc_oc=AdqjmAZkGKisPm0fWOJDefei9g9cT6PEZfCgah9EK-oUbBp2n2rq3wYYPxR7sj9EI64&_nc_zt=23&_nc_ht=scontent-lax7-1.xx&_nc_gid=PvmLvodZMOYHIpUTUgP2Zw&_nc_ss=792a8&oh=00_AQMQ9gZZ6tpcOxTaE5axkmXCvM3HO8SjiOG49RXUtRzl3Q&oe=6AE430C1"
    ]
   },
   {
-   "url": "https://www.facebook.com/reel/1785289892775663",
-   "title": "من إدلب إلى منصة التتويج في أوزبكستان",
-   "images": [
-    "https://scontent-lax3-1.xx.fbcdn.net/v/t15.5256-10/861205835_1046954208365166_8493603021322662328_n.jpg?stp=dst-jpg_tt6&cstp=mx1080x1920&ctp=s960x960&_nc_cat=108&ccb=1-7&_nc_sid=d2b52d&_nc_ohc=mKdDuRcD0p0Q7kNvwEWXhZH&_nc_oc=Adp7Y2fK7aDGil2jyAAvxF5v7pXH3grfsn2WNcwA7GANkV5NmeIv3Hy2UOZi7bdKySg&_nc_zt=23&_nc_ht=scontent-lax3-1.xx&_nc_gid=PvmLvodZMOYHIpUTUgP2Zw&_nc_ss=792a8&oh=00_AQMB_Hl7t0Wz3sLezhCHHok0_d4J8bCOnwQl-iJyYdkF3g&oe=6AE41061"
-   ]
-  },
-  {
    "url": "https://www.facebook.com/reel/1164181809599600",
    "title": "الرصاصة التي تُطلق في عرس لا تختفي، تعود إلى الأرض",
+   "date": "2026-10-24T15:39:00",
+   "text": "منذ بداية 2026، قُتل 147 شخصاً في سوريا برصاص طائش أو بحوادث سلاح وقنابل، بينهم 50 طفلاً، بحسب المرصد السوري لحقوق الإنسان (حتى 4 تشرين الأول).\nهؤلاء ليسوا ضحايا معارك.\nإن كان في بيتك سلاح، فالخطوة الأولى بسيطة: اجعل السلاح بعيداً عن متناول الأطفال، ولا تترك ذخيرة فيه.",
    "images": [
     "https://scontent-lax7-1.xx.fbcdn.net/v/t15.5256-10/866668754_2181367736119370_1333671024900468294_n.jpg?stp=dst-jpg_tt6&cstp=mx1080x1920&ctp=s960x960&_nc_cat=105&ccb=1-7&_nc_sid=d2b52d&_nc_ohc=kTdX-WswSSYQ7kNvwEfr2B0&_nc_oc=Adq7SPtlHe9WkhRV9l61Tr_qRloTEY70hYbpJ6l8zsm7o9Udh79xshxF4dWl7KNAYj0&_nc_zt=23&_nc_ht=scontent-lax7-1.xx&_nc_gid=PvmLvodZMOYHIpUTUgP2Zw&_nc_ss=792a8&oh=00_AQORqzDumEvSBVQX5Lmtrn1ea99iAPEzf3zjEzjCRLyWeg&oe=6AE41444"
    ]
   },
   {
-   "url": "https://www.facebook.com/photo/?fbid=122173558106701687",
+   "url": "https://www.facebook.com/DamaskaPlus/posts/pfbid02zKfk44mTodYP5zru46FsRG71Nsxu9jB16j7cZoV94sS4aWLsV99RgRSjhLbTJTsfl",
    "title": "الحد الأقصى للعمولة بحسب شام كاش",
    "kind": "إنفوغراف",
-   "series": "numbers",
+   "date": "2026-10-24T15:05:00",
+   "text": "السحب: 3 بالألف، أي 30 ليرة جديدة عن كل 10,000 ليرة.\nالإيداع: 2 بالألف، أي 20 ليرة عن كل 10,000 ليرة.\nيجوز للشركة أن تأخذ أقل، ولا يجوز أن تأخذ أكثر.\nلمن تذهب العمولة؟\nتقول \"شام كاش\" إنها لا تحصل على أي جزء منها، وإن العمولة كلها للشركة التي تنفّذ السحب، مقابل تكاليفها.\nإن طُلبت منك عمولة أعلى، أو رُفض سحبك:\nتقول \"شام كاش\" إنها لا تفرض سقفاً على مبالغ السحب.\nويمكنك تقديم شكوى عبر الرابط المخصص على موقعها الرسمي، عن أي مخالفة لدى شركات الصرافة والحوالات المعتمدة أو وكلائها وفروعها.\nقبل أن تشتكي، احتفظ بـ:\nاسم الجهة وعنوانها • المبلغ • العمولة المقتطعة • تاريخ العملية\nاحفظ المنشور، وأرسله لمن يتقاضى راتبه عبر التطبيق",
    "images": [
-    "https://scontent-lax7-1.xx.fbcdn.net/v/t39.99422-6/859815363_3153705574815227_2912938242511765782_n.png?stp=dst-jpg_tt6&cstp=mx1080x1350&ctp=s640x640&_nc_cat=105&ccb=1-7&_nc_sid=127cfc&_nc_ohc=fO6YWckXNs8Q7kNvwHUryMw&_nc_oc=Adow7qh9xm_vZdUNZCrcQIt7VhmAH61tGf-sbXmX25DIjmKYW66CnSHa5zOo-f3RujI&_nc_zt=14&_nc_ht=scontent-lax7-1.xx&_nc_gid=TueG7EYp0zrAWJzy1h9e2Q&_nc_ss=7b2a8&oh=00_AQM0ejDiOm8107JbrmCbqGnNn5gXuVYknmaNjpcICMY2QQ&oe=6AE40997"
+    "https://scontent-lax7-1.xx.fbcdn.net/v/t39.99422-6/859815363_3153705574815227_2912938242511765782_n.png?stp=dst-jpg_tt6&cstp=mx1080x1350&ctp=s640x640&_nc_cat=105&ccb=1-7&_nc_sid=127cfc&_nc_ohc=fO6YWckXNs8Q7kNvwHUryMw&_nc_oc=Adow7qh9xm_vZdUNZCrcQIt7VhmAH61tGf-sbXmX25DIjmKYW66CnSHa5zOo-f3RujI&_nc_zt=14&_nc_ht=scontent-lax7-1.xx&_nc_gid=iY9XrlWcgnjHJXzigCanFg&_nc_ss=7b2a8&oh=00_AQOO6rbcDJ0S1XHuh4Gw5FjXqqtuuv34zGYWUWc0l6yGhg&oe=6AE522D7"
    ]
   },
   {
    "url": "https://www.facebook.com/DamaskaPlus/posts/pfbid02hLV3moJYyrhSXyQFpVFFhAYiFBHLNjA4YZk84awMS9sLNLUfdKmCRXHKDyxNSG5wl",
    "title": "أضفنا ما طلبتموه: الطبّاخ الليزري والثلاجة والغسالة",
    "kind": "إنفوغراف",
-   "text": "الطبخ اليومي على الغاز الليزري قد يستهلك قرابة نصف الشريحة الأولى في الدورة.",
+   "date": "2026-10-24T12:56:00",
+   "text": "الطبخ اليومي على الغاز الليزري قد يستهلك قرابة نصف الشريحة الأولى في الدورة.\nأي جهاز فاجأكم استهلاكه؟",
    "series": "numbers",
    "images": [
-    "https://scontent-lax3-2.xx.fbcdn.net/v/t39.99422-6/864074282_40067035186228085_1052694498425286204_n.png?stp=dst-jpg_tt6&cstp=mx1080x1350&ctp=s640x640&_nc_cat=100&ccb=1-7&_nc_sid=127cfc&_nc_ohc=vRG77s4SAQcQ7kNvwHXX_Oj&_nc_oc=AdoP3KIGgAxjDtFTYAYE7OP0UNdZ-Lj6nQq3BFHwuc_wZ4n8Q5kDoRrBBlWr6D5_aQI&_nc_zt=14&_nc_ht=scontent-lax3-2.xx&_nc_gid=TueG7EYp0zrAWJzy1h9e2Q&_nc_ss=7b2a8&oh=00_AQNZJa6rVeE7yDxWJCVl8IPbxkvheUfxPJ5UBfGJtCb4mQ&oe=6AE42C72"
+    "https://scontent-lax3-2.xx.fbcdn.net/v/t39.99422-6/864074282_40067035186228085_1052694498425286204_n.png?stp=dst-jpg_tt6&cstp=mx1080x1350&ctp=s640x640&_nc_cat=100&ccb=1-7&_nc_sid=127cfc&_nc_ohc=vRG77s4SAQcQ7kNvwHXX_Oj&_nc_oc=AdoP3KIGgAxjDtFTYAYE7OP0UNdZ-Lj6nQq3BFHwuc_wZ4n8Q5kDoRrBBlWr6D5_aQI&_nc_zt=14&_nc_ht=scontent-lax3-2.xx&_nc_gid=WkbKXWPf17mUQKM2iprI4g&_nc_ss=7b2a8&oh=00_AQNsuva1uidvV95_psLHQsSEkpS2R41n5Nv2LdV57W76xg&oe=6AE50D72"
    ]
   },
   {
    "url": "https://www.facebook.com/reel/1137313618844029",
    "title": "ليست كل مهام عملك معرّضة للاستبدال بالذكاء الاصطناعي بالقدر نفسه",
+   "date": "2026-10-24T11:56:00",
+   "text": "بعضها تنجزه أدوات الذكاء الاصطناعي بسهولة، وبعضها يبقى بحاجة إليك أنت.",
    "images": [
     "https://scontent-lax3-2.xx.fbcdn.net/v/t15.5256-10/861827600_1434686614861732_7327062171947638423_n.jpg?stp=dst-jpg_tt6&cstp=mx1080x1920&ctp=s960x960&_nc_cat=107&ccb=1-7&_nc_sid=d2b52d&_nc_ohc=irDESdPoOrYQ7kNvwEyz3uf&_nc_oc=Adp_knmwH399hkN6040B0TEBBhuvMRaKtQl0xmiG_EzAvl-TTbBMTOaSvFmskT1TOB8&_nc_zt=23&_nc_ht=scontent-lax3-2.xx&_nc_gid=PvmLvodZMOYHIpUTUgP2Zw&_nc_ss=792a8&oh=00_AQNRH4KspCJ0i4nHysGR4Xr2I-yC7dhtfpAcv3s6BUQprw&oe=6AE410C9"
    ]
@@ -98,6 +102,8 @@
   {
    "url": "https://www.facebook.com/reel/1514533713872452",
    "title": "ما هي المواد التي انقطعت من البيت السوري بسبب غلائها؟",
+   "date": "2026-10-23T17:21:00",
+   "text": "\"سؤال الشارع\"\nبرنامج بياخدكم لعند الناس مباشرةً\nلحتى نسمع آراءهم بصوتهم عن أهم\nالقضايا اللي بتأثر على حياتنا اليومية.\nلمشاهدة الحلقة كاملة الروابط بالتعليق الأول.",
    "series": "street",
    "images": [
     "https://scontent-lax7-1.xx.fbcdn.net/v/t15.5256-10/864025285_1532152648674850_6561193045640735567_n.jpg?stp=dst-jpg_tt6&cstp=mx1080x1920&ctp=s960x960&_nc_cat=101&ccb=1-7&_nc_sid=d2b52d&_nc_ohc=Tj6cCVXpJtwQ7kNvwFBeGNj&_nc_oc=Adoh-qyjLcTWCtwyewsGiUPajnfbDPdsTn1XH5ZeZLY5NImHZniXptAPERXkrX0nvSQ&_nc_zt=23&_nc_ht=scontent-lax7-1.xx&_nc_gid=PvmLvodZMOYHIpUTUgP2Zw&_nc_ss=792a8&oh=00_AQOsQWA56y_ctAcFuQbUhUq2o6C4E2FFqdLKDGU7SEb_iw&oe=6AE42D5C"
@@ -107,20 +113,22 @@
    "url": "https://www.facebook.com/photo/?fbid=122173478954701687",
    "title": "هزات أرضية شعر بها السوريون في تشرين الأول",
    "kind": "ألبوم",
-   "text": "في 4 تشرين الأول 2026، سجّل المركز الوطني للزلازل 5 هزات في جنوب تركيا شعر بها سكان الشمال السوري.",
+   "date": "2026-10-23T12:44:00",
+   "text": "في 4 تشرين الأول 2026، سجّل المركز الوطني للزلازل 5 هزات في جنوب تركيا شعر بها سكان الشمال السوري. وبعدها بخمسة أيام، سُجّلت هزتان قبالة طرطوس، وصفهما المركز بأنهما غير محسوستين.\nهذه الهزات ليست صدفة. سوريا تقع قرب نقطة تلتقي فيها ثلاث صفائح أرضية، وإحداها تتحرك كل عام.\nاحفظ الألبوم، فالشريحة الأخيرة قد تحتاجها يوماً.\nهل تعرف ما هو المكان الأكثر أماناً في غرفتك؟",
    "images": [
-    "https://scontent-lax3-2.xx.fbcdn.net/v/t39.99422-6/860556697_39125162387131139_8030128476887230607_n.png?stp=dst-jpg_tt6&cstp=mx1080x1350&ctp=s590x590&_nc_cat=100&ccb=1-7&_nc_sid=127cfc&_nc_ohc=-94Fy_84S2AQ7kNvwF0AQEB&_nc_oc=AdqdEe125FpcMkmPifMU4mITQL9OswrZGL7Wb8pdpBAiEzL4RIS7m5ZSoXHizONAYnU&_nc_zt=14&_nc_ht=scontent-lax3-2.xx&_nc_gid=cTYX10RAO1C40VRV0DkWsA&_nc_ss=7b2a8&oh=00_AQPNiiluWDIHHaqDLEHus_G67_dwVxvHYOAJfU_S9fdb-A&oe=6AE42530",
-    "https://scontent-lax3-1.xx.fbcdn.net/v/t39.99422-6/857866027_2277867582783878_1177033510341326496_n.png?stp=dst-jpg_tt6&cstp=mx1080x1350&ctp=s590x590&_nc_cat=104&ccb=1-7&_nc_sid=127cfc&_nc_ohc=Nrxg6VkUoiEQ7kNvwEy8Wy6&_nc_oc=Adoy0r2jr6_9Mi_gpt2zgZI9wKEUycyFgp6YiuuGGyhHQty_5CaD2TXYLDvEZGB5qhw&_nc_zt=14&_nc_ht=scontent-lax3-1.xx&_nc_gid=cTYX10RAO1C40VRV0DkWsA&_nc_ss=7b2a8&oh=00_AQPZKCic0a19WQ2MQdRyGFNElQDAAurmSiGi07vslkNnaQ&oe=6AE42872",
-    "https://scontent-lax3-2.xx.fbcdn.net/v/t39.99422-6/861222173_2200303900870388_6938380827186455975_n.png?stp=dst-jpg_tt6&cstp=mx1080x1350&ctp=s590x590&_nc_cat=106&ccb=1-7&_nc_sid=127cfc&_nc_ohc=voxIaZYr6NkQ7kNvwFSFNsO&_nc_oc=Adp8MUGI8aHhYhxsapD0-C3C4EZRY-Xm3D1Q4dcNgMezM9S_r76MQpCGjhPWWhW0s_g&_nc_zt=14&_nc_ht=scontent-lax3-2.xx&_nc_gid=cTYX10RAO1C40VRV0DkWsA&_nc_ss=7b2a8&oh=00_AQNhj5vdS7R35FnXPKyORZliFYLTpVnU76Lk0LIdCioYXw&oe=6AE41A6C",
-    "https://scontent-lax3-2.xx.fbcdn.net/v/t39.99422-6/861300534_28348852458127017_6350755275916468951_n.png?stp=dst-jpg_tt6&cstp=mx1080x1350&ctp=s590x590&_nc_cat=100&ccb=1-7&_nc_sid=127cfc&_nc_ohc=LjG8CWxueFkQ7kNvwGAF8Zc&_nc_oc=AdoVT21P58jwIqHOGX4cmpa810LUPHb4YIE-uLNlqVSN-JD1vxFrPeUUDb2yDFJ6ln4&_nc_zt=14&_nc_ht=scontent-lax3-2.xx&_nc_gid=cTYX10RAO1C40VRV0DkWsA&_nc_ss=7b2a8&oh=00_AQMqe6kAAL_2PTjV7n31wtts-DrNQhBwC5xik7GJh01_NA&oe=6AE41264",
-    "https://scontent-lax3-2.xx.fbcdn.net/v/t39.99422-6/858477562_1636749161515399_5462937671287417581_n.png?stp=dst-jpg_tt6&cstp=mx1080x1350&ctp=s590x590&_nc_cat=103&ccb=1-7&_nc_sid=127cfc&_nc_ohc=8JRjLl_krmEQ7kNvwGX0FxA&_nc_oc=AdrqTVczIloMPdNFfK5F6--TrHPbedVLqowW8YCKAjz78QqYqhwwwOWJcELaOPvNcAQ&_nc_zt=14&_nc_ht=scontent-lax3-2.xx&_nc_gid=cTYX10RAO1C40VRV0DkWsA&_nc_ss=7b2a8&oh=00_AQMsu9l0_DV3Su-Gs2sFO2n49sgz5hRWj23mUFVo4SkdZg&oe=6AE428AC"
+    "https://scontent-lax3-2.xx.fbcdn.net/v/t39.99422-6/860556697_39125162387131139_8030128476887230607_n.png?stp=dst-jpg_tt6&cstp=mx1080x1350&ctp=s590x590&_nc_cat=100&ccb=1-7&_nc_sid=127cfc&_nc_ohc=YmOU9DySv7UQ7kNvwEXokSF&_nc_oc=AdpenIAGJJwkqCigZVOpNbKI-lvxkqgl7HWka2Tk2b2I38aLSMjsClEr6e944wmT8bc&_nc_zt=14&_nc_ht=scontent-lax3-2.xx&_nc_gid=gR5FpUGpIed64xQWos5QBw&_nc_ss=7b2a8&oh=00_AQOtfNfHvWuxBJWuGbNN4e9wgbvkhT9ZnVpP5rPBYv9w9A&oe=6AE50630",
+    "https://scontent-lax3-1.xx.fbcdn.net/v/t39.99422-6/857866027_2277867582783878_1177033510341326496_n.png?stp=dst-jpg_tt6&cstp=mx1080x1350&ctp=s590x590&_nc_cat=104&ccb=1-7&_nc_sid=127cfc&_nc_ohc=Mp5ahurprLIQ7kNvwF0x_fe&_nc_oc=AdoPOq0oy4-_hwoPMrNxcWYlcfHTIBFtvmWbcAurQY93t6RXAxScVEj26Bz5Zx4oFwA&_nc_zt=14&_nc_ht=scontent-lax3-1.xx&_nc_gid=gR5FpUGpIed64xQWos5QBw&_nc_ss=7b2a8&oh=00_AQNNkisQJW55gkzAUl47TC15QXfWezCwtHMZs1Lk_62tjg&oe=6AE50972",
+    "https://scontent-lax3-2.xx.fbcdn.net/v/t39.99422-6/861222173_2200303900870388_6938380827186455975_n.png?stp=dst-jpg_tt6&cstp=mx1080x1350&ctp=s590x590&_nc_cat=106&ccb=1-7&_nc_sid=127cfc&_nc_ohc=FsxrjRPjQMAQ7kNvwHBTuBQ&_nc_oc=AdpZtFnHTF9pdqqWmhCbiVcVvx7qk0Qj16UKeq0MYPhijj7H5uMivjnDhPlewImMg0Q&_nc_zt=14&_nc_ht=scontent-lax3-2.xx&_nc_gid=gR5FpUGpIed64xQWos5QBw&_nc_ss=7b2a8&oh=00_AQMjTQ1YmpNrnTu108OYu-_ZCs0ZA0nlUHXbOf8OfscTig&oe=6AE4FB6C",
+    "https://scontent-lax3-2.xx.fbcdn.net/v/t39.99422-6/861300534_28348852458127017_6350755275916468951_n.png?stp=dst-jpg_tt6&cstp=mx1080x1350&ctp=s590x590&_nc_cat=100&ccb=1-7&_nc_sid=127cfc&_nc_ohc=LjG8CWxueFkQ7kNvwGAF8Zc&_nc_oc=AdoVT21P58jwIqHOGX4cmpa810LUPHb4YIE-uLNlqVSN-JD1vxFrPeUUDb2yDFJ6ln4&_nc_zt=14&_nc_ht=scontent-lax3-2.xx&_nc_gid=gR5FpUGpIed64xQWos5QBw&_nc_ss=7b2a8&oh=00_AQPkORwyEiG8MPiEbRZT7r6aSrTZ5u0StxQHViQ_gQFEqQ&oe=6AE52BA4",
+    "https://scontent-lax3-2.xx.fbcdn.net/v/t39.99422-6/858477562_1636749161515399_5462937671287417581_n.png?stp=dst-jpg_tt6&cstp=mx1080x1350&ctp=s590x590&_nc_cat=103&ccb=1-7&_nc_sid=127cfc&_nc_ohc=8JRjLl_krmEQ7kNvwGX0FxA&_nc_oc=AdrqTVczIloMPdNFfK5F6--TrHPbedVLqowW8YCKAjz78QqYqhwwwOWJcELaOPvNcAQ&_nc_zt=14&_nc_ht=scontent-lax3-2.xx&_nc_gid=gR5FpUGpIed64xQWos5QBw&_nc_ss=7b2a8&oh=00_AQOZYYyrlypOfEnDlQ51_i2jE1dt9GZnNbcNWc1lTQOv4A&oe=6AE509AC"
    ],
    "extra": 2
   },
   {
    "url": "https://www.facebook.com/reel/1672146527857654",
    "title": "قرار بالسماح باستيراد البطاطا انتشر خلال الأيام الماضية",
-   "text": "ووزارة الزراعة تقول إنه مزوَّر.",
+   "date": "2026-10-22T17:57:00",
+   "text": "ووزارة الزراعة تقول إنه مزوَّر\nوهو ليس أول قرار مزور ينتشر بهذا الشكل.\nقبل أن تعيد نشر أي قرار، تأكد من صحة الخبر عبر الروابط الرسمية.",
    "images": [
     "https://scontent-lax7-1.xx.fbcdn.net/v/t15.5256-10/858255766_1817882775904035_1506692712989314184_n.jpg?stp=dst-jpg_tt6&cstp=mx1080x1920&ctp=s960x960&_nc_cat=105&ccb=1-7&_nc_sid=d2b52d&_nc_ohc=q3VkrxcuiX4Q7kNvwEb_Ohc&_nc_oc=AdrdEOjJqNcWV36LupahV0q7CT-BZbpJjgV9BvlRymH-jSAReAgDmlzmBy_1qHsLG-E&_nc_zt=23&_nc_ht=scontent-lax7-1.xx&_nc_gid=PvmLvodZMOYHIpUTUgP2Zw&_nc_ss=792a8&oh=00_AQP8yEIUuLOpvRqE7n6qraffdGnAW4g5tyYc_RJOGZh0Hg&oe=6AE404FD"
    ]
@@ -128,6 +136,7 @@
   {
    "url": "https://www.facebook.com/reel/1062322926767401",
    "title": "برأيك شو تغيّر بحقوق السجناء؟",
+   "date": "2026-10-22T17:00:00",
    "text": "شاركنا رأيك بالتعليقات واقترح علينا موضوع الحلقة القادمة.",
    "series": "changed",
    "images": [
@@ -138,86 +147,173 @@
    "url": "https://www.facebook.com/photo/?fbid=122173403930701687",
    "title": "في 4 تشرين الأول، صدرت في إدلب أول بطاقة إعاقة منذ 2011",
    "kind": "ألبوم",
-   "text": "وفي الحسكة عادت الخدمة بعد توقف نحو عامين.",
+   "date": "2026-10-22T15:49:00",
+   "text": "وفي الحسكة عادت الخدمة بعد توقف نحو عامين.\nالبطاقة هي الطريق إلى خدمات صحية مجانية وفرص عمل مخصصة.\nالأوراق المطلوبة والخطوات في الألبوم\nملاحظة:\nقد تختلف بعض التفاصيل بين المحافظات، فراجع مديرية الشؤون الاجتماعية والعمل في محافظتك قبل التقديم.",
    "images": [
-    "https://scontent-lax3-2.xx.fbcdn.net/v/t39.99422-6/857933725_1639516557664013_4037883441415909838_n.png?stp=dst-jpg_tt6&cstp=mx1080x1350&ctp=s590x590&_nc_cat=106&ccb=1-7&_nc_sid=127cfc&_nc_ohc=Z5cfXlxPIPMQ7kNvwH00X-9&_nc_oc=Adpy7hjHG8CIer6OyriydvpfYggLjU_eZAL_CuQFIN5hTkhjDYxof-HpvhQDfjSVY4M&_nc_zt=14&_nc_ht=scontent-lax3-2.xx&_nc_gid=4218pTXmTQeBSY1Zy3uWNA&_nc_ss=7b2a8&oh=00_AQOEVY_GNhxk67YbJ5tlNUTuvf7xsBrMQknC_bpxTkmrdg&oe=6AE40267",
-    "https://scontent-lax7-1.xx.fbcdn.net/v/t39.99422-6/857107050_2610392249465070_7401541829539837931_n.png?stp=dst-jpg_tt6&cstp=mx1080x1350&ctp=s590x590&_nc_cat=101&ccb=1-7&_nc_sid=127cfc&_nc_ohc=1oTNTWnToCsQ7kNvwGoE0mB&_nc_oc=AdoTDzozjMW6zGmBTWJHp4u0u1kkSt1az7FVN_3WHW2yeHJn2TdoziD46wm7PQuyyt8&_nc_zt=14&_nc_ht=scontent-lax7-1.xx&_nc_gid=4218pTXmTQeBSY1Zy3uWNA&_nc_ss=7b2a8&oh=00_AQPHtPP5B9gWJqCi0NkSyDzMSa9UrZJJCbA-Jkzrnikcjg&oe=6AE41BAD",
-    "https://scontent-lax3-2.xx.fbcdn.net/v/t39.99422-6/859977481_1498026669042608_578837991876306963_n.png?stp=dst-jpg_tt6&cstp=mx1080x1350&ctp=s590x590&_nc_cat=100&ccb=1-7&_nc_sid=127cfc&_nc_ohc=50L1_t6vQrAQ7kNvwF0kKXj&_nc_oc=Ado_8sGhvCKrYnGcLT8wOukEzjox01cwzmDACubr-dhKPNHOnW4NCJ0WFuNorAYGZ0c&_nc_zt=14&_nc_ht=scontent-lax3-2.xx&_nc_gid=4218pTXmTQeBSY1Zy3uWNA&_nc_ss=7b2a8&oh=00_AQMee0pEyHG9McndwUHXib4FwPZpV-Yynf61o36i1zRC-w&oe=6AE3FAD9",
-    "https://scontent-lax7-1.xx.fbcdn.net/v/t39.99422-6/857871707_3256623547880254_7268122058860728433_n.png?stp=dst-jpg_tt6&cstp=mx1080x1350&ctp=s590x590&_nc_cat=101&ccb=1-7&_nc_sid=127cfc&_nc_ohc=B8PKt27pxMMQ7kNvwGKnLHD&_nc_oc=Adrhzq4puSg3nWO1OKAkMW9hUz588UirstczGIAL1VQ_eRcbCA1WGEFQqzIGFpWi1FY&_nc_zt=14&_nc_ht=scontent-lax7-1.xx&_nc_gid=4218pTXmTQeBSY1Zy3uWNA&_nc_ss=7b2a8&oh=00_AQO1a0m8cUGWQVhCqkOXI0lSN1LH5Hz0pcCcXFQpEYIIcw&oe=6AE400D7",
-    "https://scontent-lax7-1.xx.fbcdn.net/v/t39.99422-6/859399383_2119895988892223_4498155456814125668_n.png?stp=dst-jpg_tt6&cstp=mx1080x1350&ctp=s590x590&_nc_cat=105&ccb=1-7&_nc_sid=127cfc&_nc_ohc=PENE0bvUYzEQ7kNvwFVa99v&_nc_oc=AdpHp4_BOXQeru1-f3x6f6h-NXynRS08TM3k9r7ZDRMzbrQsBdWg8PhheZIXSIPLvJM&_nc_zt=14&_nc_ht=scontent-lax7-1.xx&_nc_gid=4218pTXmTQeBSY1Zy3uWNA&_nc_ss=7b2a8&oh=00_AQOpOUwauMAOWfR80RfjAQFLRq_-RsVWQgqYJcXv5IHmzw&oe=6AE3FA72"
+    "https://scontent-lax3-2.xx.fbcdn.net/v/t39.99422-6/857933725_1639516557664013_4037883441415909838_n.png?stp=dst-jpg_tt6&cstp=mx1080x1350&ctp=s590x590&_nc_cat=106&ccb=1-7&_nc_sid=127cfc&_nc_ohc=XvCMAiwUIT0Q7kNvwG-6K2Q&_nc_oc=AdoJxs5fh1HUa6kdLRyk-jfJxt7QRE9WlQzCUWFxG2e9Mu20MFl3JLuXVQFWG2MLEQk&_nc_zt=14&_nc_ht=scontent-lax3-2.xx&_nc_gid=6uTAhoqPhgsUnVzz_LEcew&_nc_ss=7b2a8&oh=00_AQN6Am7aDQZ5S6G3lXOsReXZEQ6fvUaMX2fRacpd0RgaKA&oe=6AE51BA7",
+    "https://scontent-lax7-1.xx.fbcdn.net/v/t39.99422-6/857107050_2610392249465070_7401541829539837931_n.png?stp=dst-jpg_tt6&cstp=mx1080x1350&ctp=s590x590&_nc_cat=101&ccb=1-7&_nc_sid=127cfc&_nc_ohc=1oTNTWnToCsQ7kNvwGoE0mB&_nc_oc=AdoTDzozjMW6zGmBTWJHp4u0u1kkSt1az7FVN_3WHW2yeHJn2TdoziD46wm7PQuyyt8&_nc_zt=14&_nc_ht=scontent-lax7-1.xx&_nc_gid=6uTAhoqPhgsUnVzz_LEcew&_nc_ss=7b2a8&oh=00_AQNE7TLtpw-xV6krLKe_31cT8ah1AD3wcIM9PFgvsY8KMQ&oe=6AE4FCAD",
+    "https://scontent-lax3-2.xx.fbcdn.net/v/t39.99422-6/859977481_1498026669042608_578837991876306963_n.png?stp=dst-jpg_tt6&cstp=mx1080x1350&ctp=s590x590&_nc_cat=100&ccb=1-7&_nc_sid=127cfc&_nc_ohc=50L1_t6vQrAQ7kNvwF0kKXj&_nc_oc=Ado_8sGhvCKrYnGcLT8wOukEzjox01cwzmDACubr-dhKPNHOnW4NCJ0WFuNorAYGZ0c&_nc_zt=14&_nc_ht=scontent-lax3-2.xx&_nc_gid=6uTAhoqPhgsUnVzz_LEcew&_nc_ss=7b2a8&oh=00_AQOzgwK_uhmMu9XUlX9kzQfH7SNPWxrEy-0TSHEz2kbz8A&oe=6AE51419",
+    "https://scontent-lax7-1.xx.fbcdn.net/v/t39.99422-6/857871707_3256623547880254_7268122058860728433_n.png?stp=dst-jpg_tt6&cstp=mx1080x1350&ctp=s590x590&_nc_cat=101&ccb=1-7&_nc_sid=127cfc&_nc_ohc=B8PKt27pxMMQ7kNvwGKnLHD&_nc_oc=Adrhzq4puSg3nWO1OKAkMW9hUz588UirstczGIAL1VQ_eRcbCA1WGEFQqzIGFpWi1FY&_nc_zt=14&_nc_ht=scontent-lax7-1.xx&_nc_gid=6uTAhoqPhgsUnVzz_LEcew&_nc_ss=7b2a8&oh=00_AQMgjjx5j_5OcgfwzBdvbLR7jVt055UOhKNWIfetUg_Hdw&oe=6AE51A17",
+    "https://scontent-lax7-1.xx.fbcdn.net/v/t39.99422-6/859399383_2119895988892223_4498155456814125668_n.png?stp=dst-jpg_tt6&cstp=mx1080x1350&ctp=s590x590&_nc_cat=105&ccb=1-7&_nc_sid=127cfc&_nc_ohc=PENE0bvUYzEQ7kNvwFVa99v&_nc_oc=AdpHp4_BOXQeru1-f3x6f6h-NXynRS08TM3k9r7ZDRMzbrQsBdWg8PhheZIXSIPLvJM&_nc_zt=14&_nc_ht=scontent-lax7-1.xx&_nc_gid=6uTAhoqPhgsUnVzz_LEcew&_nc_ss=7b2a8&oh=00_AQPX8yNG-KYZkmCC-_MT1LPO8yYcCJTNTe0qf50nG5dFqA&oe=6AE513B2"
    ]
   },
   {
-   "url": "https://www.facebook.com/DamaskaPlus/posts/pfbid02zK3cFdZQAT4rfwWwWvmbPgnyZZ6cxN7enwAet7V2s96u4zjyrkGGKhAWTzrZV83l",
+   "url": "https://www.facebook.com/DamaskaPlus/posts/pfbid0355yFz3tNRA4swtDP2FeY1dRzBtXAwGZs9QmqykY49dkQLK9shNSC6Y6UhDkcQ4F6l",
+   "title": "حملة \"بصر 5\" لعمليات إزالة الساد مجاناً في دمشق",
+   "kind": "منشور",
+   "date": "2026-10-22T12:59:00",
+   "text": "هل تعاني أنت أو أحد من عائلتك من الساد (المياه البيضاء)؟\nبدأت وزارة الصحة استقبال طلبات التسجيل في حملة \"بصر 5\" لعمليات إزالة الساد في دمشق، بالتعاون مع مؤسسة البصر العالمية وبدعم من مركز الملك سلمان للإغاثة.\nموعد الحملة: من 14 إلى 20 تشرين الثاني 2026\nالتسجيل: عبر رمز QR على البطاقة، أو الرابط:\ntawasal.moh.gov.sy/cataract-surgery\nشارك المنشور مع من قد يحتاجه، خاصة كبار السن الذين لا يستخدمون الإنترنت كثيراً.",
+   "images": [
+    "https://scontent-lax3-2.xx.fbcdn.net/v/t39.99422-6/855928009_1775850067024073_5005787141765866079_n.png?stp=dst-jpg_tt6&cstp=mx1080x1350&ctp=s640x640&_nc_cat=106&ccb=1-7&_nc_sid=127cfc&_nc_ohc=6L60C6b3LXQQ7kNvwGIiqaJ&_nc_oc=AdrQrNuvZYtq95Hi4y3aZsnM9bB4yFcAIk-D-RhtYNHjH5eDBifI-MbUCHILI0sBLPo&_nc_zt=14&_nc_ht=scontent-lax3-2.xx&_nc_gid=6uTAhoqPhgsUnVzz_LEcew&_nc_ss=7b2a8&oh=00_AQNKD4AsuzgFLT8mtvcRDM683YBzLToF7QqqHTzTRwMgXA&oe=6AE4F5DC"
+   ]
+  },
+  {
+   "url": "https://www.facebook.com/DamaskaPlus/posts/pfbid0vjqr3cQWYt6ZeLo3YDP4BN8ywcgt3ow2rGp3DEvJoQ4wmfSvUNfsmbmpGoKPHEBtl",
+   "title": "وزير العدل: المساس باسم الساروت جريمة أخلاقية",
+   "kind": "منشور",
+   "date": "2026-10-22T10:50:00",
+   "text": "جاء تصريح وزير العدل مظهر الويس بعد هتافات اعتُبرت مسيئة للساروت خلال مباراة كرة السلة بين ناديي الوحدة والكرامة في صالة الفيحاء بدمشق، يوم الثلاثاء.\nماذا بعد؟\nوزارة الرياضة والشباب شكّلت لجنة تحقيق لمراجعة التسجيلات وتحديد المسؤوليات.\nرئيس نادي الوحدة زار عائلة الساروت في حمص وقدّم اعتذاراً.\nحتى صباح الخميس، لم تُعلن نتائج التحقيق ولا عقوبات بحق أشخاص محددين.",
+   "images": [
+    "https://scontent-lax3-2.xx.fbcdn.net/v/t39.99422-6/859978041_3009035592773400_7281032719837294193_n.png?stp=dst-jpg_tt6&cstp=mx1080x1350&ctp=s640x640&_nc_cat=107&ccb=1-7&_nc_sid=127cfc&_nc_ohc=J6quXJKu4TYQ7kNvwHNgj6l&_nc_oc=AdpSlAKGlQTI-XF5-fnB9O5F1YzuqNPN-1PdTv10uPp6qNiH0yXCmGCrc8iyFbp5I9Q&_nc_zt=14&_nc_ht=scontent-lax3-2.xx&_nc_gid=6uTAhoqPhgsUnVzz_LEcew&_nc_ss=7b2a8&oh=00_AQOOgwO5vUbjLsx0Lna6YxmBW9xi3DxwmKJ6Ka1CPodzBQ&oe=6AE50062"
+   ]
+  },
+  {
+   "url": "https://www.facebook.com/DamaskaPlus/posts/pfbid026qkknvZPFaDSj6fz4AyTswdHcvn2xLLhoU3dHbRyTPL5LiBt2nWf18FmovQCMTbxl",
    "title": "فاتورة الكهرباء تُحسب كل شهرين",
    "kind": "إنفوغراف",
-   "text": "أول 300 كيلوواط بـ6 ليرات جديدة للكيلوواط، وما فوقها بـ14.",
+   "date": "2026-10-22T07:17:00",
+   "text": "أول 300 كيلوواط بـ6 ليرات جديدة للكيلوواط، وما فوقها بـ14.\nمن يستهلك 500 كيلوواط في الدورة يدفع 4,600 ليرة: الـ200 الإضافية تكلّف أكثر من أول 300.\nأي جهاز يستهلك أكثر في بيتك؟",
    "series": "numbers",
    "images": [
-    "https://scontent-lax7-1.xx.fbcdn.net/v/t39.99422-6/857324831_1811427746668609_5640407748469260392_n.png?stp=dst-jpg_tt6&cstp=mx1440x1800&ctp=s640x640&_nc_cat=105&ccb=1-7&_nc_sid=127cfc&_nc_ohc=_Xo3rWPFCUkQ7kNvwFtPrtJ&_nc_oc=Adr3U3Y5PUP4Fi0S2LHN2vm3FjskKT722uv8iPpe-ySpCV0tkYn3XZQIUrF1Snz7tAc&_nc_zt=14&_nc_ht=scontent-lax7-1.xx&_nc_gid=NLFVNf5ilAmQduH6xxy_uQ&_nc_ss=7b2a8&oh=00_AQOlR7jrnWdDQJcQwMlHU8d3hdxxrzLMlLiqdjvY31NKeg&oe=6AE410CB"
+    "https://scontent-lax7-1.xx.fbcdn.net/v/t39.99422-6/857324831_1811427746668609_5640407748469260392_n.png?stp=dst-jpg_tt6&cstp=mx1440x1800&ctp=s640x640&_nc_cat=105&ccb=1-7&_nc_sid=127cfc&_nc_ohc=_Xo3rWPFCUkQ7kNvwFtPrtJ&_nc_oc=Adr3U3Y5PUP4Fi0S2LHN2vm3FjskKT722uv8iPpe-ySpCV0tkYn3XZQIUrF1Snz7tAc&_nc_zt=14&_nc_ht=scontent-lax7-1.xx&_nc_gid=Kf6Wv22V4PpvBH5GbuqdHA&_nc_ss=7b2a8&oh=00_AQOoNtaAuAoK3LuZJR67QgIODDIARLNOruqsWBAZu14EXQ&oe=6AE52A0B"
    ]
   },
   {
    "url": "https://www.facebook.com/photo/?fbid=122173330994701687",
    "title": "سقف أجر الساعة المعتمدة في الجامعات الخاصة",
    "kind": "إنفوغراف",
-   "text": "حدد مجلس التعليم العالي يوم الأحد 18 تشرين الأول سقفاً لأجر الساعة المعتمدة في الجامعات الخاصة حسب الاختصاص:",
+   "date": "2026-10-21T15:11:00",
+   "text": "حدد مجلس التعليم العالي يوم الأحد 18 تشرين الأول سقفاً لأجر الساعة المعتمدة في الجامعات الخاصة حسب الاختصاص:\nماذا يعني القرار لك؟\nالرقم حدّ أقصى، ويجوز للجامعة أن تطلب أقل منه.\nيشمل الطلاب السوريين ومن في حكمهم، ولا يشمل المقبولين وفق نظام الطلاب العرب والأجانب.\nالطلاب المستنفذين الذين أُعيد قبولهم يدفعون رسوم العام الدراسي الماضي دون أي زيادة.\nبحسب وزارة التعليم العالي، على الجامعات الخاصة نشر رسومها المعتمدة على معرّفاتها الرسمية وإرسالها إلى الوزارة للتدقيق، وستُلزَم الجامعة المخالفة بالعودة إلى السقف المحدد.\nإن كنت تدرس في جامعة خاصة، قارن الرسم المطلوب منك بسقف اختصاصك.",
    "series": "numbers",
    "images": [
-    "https://scontent-lax3-2.xx.fbcdn.net/v/t39.99422-6/858357248_1124146843644934_4856342393003285593_n.png?stp=dst-jpg_tt6&cstp=mx1080x1350&ctp=s640x640&_nc_cat=111&ccb=1-7&_nc_sid=127cfc&_nc_ohc=a1T9qHuY87cQ7kNvwEL9Nnp&_nc_oc=Adrsw91wjfVjncmap3slAREM730bTp3_6a0qGkU0Cn1o_CRjWIYuAXlm44xRy6cnQQo&_nc_zt=14&_nc_ht=scontent-lax3-2.xx&_nc_gid=vuNcTb9M6lZDG6fWL-GrOg&_nc_ss=7b2a8&oh=00_AQN9UXUKmEHYoNdUyJh8MJSa6ea0bpWuuQiu9yqLeulC-g&oe=6AE4190C"
+    "https://scontent-lax3-2.xx.fbcdn.net/v/t39.99422-6/858357248_1124146843644934_4856342393003285593_n.png?stp=dst-jpg_tt6&cstp=mx1080x1350&ctp=s640x640&_nc_cat=111&ccb=1-7&_nc_sid=127cfc&_nc_ohc=a1T9qHuY87cQ7kNvwEL9Nnp&_nc_oc=Adrsw91wjfVjncmap3slAREM730bTp3_6a0qGkU0Cn1o_CRjWIYuAXlm44xRy6cnQQo&_nc_zt=14&_nc_ht=scontent-lax3-2.xx&_nc_gid=K-krB1af2Ql24VKPNshUqA&_nc_ss=7b2a8&oh=00_AQNvgzKv-Qt1yGmZD9McQEfcLjrUuqL_Px02ymY8O4_y6g&oe=6AE4FA0C"
    ]
   },
   {
    "url": "https://www.facebook.com/photo/?fbid=122173327844701687",
    "title": "كثيرات لا يُبلغن عن الابتزاز خوفاً من الفضيحة",
    "kind": "ألبوم",
-   "text": "والمبتز يعرف ذلك، ويبني تهديده عليه.",
+   "date": "2026-10-21T14:35:00",
+   "text": "والمبتز يعرف ذلك، ويبني تهديده عليه.\nردّ فعل العائلة قد يكون الفرق بين بنت تطلب المساعدة، وبنت تواجه المبتز وحدها.\nالخطوات في الألبوم",
    "images": [
-    "https://scontent-lax3-1.xx.fbcdn.net/v/t39.99422-6/856854426_1449311003802505_1594446845379902036_n.png?stp=dst-jpg_tt6&cstp=mx1080x1350&ctp=s590x590&_nc_cat=109&ccb=1-7&_nc_sid=127cfc&_nc_ohc=52cRRwFvr9gQ7kNvwH6QWbL&_nc_oc=Adq9w0H9DznA9tfIqlJk9VgP1Fbm3-dg_RwZpsuTJF3DeoddPSxIVZYqmaiGk6RcL0o&_nc_zt=14&_nc_ht=scontent-lax3-1.xx&_nc_gid=psAbA_6DAuWu0H82NmvGfA&_nc_ss=7b2a8&oh=00_AQPMfQvpJxRuLcKC5K7jeUlAP3cNiSqa8q3s6SN1_VuqKQ&oe=6AE40E7B",
-    "https://scontent-lax3-2.xx.fbcdn.net/v/t39.99422-6/857207681_1431719261673743_3443075807438998932_n.png?stp=dst-jpg_tt6&cstp=mx1080x1350&ctp=s590x590&_nc_cat=111&ccb=1-7&_nc_sid=127cfc&_nc_ohc=Fy3OpZVDnSkQ7kNvwHbDhFu&_nc_oc=Adp9yKOY8AQUab7KoD5g28lcywPn5LfsSUoUWrdLVibI5nCWX1J_94xzk-ZbyVKC_nM&_nc_zt=14&_nc_ht=scontent-lax3-2.xx&_nc_gid=psAbA_6DAuWu0H82NmvGfA&_nc_ss=7b2a8&oh=00_AQONTruSeV-_nOkFEhaQurMTMX7zn2ydmS0hY4wrjq3Tiw&oe=6AE414BE",
-    "https://scontent-lax3-1.xx.fbcdn.net/v/t39.99422-6/858704836_1104417745622743_704818769195669366_n.png?stp=dst-jpg_tt6&cstp=mx1080x1350&ctp=s590x590&_nc_cat=109&ccb=1-7&_nc_sid=127cfc&_nc_ohc=E-tgNEUT2BoQ7kNvwGx9eWB&_nc_oc=AdryX5c05gbWDA3fHwvQASVg95QpTY4BJYiiUvKDcb6G2BQXIJVp4HTf2dpRZTlMPIw&_nc_zt=14&_nc_ht=scontent-lax3-1.xx&_nc_gid=psAbA_6DAuWu0H82NmvGfA&_nc_ss=7b2a8&oh=00_AQP5C-R1AFA1RDAAn8VnGwKGuq_0ZegUvMKwxR9pabEYxg&oe=6AE42ED3",
-    "https://scontent-lax7-1.xx.fbcdn.net/v/t39.99422-6/858653664_938729395708209_4736788246706832667_n.png?stp=dst-jpg_tt6&cstp=mx1080x1350&ctp=s590x590&_nc_cat=105&ccb=1-7&_nc_sid=127cfc&_nc_ohc=4M7iPfqw-pAQ7kNvwEE5Alq&_nc_oc=AdpnSgXqkrEC289P74qz7JFbSU6rVXOodfeAovLI-kEP0FmbpIhfqffRH7-DUKvz2Cg&_nc_zt=14&_nc_ht=scontent-lax7-1.xx&_nc_gid=psAbA_6DAuWu0H82NmvGfA&_nc_ss=7b2a8&oh=00_AQMJGknrB6BOL4zeI4bgz5WHqUD-pY2dR1rFe59fI9OmbQ&oe=6AE4079E",
-    "https://scontent-lax3-1.xx.fbcdn.net/v/t39.99422-6/858323060_1781083299785593_4385789177951858336_n.png?stp=dst-jpg_tt6&cstp=mx1080x1350&ctp=s590x590&_nc_cat=102&ccb=1-7&_nc_sid=127cfc&_nc_ohc=ierU2QIaIokQ7kNvwEwv2J0&_nc_oc=AdoQRBA7On7HX-eEuf9rKr5ksxn7LFCP9FcYN6Oey5gCNegxGkp-iySZp3s3QFsKdxI&_nc_zt=14&_nc_ht=scontent-lax3-1.xx&_nc_gid=psAbA_6DAuWu0H82NmvGfA&_nc_ss=7b2a8&oh=00_AQNApUr10rp8aZwlL1yhtHQ9FgrztqpeTfWBD2Zto4OJOA&oe=6AE42BA3"
+    "https://scontent-lax3-1.xx.fbcdn.net/v/t39.99422-6/856854426_1449311003802505_1594446845379902036_n.png?stp=dst-jpg_tt6&cstp=mx1080x1350&ctp=s590x590&_nc_cat=109&ccb=1-7&_nc_sid=127cfc&_nc_ohc=52cRRwFvr9gQ7kNvwH6QWbL&_nc_oc=Adq9w0H9DznA9tfIqlJk9VgP1Fbm3-dg_RwZpsuTJF3DeoddPSxIVZYqmaiGk6RcL0o&_nc_zt=14&_nc_ht=scontent-lax3-1.xx&_nc_gid=K-krB1af2Ql24VKPNshUqA&_nc_ss=7b2a8&oh=00_AQOZGC7VXw1wf9a4-_bboI8L5Wee6fN0lpqkOzpxzOLuag&oe=6AE527BB",
+    "https://scontent-lax3-2.xx.fbcdn.net/v/t39.99422-6/857207681_1431719261673743_3443075807438998932_n.png?stp=dst-jpg_tt6&cstp=mx1080x1350&ctp=s590x590&_nc_cat=111&ccb=1-7&_nc_sid=127cfc&_nc_ohc=Fy3OpZVDnSkQ7kNvwHbDhFu&_nc_oc=Adp9yKOY8AQUab7KoD5g28lcywPn5LfsSUoUWrdLVibI5nCWX1J_94xzk-ZbyVKC_nM&_nc_zt=14&_nc_ht=scontent-lax3-2.xx&_nc_gid=K-krB1af2Ql24VKPNshUqA&_nc_ss=7b2a8&oh=00_AQMqpkprNV-zxJBmnZ2nkKLyZoHIzl99ylleSdttRUn6iA&oe=6AE4F5BE",
+    "https://scontent-lax3-1.xx.fbcdn.net/v/t39.99422-6/858704836_1104417745622743_704818769195669366_n.png?stp=dst-jpg_tt6&cstp=mx1080x1350&ctp=s590x590&_nc_cat=109&ccb=1-7&_nc_sid=127cfc&_nc_ohc=E-tgNEUT2BoQ7kNvwGx9eWB&_nc_oc=AdryX5c05gbWDA3fHwvQASVg95QpTY4BJYiiUvKDcb6G2BQXIJVp4HTf2dpRZTlMPIw&_nc_zt=14&_nc_ht=scontent-lax3-1.xx&_nc_gid=K-krB1af2Ql24VKPNshUqA&_nc_ss=7b2a8&oh=00_AQPGNsdO8wSB8b5sEfzHkJtuublGRU9xK-emEJ5V8P4T_A&oe=6AE50FD3",
+    "https://scontent-lax7-1.xx.fbcdn.net/v/t39.99422-6/858653664_938729395708209_4736788246706832667_n.png?stp=dst-jpg_tt6&cstp=mx1080x1350&ctp=s590x590&_nc_cat=105&ccb=1-7&_nc_sid=127cfc&_nc_ohc=4M7iPfqw-pAQ7kNvwEE5Alq&_nc_oc=AdpnSgXqkrEC289P74qz7JFbSU6rVXOodfeAovLI-kEP0FmbpIhfqffRH7-DUKvz2Cg&_nc_zt=14&_nc_ht=scontent-lax7-1.xx&_nc_gid=K-krB1af2Ql24VKPNshUqA&_nc_ss=7b2a8&oh=00_AQPQ_Ps2adtXjHGbpYeMHRMEe4ga-f9m0oyG97L9Mgh2Vw&oe=6AE520DE",
+    "https://scontent-lax3-1.xx.fbcdn.net/v/t39.99422-6/858323060_1781083299785593_4385789177951858336_n.png?stp=dst-jpg_tt6&cstp=mx1080x1350&ctp=s590x590&_nc_cat=102&ccb=1-7&_nc_sid=127cfc&_nc_ohc=ierU2QIaIokQ7kNvwEwv2J0&_nc_oc=AdoQRBA7On7HX-eEuf9rKr5ksxn7LFCP9FcYN6Oey5gCNegxGkp-iySZp3s3QFsKdxI&_nc_zt=14&_nc_ht=scontent-lax3-1.xx&_nc_gid=K-krB1af2Ql24VKPNshUqA&_nc_ss=7b2a8&oh=00_AQP5QrzlZCUiBevv-xuGYMsvXefOLDCaG_qGzX-8epn5xg&oe=6AE50CA3"
    ],
    "extra": 3
+  },
+  {
+   "url": "https://www.facebook.com/photo/?fbid=122173321226701687",
+   "title": "\"إكرامية\" الموظف رشوة: كيف تبلّغ؟",
+   "kind": "منشور",
+   "date": "2026-10-21T12:42:00",
+   "text": "تدفع مبلغاً \"إكرامية\" لموظف كي تُنجَز معاملتك؟\nبحسب الهيئة المركزية للرقابة والتفتيش، هذا المبلغ رشوة، ويُحاسَب عليه من يأخذه ومن يدفعه. جاء ذلك في حملة أطلقتها الهيئة باسم \"سمّها باسمها\".\nكيف تبلّغ؟\nعبر منصة الشكاوى في الموقع الرسمي للهيئة:\ncasi.gov.sy/complaints/create\nقبل أن تقدّم الشكوى:\nيمكنك تقديمها باسمك الصريح، أو دون كشف هويتك.\nالشكوى المجهولة لا تُقبل دون إرفاق أدلة ومستندات، ولا يمكنك متابعتها أو تلقي رد عليها.\nالشكوى باسمك تتيح لك تتبّع حالتها.\nلا تُقبل الشكوى إن كانت هناك قضية مرفوعة أمام المحكمة في الموضوع نفسه.\nالهيئة تحذّر من أن الشكاوى الكاذبة تُلغى، وقد تعرّض صاحبها للمساءلة.",
+   "images": [
+    "https://scontent-lax3-1.xx.fbcdn.net/v/t39.99422-6/859475422_4537266099894416_4014418799590143644_n.png?stp=dst-jpg_tt6&cstp=mx1080x1350&ctp=s640x640&_nc_cat=108&ccb=1-7&_nc_sid=127cfc&_nc_ohc=aFWbX1RH6EAQ7kNvwG-YJDf&_nc_oc=AdrmNVTyVmYHANw_QFPzFZ3apW8K7CZD-fcxeT7Yng09DJzMoV_HGoovFV3EPYMrenU&_nc_zt=14&_nc_ht=scontent-lax3-1.xx&_nc_gid=Y4VNPYP5scnZsAsczvYbOA&_nc_ss=7b2a8&oh=00_AQPY-REwSCqc4SzIQb8wUvCRnGlX2o_1abpNYzXR-zV0Ig&oe=6AE525B8"
+   ]
   },
   {
    "url": "https://www.facebook.com/photo/?fbid=122173308920701687",
    "title": "رحلات السورية للطيران بين دمشق وحلب",
    "kind": "إنفوغراف",
-   "text": "أعلنت السورية للطيران تسيير رحلات بين دمشق وحلب في الاتجاهين، ابتداءً من 18 تشرين الثاني 2026.",
-   "series": "numbers",
+   "date": "2026-10-21T11:38:00",
+   "text": "أعلنت السورية للطيران تسيير رحلات بين دمشق وحلب في الاتجاهين، ابتداءً من 18 تشرين الثاني 2026.\nيبدأ سعر التذكرة من 5,900 ليرة جديدة للاتجاه الواحد، بحسب الشركة.\nالحجز عبر موقع الشركة syrian-airlines.net أو مكاتبها.",
    "images": [
-    "https://scontent-lax3-2.xx.fbcdn.net/v/t39.99422-6/855164088_958663393523520_4599052257580197988_n.png?stp=dst-jpg_tt6&cstp=mx1080x1350&ctp=s640x640&_nc_cat=100&ccb=1-7&_nc_sid=127cfc&_nc_ohc=8zJPEpBPW7IQ7kNvwGXnhEM&_nc_oc=AdobOw2PPciES4gyq6D66pubcQDL_qjcab7uicwzRSp9B1_iLFiMDbv_I1bBDdVra6U&_nc_zt=14&_nc_ht=scontent-lax3-2.xx&_nc_gid=psAbA_6DAuWu0H82NmvGfA&_nc_ss=7b2a8&oh=00_AQNRtYWYFMTmAFxMcSEFnjzvhhZ4vPJ2W8vJMSdfznOQgA&oe=6AE42130"
+    "https://scontent-lax3-2.xx.fbcdn.net/v/t39.99422-6/855164088_958663393523520_4599052257580197988_n.png?stp=dst-jpg_tt6&cstp=mx1080x1350&ctp=s640x640&_nc_cat=100&ccb=1-7&_nc_sid=127cfc&_nc_ohc=8zJPEpBPW7IQ7kNvwGXnhEM&_nc_oc=AdobOw2PPciES4gyq6D66pubcQDL_qjcab7uicwzRSp9B1_iLFiMDbv_I1bBDdVra6U&_nc_zt=14&_nc_ht=scontent-lax3-2.xx&_nc_gid=Y4VNPYP5scnZsAsczvYbOA&_nc_ss=7b2a8&oh=00_AQObVQSlbBLU-6KATpfA80op7Lj7DUj96Z93m93PaGfw5A&oe=6AE50230"
+   ]
+  },
+  {
+   "url": "https://www.facebook.com/photo/?fbid=122173250396701687",
+   "title": "كاميرات محمولة لعناصر الرقابة التموينية في حماة",
+   "kind": "منشور",
+   "date": "2026-10-20T18:16:00",
+   "text": "بدأت مديرية التجارة الداخلية وحماية المستهلك في حماة، يوم الثلاثاء 20 تشرين الأول، تسليم كاميرات محمولة لعناصر الرقابة التموينية، وتدريبهم على استخدامها خلال جولاتهم على الأسواق.\nماذا يعني ذلك؟\nلصاحب المحل: ما يجري أثناء تنظيم المخالفة صار موثّقاً، فلا يبقى الخلاف رواية مقابل رواية.\nللمراقب: تسجيل يحميه من الادعاءات.\nالخطوة جزء من توجه أوسع، فقد وقّعت وزارة الاقتصاد والصناعة في 1 تشرين الأول مذكرة لتقديم 325 كاميرا محمولة لدوريات حماية المستهلك في سوريا، تسجّل الجولة وتحدد موقعها، وفيها زر طوارئ.\nما رأيك بهذه الخطوة وما هي أبرز القطاعات التي تحتاج إلى كاميرات محمولة برأيك؟",
+   "images": [
+    "https://scontent-lax3-1.xx.fbcdn.net/v/t39.99422-6/855109423_1128863966553859_3504684821492844510_n.png?stp=dst-jpg_tt6&cstp=mx1080x1350&ctp=s640x640&_nc_cat=108&ccb=1-7&_nc_sid=127cfc&_nc_ohc=zYohiVAsJIkQ7kNvwFYKa25&_nc_oc=Adqb7ZM1PnPXvYinvqOzO1eLhEvymuKin2ch4-FhM99rHBxWrbXaukRLw2Zbl2mjrVM&_nc_zt=14&_nc_ht=scontent-lax3-1.xx&_nc_gid=Y4VNPYP5scnZsAsczvYbOA&_nc_ss=7b2a8&oh=00_AQNmhUx74Kuyba8TCVzU6BAKcg3KLA_QENVpxDqsWvyCZw&oe=6AE52681"
    ]
   },
   {
    "url": "https://www.facebook.com/reel/1005989445847466",
    "title": "عاد إصدار بطاقة الإعاقة في إدلب بعد توقف منذ 2011",
-   "text": "بدأ في مدينة إدلب في 4 تشرين الأول، ووصل إلى معرة النعمان في 19 منه.",
+   "date": "2026-10-20T17:21:00",
+   "text": "بعد توقف منذ 2011، عاد إصدار بطاقة الإعاقة في إدلب: بدأ في مدينة إدلب في 4 تشرين الأول، ووصل إلى معرة النعمان في 19 منه.\nالتسجيل يتم على مراحل حسب البلدات لتفادي الازدحام، فتابعوا اللجان المجتمعية في منطقتكم.",
    "images": [
     "https://scontent-lax3-1.xx.fbcdn.net/v/t15.5256-10/858265875_1092956470009355_5366567380044360913_n.jpg?stp=dst-jpg_tt6&cstp=mx1080x1920&ctp=s960x960&_nc_cat=104&ccb=1-7&_nc_sid=d2b52d&_nc_ohc=13kNGTh-jQQQ7kNvwEqAuTZ&_nc_oc=AdpIbIlxbTyhuCT6Ih_ni-WfyhnEw48IIDOCQuI9mrz2go0kyUQZmnyndYCYO-ffGMA&_nc_zt=23&_nc_ht=scontent-lax3-1.xx&_nc_gid=iacGafFoYuVlA7KFjfjkWA&_nc_ss=7b2a8&oh=00_AQPlDrJUu_i4Nt0EaJWp93Xz-gF732MhewdkHJTIX0aAgA&oe=6AE3F97F"
+   ]
+  },
+  {
+   "url": "https://www.facebook.com/DamaskaPlus/posts/pfbid02hqyH8X5heG9Qg8geDqkPxD5vZoEKwryCp2Phrp8YU12m83fqxTbFDcmnxhgLcxu2l",
+   "title": "باحثان سوريان ضمن قائمة أعلى 2% من العلماء في العالم",
+   "kind": "منشور",
+   "date": "2026-10-20T16:52:00",
+   "text": "باحثان من هيئة الطاقة الذرية السورية في قائمة ستانفورد–إلسفير لأعلى 2% من العلماء الأكثر استشهاداً بأبحاثهم في العالم، في إصدار 2026.\nالباحث في العلوم البيئية محمد سعيد المصري: في قائمة الأثر على امتداد المسيرة العلمية، للعام الثاني على التوالي.\nالباحث في علوم البوليميرات عبد الغفار اللافي: في قائمة الأثر السنوي لعام 2026.\nماذا تقيس القائمة؟\nليست جائزة، بل تصنيف سنوي يعتمد على عدد المرات التي استشهد فيها باحثون آخرون بأبحاث العالِم، وفق بيانات قاعدة Scopus، ويوزّع العلماء على 22 مجالاً علمياً.",
+   "images": [
+    "https://scontent-lax7-1.xx.fbcdn.net/v/t39.99422-6/857248007_2223759731503394_1047535468631874531_n.png?stp=dst-jpg_tt6&cstp=mx1080x1350&ctp=s640x640&_nc_cat=105&ccb=1-7&_nc_sid=127cfc&_nc_ohc=tescvGDFfw8Q7kNvwEYufCU&_nc_oc=AdrLNf7IBwz9RkYLYJmy1srfnh3xo9gsUy8GIeTR50pePKwN7MvhL2qKUhJVn3IvSj8&_nc_zt=14&_nc_ht=scontent-lax7-1.xx&_nc_gid=GcNYUANt1jKsW6FvvXbhYg&_nc_ss=7b2a8&oh=00_AQMDH7fDQ0yhSSWDdVOpn-xhSryKtgey0MftHDf6cJOq3A&oe=6AE4FA4B"
+   ]
+  },
+  {
+   "url": "https://www.facebook.com/photo/?fbid=122173242776701687",
+   "title": "حملة مجانية للقثطرة والدعامات القلبية في الرقة",
+   "kind": "منشور",
+   "date": "2026-10-20T16:10:00",
+   "text": "حملة طبية مجانية في الرقة لمرضى القلب وتصلّب الشرايين، تشمل عمليات القثطرة وتوسيع الشرايين وزرع الدعامات.\nالمدة: 4 أيام.\nالعدد المتوقع: بين 20 و30 عملية، بمعدل نحو 6 عمليات يومياً\nشارك المنشور مع من يحتاجه في الرقة وريفها",
+   "images": [
+    "https://scontent-lax3-2.xx.fbcdn.net/v/t39.99422-6/857343591_1441043844785830_5690553124500190885_n.png?stp=dst-jpg_tt6&cstp=mx1080x1350&ctp=s640x640&_nc_cat=100&ccb=1-7&_nc_sid=127cfc&_nc_ohc=eaHYsE9ypYQQ7kNvwE09VMu&_nc_oc=AdpZloXmAPKhWs9cr_PgCfMAAnbU8U5WPlnv3susDuz_3kml1nrTnHs-JTwdgS8zFqo&_nc_zt=14&_nc_ht=scontent-lax3-2.xx&_nc_gid=fmDxO-05iE2ElLBoskqo1Q&_nc_ss=7b2a8&oh=00_AQPniNDJycW_Ctba35Wc20pj-h6M3U1SxemA2t6gnOMh3g&oe=6AE4F9A5"
    ]
   },
   {
    "url": "https://www.facebook.com/photo/?fbid=122173177406701687",
    "title": "الفستق الحلبي في الزراعة السورية",
    "kind": "ألبوم",
+   "date": "2026-10-19T19:00:00",
    "text": "من حماة وحلب إلى إدلب، يحتل الفستق الحلبي مكانة مهمة في الزراعة السورية.\nفما الذي يجعل هذا المحصول مهماً للاقتصاد المحلي والمزارعين؟",
    "images": [
-    "https://scontent-lax7-1.xx.fbcdn.net/v/t39.99422-6/855590374_1101249839323752_5471712571282523021_n.png?stp=dst-jpg_tt6&cstp=mx1080x1350&ctp=s590x590&_nc_cat=105&ccb=1-7&_nc_sid=127cfc&_nc_ohc=yS7AqB5JLsAQ7kNvwGhmZWT&_nc_oc=Adp4ywYdUUSBDWvFk3ZtAIOZF5TN2-f9x7WQpaCZA1nSGItqae71AAhx5diDESFf_GM&_nc_zt=14&_nc_ht=scontent-lax7-1.xx&_nc_gid=f7xxNM6pkI9f_2Q_2vo32A&_nc_ss=7b2a8&oh=00_AQM3Z0CwHXBJozotvrW-Z-3R4_Ar9J_lrt10XpgpSSLbmg&oe=6AE419D2",
-    "https://scontent-lax7-1.xx.fbcdn.net/v/t39.99422-6/855436963_1112497618039910_3119920271399714908_n.png?stp=dst-jpg_tt6&cstp=mx1080x1350&ctp=s590x590&_nc_cat=105&ccb=1-7&_nc_sid=127cfc&_nc_ohc=pnzZgze5TaQQ7kNvwENJIN_&_nc_oc=Adr9A1eaMWbZACRNifeSZGTJ0di3hEsA5J09oPKVTDTA7I1Y23N4a1R4VJBW4ECIhUI&_nc_zt=14&_nc_ht=scontent-lax7-1.xx&_nc_gid=f7xxNM6pkI9f_2Q_2vo32A&_nc_ss=7b2a8&oh=00_AQNk04HXspSUEXdcHUg0OMRKaHLrkDkdnixlNLCKb9tmYw&oe=6AE401DC",
-    "https://scontent-lax3-2.xx.fbcdn.net/v/t39.99422-6/854236703_1112385425024878_3002613474445003821_n.png?stp=dst-jpg_tt6&cstp=mx1080x1350&ctp=s590x590&_nc_cat=103&ccb=1-7&_nc_sid=127cfc&_nc_ohc=snA-nlCefyoQ7kNvwHkHfBc&_nc_oc=Adof1DzknWzHohZUEDMinjG3OBS19keyG8g7INBaJTE8aTgPcl-G4pUSP2F8vRa7ykQ&_nc_zt=14&_nc_ht=scontent-lax3-2.xx&_nc_gid=f7xxNM6pkI9f_2Q_2vo32A&_nc_ss=7b2a8&oh=00_AQOkp0_X3GhBUT6A1oq42Ktup-OEbM3mSH99-rzrX0Oc3g&oe=6AE42DF9",
-    "https://scontent-lax3-1.xx.fbcdn.net/v/t39.99422-6/855109420_4511161192487309_3134542270191838968_n.png?stp=dst-jpg_tt6&cstp=mx1080x1350&ctp=s590x590&_nc_cat=109&ccb=1-7&_nc_sid=127cfc&_nc_ohc=fZNtnMOTOycQ7kNvwEcpZMO&_nc_oc=AdpsbOc_rWAWONFiHfPKm4DCfx25QYo4ZTg0d7gG_L8Uzhc1kEVxg2If5p0TizuBXgY&_nc_zt=14&_nc_ht=scontent-lax3-1.xx&_nc_gid=f7xxNM6pkI9f_2Q_2vo32A&_nc_ss=7b2a8&oh=00_AQOPuUO_ip6j6eqHIwL4dvdYAa7bO_at0WNDE_rtWYA8sA&oe=6AE42A84",
-    "https://scontent-lax3-1.xx.fbcdn.net/v/t39.99422-6/853629121_1761189481776335_4720481977939168969_n.png?stp=dst-jpg_tt6&cstp=mx1080x1350&ctp=s590x590&_nc_cat=104&ccb=1-7&_nc_sid=127cfc&_nc_ohc=R-U-M_zOmJsQ7kNvwHxUQTr&_nc_oc=AdoH2s9_M8pWGmwG0Kkce58FQRBqn3hMQo90XHtURP8iEBuLAOxIZg-aICi6eWyGb2s&_nc_zt=14&_nc_ht=scontent-lax3-1.xx&_nc_gid=f7xxNM6pkI9f_2Q_2vo32A&_nc_ss=7b2a8&oh=00_AQOL7zcbMzuufPgNfUSBsmtysHL7nEbIMTojmLHR7J_MbA&oe=6AE4189E"
+    "https://scontent-lax7-1.xx.fbcdn.net/v/t39.99422-6/855590374_1101249839323752_5471712571282523021_n.png?stp=dst-jpg_tt6&cstp=mx1080x1350&ctp=s590x590&_nc_cat=105&ccb=1-7&_nc_sid=127cfc&_nc_ohc=yS7AqB5JLsAQ7kNvwGhmZWT&_nc_oc=Adp4ywYdUUSBDWvFk3ZtAIOZF5TN2-f9x7WQpaCZA1nSGItqae71AAhx5diDESFf_GM&_nc_zt=14&_nc_ht=scontent-lax7-1.xx&_nc_gid=7UXbEmSV2oEWL6DiAJdTYQ&_nc_ss=7b2a8&oh=00_AQMppR_gofqGKACLBh_-5mgee1ZD6PMhz8Al2SqtCcKIEQ&oe=6AE4FAD2",
+    "https://scontent-lax7-1.xx.fbcdn.net/v/t39.99422-6/855436963_1112497618039910_3119920271399714908_n.png?stp=dst-jpg_tt6&cstp=mx1080x1350&ctp=s590x590&_nc_cat=105&ccb=1-7&_nc_sid=127cfc&_nc_ohc=pnzZgze5TaQQ7kNvwENJIN_&_nc_oc=Adr9A1eaMWbZACRNifeSZGTJ0di3hEsA5J09oPKVTDTA7I1Y23N4a1R4VJBW4ECIhUI&_nc_zt=14&_nc_ht=scontent-lax7-1.xx&_nc_gid=7UXbEmSV2oEWL6DiAJdTYQ&_nc_ss=7b2a8&oh=00_AQPvM3mtnC4ayLuF1c35Mh7xB1j8AfC_TuAinTdu2vjszw&oe=6AE51B1C",
+    "https://scontent-lax3-2.xx.fbcdn.net/v/t39.99422-6/854236703_1112385425024878_3002613474445003821_n.png?stp=dst-jpg_tt6&cstp=mx1080x1350&ctp=s590x590&_nc_cat=103&ccb=1-7&_nc_sid=127cfc&_nc_ohc=snA-nlCefyoQ7kNvwHkHfBc&_nc_oc=Adof1DzknWzHohZUEDMinjG3OBS19keyG8g7INBaJTE8aTgPcl-G4pUSP2F8vRa7ykQ&_nc_zt=14&_nc_ht=scontent-lax3-2.xx&_nc_gid=7UXbEmSV2oEWL6DiAJdTYQ&_nc_ss=7b2a8&oh=00_AQOqQHidH5fNMcvXEboxmNJHKUZhHW7lF3-drjoR0RtaWw&oe=6AE50EF9",
+    "https://scontent-lax3-1.xx.fbcdn.net/v/t39.99422-6/855109420_4511161192487309_3134542270191838968_n.png?stp=dst-jpg_tt6&cstp=mx1080x1350&ctp=s590x590&_nc_cat=109&ccb=1-7&_nc_sid=127cfc&_nc_ohc=fZNtnMOTOycQ7kNvwEcpZMO&_nc_oc=AdpsbOc_rWAWONFiHfPKm4DCfx25QYo4ZTg0d7gG_L8Uzhc1kEVxg2If5p0TizuBXgY&_nc_zt=14&_nc_ht=scontent-lax3-1.xx&_nc_gid=7UXbEmSV2oEWL6DiAJdTYQ&_nc_ss=7b2a8&oh=00_AQP_Zt-8fNUA7m-kZ65Ad1QgXEIhm-TSxUNCuarbdtRNbg&oe=6AE50B84",
+    "https://scontent-lax3-1.xx.fbcdn.net/v/t39.99422-6/853629121_1761189481776335_4720481977939168969_n.png?stp=dst-jpg_tt6&cstp=mx1080x1350&ctp=s590x590&_nc_cat=104&ccb=1-7&_nc_sid=127cfc&_nc_ohc=R-U-M_zOmJsQ7kNvwHxUQTr&_nc_oc=AdoH2s9_M8pWGmwG0Kkce58FQRBqn3hMQo90XHtURP8iEBuLAOxIZg-aICi6eWyGb2s&_nc_zt=14&_nc_ht=scontent-lax3-1.xx&_nc_gid=7UXbEmSV2oEWL6DiAJdTYQ&_nc_ss=7b2a8&oh=00_AQMd-9bKBCBU9P945krk-GuR_mTEKL42C4oJ_svjTZrKCA&oe=6AE4F99E"
    ],
    "extra": 2
   },
   {
    "url": "https://www.youtube.com/watch?v=0LXriGpHi9w",
    "title": "ما الشيء الذي صرت تشتريه أغلى من قبل؟",
-   "text": "سؤال طرحناه على الناس في الشارع، في حلقة هذا الأسبوع من برنامج سؤال الشارع.",
+   "date": "2026-10-19T17:30:00",
+   "text": "سؤال طرحناه على الناس بحلقة هذا الأسبوع من برنامج \"سؤال الشارع\". شو كانت الإجابات؟",
    "series": "street"
+  },
+  {
+   "url": "https://www.facebook.com/reel/1428050899525485",
+   "title": "وزير العدل مظهر الويس في جولة سيراً على الأقدام في محيط قلعة حلب",
+   "skip": "لقطات"
+  },
+  {
+   "url": "https://www.facebook.com/reel/1658991198920754",
+   "title": "أب يعلن أن مهر ابنته 100 ليرة جديدة",
+   "skip": "لقطات"
+  },
+  {
+   "url": "https://www.facebook.com/reel/1785289892775663",
+   "title": "من إدلب إلى منصة التتويج في أوزبكستان",
+   "skip": "لقطات"
+  },
+  {
+   "url": "https://www.facebook.com/reel/1752097182672669",
+   "title": "وزير النقل: لا أستخدم سيارة الوزارة في تنقلاتي الشخصية",
+   "skip": "لقطات / بلا صورة"
   }
  ]
 }
