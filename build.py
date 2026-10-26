@@ -338,6 +338,7 @@ section.blk{padding:48px 0 8px}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:18px}
 .grid.sq{grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}
 .card{display:flex;flex-direction:column;gap:10px;color:var(--text);text-decoration:none}
+.card[hidden]{display:none}
 .card .th{position:relative;aspect-ratio:9/16;background:var(--card);border-radius:16px;overflow:hidden}
 .card .th img{width:100%;height:100%;object-fit:cover}
 .card .th .chip{position:absolute;bottom:10px;right:10px}
@@ -510,8 +511,11 @@ def page(path, title, body, desc=BIO, image=None, current=None):
 def T(s, tag="span", cls=""):
     return OT.text(s, tag, cls)
 
+def disp_kind(p):
+    return "فيديو" if p["kind"] == "ريل" else p["kind"]
+
 def card(p, show_series=True):
-    label = SERIES[p["series"]]["name"] if (show_series and p["series"]) else p["kind"]
+    label = SERIES[p["series"]]["name"] if (show_series and p["series"]) else disp_kind(p)
     if p["kind"] == "ألبوم":
         label = f'ألبوم · {len(p.get("images") or []) + (p.get("extra") or 0)} صور'
     elif p["series"] == "numbers" and not show_series:
@@ -616,7 +620,7 @@ def home(posts):
     albums = [p for p in posts if p["kind"] == "ألبوم"][:6]
     body = hero
     if reels:
-        body += row(T("أحدث الريلز", "h2"), '<a href="/all/#ريل">عرض الكل</a>', [card(p) for p in reels], "reels")
+        body += row(T("أحدث الفيديوهات", "h2"), '<a href="/all/#فيديو">عرض الكل</a>', [card(p) for p in reels], "reels")
     if nums:
         body += row(T("سوريا بالأرقام", "h2"), '<a href="/syria-in-numbers/">كل الإنفوغرافات</a>', [card(p, False) for p in nums], "nums")
     if albums:
@@ -628,7 +632,7 @@ def home(posts):
 def post_page(p, posts):
     s = SERIES.get(p["series"]) if p["series"] else None
     meta = (f'<a class="tag" href="/{s["slug"]}/">{E(s["name"])}</a><span>{s["every"]} · ' if s
-            else f'<span class="tag">{E(p["kind"])}</span><span>') + (f'<time datetime="{p["dt"].isoformat()}">{p["date"]}</time>' if p["dt"] else "دامسكا بلس") + '</span>'
+            else f'<span class="tag">{E(disp_kind(p))}</span><span>') + (f'<time datetime="{p["dt"].isoformat()}">{p["date"]}</time>' if p["dt"] else "دامسكا بلس") + '</span>'
     if p.get("youtube"):
         media = (f'<div class="player wide"><iframe src="{E(embed_src(p))}" title="{E(p["title"])}" '
                  f'allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowfullscreen></iframe></div>')
@@ -669,7 +673,7 @@ def post_page(p, posts):
         rel_title = "منشورات أخرى"
     if not rel:
         rel = [x for x in posts if x["id"] != p["id"] and x["kind"] == "ريل"][:4]
-        rel_title = "أحدث الريلز"
+        rel_title = "أحدث الفيديوهات"
     rel_html = (f'<section class="blk"><div class="wrap"><div class="head">{T(rel_title, "h2")}</div>'
                 f'<div class="grid">{"".join(card(x) for x in rel)}</div></div></section>') if rel else ""
     body = (f'<article class="post"><div class="wrap"><div class="meta">{meta}</div>{T(p["title"], "h1")}{media}'
@@ -698,10 +702,10 @@ def series_page(key, posts):
          image=eps[0]["thumb"] if eps else None)
 
 def all_page(posts):
-    kinds = [k for k in ("ريل", "فيديو", "إنفوغراف", "ألبوم", "منشور") if any(p["kind"] == k for p in posts)]
+    kinds = [k for k in ("فيديو", "إنفوغراف", "ألبوم", "منشور") if any(disp_kind(p) == k for p in posts)]
     btns = '<button type="button" aria-pressed="true" data-k="">الكل</button>' + "".join(
         f'<button type="button" aria-pressed="false" data-k="{k}">{k}</button>' for k in kinds)
-    cards = "".join(card(p).replace('<a class="card"', f'<a class="card" data-k="{p["kind"]}"', 1) for p in posts)
+    cards = "".join(card(p).replace('<a class="card"', f'<a class="card" data-k="{disp_kind(p)}"', 1) for p in posts)
     script = """<script>
 (function(){var b=document.querySelectorAll('.filters button'),c=document.querySelectorAll('.card[data-k]');
 function set(k){b.forEach(function(x){x.setAttribute('aria-pressed',x.dataset.k===k)});c.forEach(function(x){x.hidden=!!k&&x.dataset.k!==k});}
