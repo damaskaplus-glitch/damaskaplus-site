@@ -34,7 +34,10 @@ SERIES = {
                 "about": "نقارن بين ما كان في عهد النظام البائد وما صار بعد التحرير، في مختلف جوانب الحياة. كل خميس."},
     "numbers": {"name": "سوريا بالأرقام", "tag": "#سوريا_بالارقام", "slug": "syria-in-numbers", "day": "دوري", "every": "إنفوغرافات",
                 "about": "إحصائيات رسمية ومجتمعية وثقافية من داخل سوريا، في إنفوغراف يُقرأ بنظرة."},
+    "maps": {"name": "خرائط سوريا", "tag": "#خرائط_سوريا", "slug": "syria-maps", "day": "دوري", "every": "خرائط",
+             "about": "خريطة لكل محافظة سورية: مناطقها الإدارية ومساحاتها وأرقامها، في سلسلة من 14 محافظة."},
 }
+GRID_SERIES = ("numbers", "maps")   # 4:5 designs, shown as square-ish cards
 MONTHS = ["كانون الثاني", "شباط", "آذار", "نيسان", "أيار", "حزيران", "تموز", "آب", "أيلول",
           "تشرين الأول", "تشرين الثاني", "كانون الأول"]
 DAMASCUS = dt.timezone(dt.timedelta(hours=3))
@@ -525,12 +528,12 @@ def card(p, show_series=True):
     label = SERIES[p["series"]]["name"] if (show_series and p["series"]) else disp_kind(p)
     if p["kind"] == "ألبوم":
         label = f'ألبوم · {len(p.get("images") or []) + (p.get("extra") or 0)} صور'
-    elif p["series"] == "numbers" and not show_series:
-        label = "سوريا بالأرقام"
+    elif p["series"] in GRID_SERIES and not show_series:
+        label = SERIES[p["series"]]["name"]
     if p["thumb"]:
         th = f'<img src="{p["thumb"]}" alt="" loading="lazy">'
     else:
-        tone = {"changed": "olive", "numbers": "sand"}.get(p["series"], "blue")
+        tone = {"changed": "olive", "numbers": "sand", "maps": "olive"}.get(p["series"], "blue")
         icon = PLAY if p["kind"] in ("ريل", "فيديو") else ""
         th = f'<span class="tile {tone}"><img class="mk" src="/favicon.svg" alt=""><span class="pl">{icon}</span></span>'
     tm = f'<time datetime="{p["dt"].isoformat()}">{p["date"]}</time>' if p["dt"] else ""
@@ -624,15 +627,17 @@ def home(posts):
         hero = f"""<section class="hero"><div class="wrap"><div class="txt"><span class="tag">قريباً</span>{T("منصة سورية للإعلام الحر", "h1")}<p>{E(BIO)}</p></div></div></section>"""
     reels = [p for p in posts if p["kind"] == "ريل" and p["id"] not in used][:10]
     nums = [p for p in posts if p["series"] == "numbers"][:12]
-    albums = [p for p in posts if p["kind"] == "ألبوم"][:6]
+    albums = [p for p in posts if p["kind"] == "ألبوم" and p["series"] != "maps"][:12]
+    maps = [p for p in posts if p["series"] == "maps"][:14]
     body = hero
     if reels:
         body += row(T("أحدث الفيديوهات", "h2"), '<a href="/all/#فيديو">عرض الكل</a>', [card(p) for p in reels], "reels")
     if nums:
         body += row(T("سوريا بالأرقام", "h2"), '<a href="/syria-in-numbers/">كل الإنفوغرافات</a>', [card(p, False) for p in nums], "nums")
     if albums:
-        body += (f'<section class="blk"><div class="wrap"><div class="head">{T("الألبومات", "h2")}'
-                 f'<a href="/all/#ألبوم">كل الألبومات</a></div><div class="grid sq">{"".join(card(p, False) for p in albums)}</div></div></section>')
+        body += row(T("الألبومات", "h2"), '<a href="/all/#ألبوم">كل الألبومات</a>', [card(p, False) for p in albums], "nums")
+    if maps:
+        body += row(T("خرائط سوريا", "h2"), '<a href="/syria-maps/">كل الخرائط</a>', [card(p, False) for p in maps], "nums")
     body += about_strip()
     page("/", "دامسكا بلس", body, current="/", ld=site_ld())
 
@@ -698,8 +703,8 @@ def post_page(p, posts):
     cta = (f'<a class="btn y cta" href="{E(p["permalink"])}" rel="noopener" target="_blank">'
            f'{"علّق على يوتيوب" if p.get("youtube") else "علّق على فيسبوك"}</a>') if p.get("permalink") else ""
     rel = [x for x in posts if x["id"] != p["id"] and (x["series"] == p["series"] if p["series"] else True)][:4]
-    if p["series"] == "numbers":
-        rel_title = "المزيد من سوريا بالأرقام"
+    if p["series"] in GRID_SERIES:
+        rel_title = f"المزيد من {s['name']}"
     elif s:
         rel_title = f"حلقات أخرى من {s['name']}"
     else:
@@ -723,7 +728,7 @@ def series_page(key, posts):
         grid = (f'<h2 class="sub">الحلقات الكاملة</h2><div class="grid wide">{"".join(card(p, False) for p in full)}</div>'
                 f'<h2 class="sub">مقاطع من الحلقات</h2><div class="grid">{"".join(card(p, False) for p in clips)}</div>')
     elif eps:
-        grid = f'<div class="grid{" sq" if key == "numbers" else (" wide" if full else "")}">{"".join(card(p, False) for p in eps)}</div>'
+        grid = f'<div class="grid{" sq" if key in GRID_SERIES else (" wide" if full else "")}">{"".join(card(p, False) for p in eps)}</div>'
     else:
         grid = '<p class="empty">ستظهر الحلقات هنا فور نشرها.</p>'
     if "wd" in s:
