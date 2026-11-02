@@ -614,7 +614,7 @@ def home(posts):
         if prefer_wide:
             eps = [p for p in eps if p.get("youtube") or p["kind"] == "فيديو"] or eps
         return eps[0] if eps else None
-    slides = [p for p in (latest("changed"), latest("street", True)) if p]
+    slides = [p for p in (latest("street", True), latest("changed")) if p]
     used = {p["id"] for p in slides}
     if slides:
         hero = (f'<section class="hero slider" aria-roledescription="عرض متتابع" aria-label="برامجنا">'
