@@ -36,6 +36,8 @@ SERIES = {
                 "about": "إحصائيات رسمية ومجتمعية وثقافية من داخل سوريا، في إنفوغراف يُقرأ بنظرة."},
     "maps": {"name": "خرائط سوريا", "tag": "#خرائط_سوريا", "slug": "syria-maps", "day": "دوري", "every": "خرائط",
              "about": "خريطة لكل محافظة سورية: مناطقها الإدارية ومساحاتها وأرقامها، في سلسلة من 14 محافظة."},
+    "tips": {"name": "معلومة تهمك", "tag": "#معلومة_تهمك", "slug": "good-to-know", "day": "دوري", "every": "فيديوهات توعوية",
+             "about": "معلومة عملية تهمك في حياتك اليومية، في فيديو قصير: ما حقك، وكيف تتصرف، وإلى أين تتجه."},
 }
 GRID_SERIES = ("numbers", "maps")   # 4:5 designs, shown as square-ish cards
 MONTHS = ["كانون الثاني", "شباط", "آذار", "نيسان", "أيار", "حزيران", "تموز", "آب", "أيلول",
@@ -533,7 +535,7 @@ def card(p, show_series=True):
     if p["thumb"]:
         th = f'<img src="{p["thumb"]}" alt="" loading="lazy">'
     else:
-        tone = {"changed": "olive", "numbers": "sand", "maps": "olive"}.get(p["series"], "blue")
+        tone = {"changed": "olive", "numbers": "sand", "maps": "olive", "tips": "olive"}.get(p["series"], "blue")
         icon = PLAY if p["kind"] in ("ريل", "فيديو") else ""
         th = f'<span class="tile {tone}"><img class="mk" src="/favicon.svg" alt=""><span class="pl">{icon}</span></span>'
     tm = f'<time datetime="{p["dt"].isoformat()}">{p["date"]}</time>' if p["dt"] else ""
@@ -625,13 +627,16 @@ def home(posts):
                 + '</section>' + SLIDER_JS)
     else:
         hero = f"""<section class="hero"><div class="wrap"><div class="txt"><span class="tag">قريباً</span>{T("منصة سورية للإعلام الحر", "h1")}<p>{E(BIO)}</p></div></div></section>"""
-    reels = [p for p in posts if p["kind"] == "ريل" and p["id"] not in used][:10]
+    reels = [p for p in posts if p["kind"] == "ريل" and p["id"] not in used and p["series"] != "tips"][:10]
+    tips = [p for p in posts if p["series"] == "tips"][:12]
     nums = [p for p in posts if p["series"] == "numbers"][:12]
     albums = [p for p in posts if p["kind"] == "ألبوم" and p["series"] != "maps"][:12]
     maps = [p for p in posts if p["series"] == "maps"][:14]
     body = hero
     if reels:
         body += row(T("أحدث الفيديوهات", "h2"), '<a href="/all/#فيديو">عرض الكل</a>', [card(p) for p in reels], "reels")
+    if tips:
+        body += row(T("معلومة تهمك", "h2"), '<a href="/good-to-know/">كل الحلقات</a>', [card(p, False) for p in tips], "reels")
     if nums:
         body += row(T("سوريا بالأرقام", "h2"), '<a href="/syria-in-numbers/">كل الإنفوغرافات</a>', [card(p, False) for p in nums], "nums")
     if albums:
